@@ -14,6 +14,52 @@
 		CFBD7B121F2AE65900D7BBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */; };
 		CFBD7B151F2AE65900D7BBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */; };
 		CFBD7B201F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */; };
+		CFBD7B541F2AE68200D7BBA8 /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */; };
+		CFBD7B551F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */; };
+		CFBD7B561F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */; };
+		CFBD7B571F2AE68200D7BBA8 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
+		CFBD7B581F2AE68200D7BBA8 /* DWCollectionCellMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */; };
+		CFBD7B591F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */; };
+		CFBD7B5A1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */; };
+		CFBD7B5B1F2AE68200D7BBA8 /* DWCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */; };
+		CFBD7B5C1F2AE68200D7BBA8 /* DWMapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */; };
+		CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */; };
+		CFBD7B5E1F2AE68200D7BBA8 /* DWSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B461F2AE68200D7BBA8 /* DWSection.m */; };
+		CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */; };
+		CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */; };
+		CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */; };
+		CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */; };
+		CFBD7B631F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
+		CFBD7B721F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
+		CFBD7B791F2AE75E00D7BBA8 /* DWCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */; };
+		CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B7E1F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
+		CFBD7B7F1F2AE75E00D7BBA8 /* DWCollection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CFBD7B871F2AE78A00D7BBA8 /* DWCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B881F2AE78A00D7BBA8 /* DWCollectionViewCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B891F2AE78A00D7BBA8 /* DWFooterCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8A1F2AE78A00D7BBA8 /* DWHeaderCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8B1F2AE78A00D7BBA8 /* DWCollectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8C1F2AE78A00D7BBA8 /* DWCollectionCellMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B371F2AE68200D7BBA8 /* DWCollectionCellMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B391F2AE68200D7BBA8 /* DWCollectionDelegateMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8E1F2AE78A00D7BBA8 /* DWCollectionHeaderFooterMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B3B1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B8F1F2AE78A00D7BBA8 /* DWCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B901F2AE78A00D7BBA8 /* DWMapperModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B401F2AE68200D7BBA8 /* DWMapperModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B911F2AE78A00D7BBA8 /* DWProtocolMethodImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B431F2AE68200D7BBA8 /* DWProtocolMethodImplementation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B451F2AE68200D7BBA8 /* DWSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7B931F2AE78A00D7BBA8 /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */; };
+		CFBD7BA51F2AE9E800D7BBA8 /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */; };
+		CFBD7BA61F2AE9E800D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */; };
+		CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
+		CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */; };
+		CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */; };
+		CFBD7BAA1F2AE9E800D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */; };
+		CFBD7BAB1F2AE9E800D7BBA8 /* DWCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */; };
+		CFBD7BAC1F2AE9E800D7BBA8 /* DWMapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */; };
+		CFBD7BAD1F2AE9E800D7BBA8 /* DWProtocolMethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */; };
+		CFBD7BAE1F2AE9E800D7BBA8 /* DWSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B461F2AE68200D7BBA8 /* DWSection.m */; };
+		CFBD7BAF1F2AE9E800D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +70,42 @@
 			remoteGlobalIDString = CFBD7B011F2AE65900D7BBA8;
 			remoteInfo = DWCollectionViewDemo;
 		};
+		CFBD7B731F2AE75E00D7BBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFBD7B681F2AE75E00D7BBA8;
+			remoteInfo = DWCollection;
+		};
+		CFBD7B751F2AE75E00D7BBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFBD7B011F2AE65900D7BBA8;
+			remoteInfo = DWCollectionViewDemo;
+		};
+		CFBD7B7C1F2AE75E00D7BBA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFBD7B681F2AE75E00D7BBA8;
+			remoteInfo = DWCollection;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFBD7B831F2AE75E00D7BBA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CFBD7B7F1F2AE75E00D7BBA8 /* DWCollection.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +121,45 @@
 		CFBD7B1B1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCollectionViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewDemoTests.m; sourceTree = "<group>"; };
 		CFBD7B211F2AE65900D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewCell.h; sourceTree = "<group>"; };
+		CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewCell.m; sourceTree = "<group>"; };
+		CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewCellProtocol.h; sourceTree = "<group>"; };
+		CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionDelegate.h; sourceTree = "<group>"; };
+		CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionDelegate.m; sourceTree = "<group>"; };
+		CFBD7B371F2AE68200D7BBA8 /* DWCollectionCellMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionCellMaker.h; sourceTree = "<group>"; };
+		CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionCellMaker.m; sourceTree = "<group>"; };
+		CFBD7B391F2AE68200D7BBA8 /* DWCollectionDelegateMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionDelegateMaker.h; sourceTree = "<group>"; };
+		CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionDelegateMaker.m; sourceTree = "<group>"; };
+		CFBD7B3B1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionHeaderFooterMaker.h; sourceTree = "<group>"; };
+		CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionHeaderFooterMaker.m; sourceTree = "<group>"; };
+		CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionView.h; sourceTree = "<group>"; };
+		CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionView.m; sourceTree = "<group>"; };
+		CFBD7B401F2AE68200D7BBA8 /* DWMapperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMapperModel.h; sourceTree = "<group>"; };
+		CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMapperModel.m; sourceTree = "<group>"; };
+		CFBD7B431F2AE68200D7BBA8 /* DWProtocolMethodImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWProtocolMethodImplementation.h; sourceTree = "<group>"; };
+		CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWProtocolMethodImplementation.m; sourceTree = "<group>"; };
+		CFBD7B451F2AE68200D7BBA8 /* DWSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSection.h; sourceTree = "<group>"; };
+		CFBD7B461F2AE68200D7BBA8 /* DWSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSection.m; sourceTree = "<group>"; };
+		CFBD7B481F2AE68200D7BBA8 /* LeagueHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueHeaderReusableView.h; sourceTree = "<group>"; };
+		CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueHeaderReusableView.m; sourceTree = "<group>"; };
+		CFBD7B4A1F2AE68200D7BBA8 /* LeagueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueInfo.h; sourceTree = "<group>"; };
+		CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueInfo.m; sourceTree = "<group>"; };
+		CFBD7B4C1F2AE68200D7BBA8 /* TeamInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfo.h; sourceTree = "<group>"; };
+		CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfo.m; sourceTree = "<group>"; };
+		CFBD7B4E1F2AE68200D7BBA8 /* TeamInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoCell.h; sourceTree = "<group>"; };
+		CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoCell.m; sourceTree = "<group>"; };
+		CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MulArgPerformSel.h"; sourceTree = "<group>"; };
+		CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MulArgPerformSel.m"; sourceTree = "<group>"; };
+		CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DWCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWCollection.h; sourceTree = "<group>"; };
+		CFBD7B6C1F2AE75E00D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFBD7B711F2AE75E00D7BBA8 /* DWCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCollectionTests.m; sourceTree = "<group>"; };
+		CFBD7B7A1F2AE75E00D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBD7B7E1F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +175,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBD7B651F2AE75E00D7BBA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBD7B6E1F2AE75E00D7BBA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBD7B721F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +201,8 @@
 			children = (
 				CFBD7B041F2AE65900D7BBA8 /* DWCollectionViewDemo */,
 				CFBD7B1E1F2AE65900D7BBA8 /* DWCollectionViewDemoTests */,
+				CFBD7B6A1F2AE75E00D7BBA8 /* DWCollection */,
+				CFBD7B771F2AE75E00D7BBA8 /* DWCollectionTests */,
 				CFBD7B031F2AE65900D7BBA8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +212,8 @@
 			children = (
 				CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */,
 				CFBD7B1B1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.xctest */,
+				CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */,
+				CFBD7B711F2AE75E00D7BBA8 /* DWCollectionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,7 +225,10 @@
 				CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */,
 				CFBD7B0B1F2AE65900D7BBA8 /* ViewController.h */,
 				CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */,
+				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CFBD7B0E1F2AE65900D7BBA8 /* Main.storyboard */,
+				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
+				CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */,
 				CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */,
 				CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */,
 				CFBD7B161F2AE65900D7BBA8 /* Info.plist */,
@@ -111,7 +254,143 @@
 			path = DWCollectionViewDemoTests;
 			sourceTree = "<group>";
 		};
+		CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
+				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
+				CFBD7B361F2AE68200D7BBA8 /* DWCollectionMaker */,
+				CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */,
+				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
+				CFBD7B3F1F2AE68200D7BBA8 /* DWMapperModel */,
+				CFBD7B421F2AE68200D7BBA8 /* DWProtocolImplementation */,
+				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
+				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
+			);
+			path = DWCollectionView;
+			sourceTree = "<group>";
+		};
+		CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */,
+				CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */,
+				CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */,
+				CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */,
+				CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */,
+				CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */,
+				CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */,
+			);
+			path = DWCollectionCell;
+			sourceTree = "<group>";
+		};
+		CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */,
+				CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */,
+			);
+			path = DWCollectionDelegate;
+			sourceTree = "<group>";
+		};
+		CFBD7B361F2AE68200D7BBA8 /* DWCollectionMaker */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B371F2AE68200D7BBA8 /* DWCollectionCellMaker.h */,
+				CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */,
+				CFBD7B391F2AE68200D7BBA8 /* DWCollectionDelegateMaker.h */,
+				CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */,
+				CFBD7B3B1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.h */,
+				CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */,
+			);
+			path = DWCollectionMaker;
+			sourceTree = "<group>";
+		};
+		CFBD7B3F1F2AE68200D7BBA8 /* DWMapperModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B401F2AE68200D7BBA8 /* DWMapperModel.h */,
+				CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */,
+			);
+			path = DWMapperModel;
+			sourceTree = "<group>";
+		};
+		CFBD7B421F2AE68200D7BBA8 /* DWProtocolImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B431F2AE68200D7BBA8 /* DWProtocolMethodImplementation.h */,
+				CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */,
+			);
+			path = DWProtocolImplementation;
+			sourceTree = "<group>";
+		};
+		CFBD7B471F2AE68200D7BBA8 /* EgModelCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B481F2AE68200D7BBA8 /* LeagueHeaderReusableView.h */,
+				CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */,
+				CFBD7B4A1F2AE68200D7BBA8 /* LeagueInfo.h */,
+				CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */,
+				CFBD7B4C1F2AE68200D7BBA8 /* TeamInfo.h */,
+				CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */,
+				CFBD7B4E1F2AE68200D7BBA8 /* TeamInfoCell.h */,
+				CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */,
+			);
+			path = EgModelCell;
+			sourceTree = "<group>";
+		};
+		CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */,
+				CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */,
+			);
+			path = NSObjectExtention;
+			sourceTree = "<group>";
+		};
+		CFBD7B6A1F2AE75E00D7BBA8 /* DWCollection */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */,
+				CFBD7B6C1F2AE75E00D7BBA8 /* Info.plist */,
+			);
+			path = DWCollection;
+			sourceTree = "<group>";
+		};
+		CFBD7B771F2AE75E00D7BBA8 /* DWCollectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */,
+				CFBD7B7A1F2AE75E00D7BBA8 /* Info.plist */,
+			);
+			path = DWCollectionTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CFBD7B661F2AE75E00D7BBA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */,
+				CFBD7B871F2AE78A00D7BBA8 /* DWCollectionViewCell.h in Headers */,
+				CFBD7B881F2AE78A00D7BBA8 /* DWCollectionViewCellProtocol.h in Headers */,
+				CFBD7B891F2AE78A00D7BBA8 /* DWFooterCollectionReusableView.h in Headers */,
+				CFBD7B8A1F2AE78A00D7BBA8 /* DWHeaderCollectionReusableView.h in Headers */,
+				CFBD7B8B1F2AE78A00D7BBA8 /* DWCollectionDelegate.h in Headers */,
+				CFBD7B8C1F2AE78A00D7BBA8 /* DWCollectionCellMaker.h in Headers */,
+				CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */,
+				CFBD7B8E1F2AE78A00D7BBA8 /* DWCollectionHeaderFooterMaker.h in Headers */,
+				CFBD7B8F1F2AE78A00D7BBA8 /* DWCollectionView.h in Headers */,
+				CFBD7B901F2AE78A00D7BBA8 /* DWMapperModel.h in Headers */,
+				CFBD7B911F2AE78A00D7BBA8 /* DWProtocolMethodImplementation.h in Headers */,
+				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
+				CFBD7B931F2AE78A00D7BBA8 /* NSObject+MulArgPerformSel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */ = {
@@ -121,10 +400,12 @@
 				CFBD7AFE1F2AE65900D7BBA8 /* Sources */,
 				CFBD7AFF1F2AE65900D7BBA8 /* Frameworks */,
 				CFBD7B001F2AE65900D7BBA8 /* Resources */,
+				CFBD7B831F2AE75E00D7BBA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CFBD7B7D1F2AE75E00D7BBA8 /* PBXTargetDependency */,
 			);
 			name = DWCollectionViewDemo;
 			productName = DWCollectionViewDemo;
@@ -149,6 +430,43 @@
 			productReference = CFBD7B1B1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CFBD7B681F2AE75E00D7BBA8 /* DWCollection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFBD7B801F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollection" */;
+			buildPhases = (
+				CFBD7B641F2AE75E00D7BBA8 /* Sources */,
+				CFBD7B651F2AE75E00D7BBA8 /* Frameworks */,
+				CFBD7B661F2AE75E00D7BBA8 /* Headers */,
+				CFBD7B671F2AE75E00D7BBA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWCollection;
+			productName = DWCollection;
+			productReference = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CFBD7B701F2AE75E00D7BBA8 /* DWCollectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFBD7B841F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollectionTests" */;
+			buildPhases = (
+				CFBD7B6D1F2AE75E00D7BBA8 /* Sources */,
+				CFBD7B6E1F2AE75E00D7BBA8 /* Frameworks */,
+				CFBD7B6F1F2AE75E00D7BBA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFBD7B741F2AE75E00D7BBA8 /* PBXTargetDependency */,
+				CFBD7B761F2AE75E00D7BBA8 /* PBXTargetDependency */,
+			);
+			name = DWCollectionTests;
+			productName = DWCollectionTests;
+			productReference = CFBD7B711F2AE75E00D7BBA8 /* DWCollectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -163,6 +481,15 @@
 						ProvisioningStyle = Automatic;
 					};
 					CFBD7B1A1F2AE65900D7BBA8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFBD7B011F2AE65900D7BBA8;
+					};
+					CFBD7B681F2AE75E00D7BBA8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					CFBD7B701F2AE75E00D7BBA8 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = CFBD7B011F2AE65900D7BBA8;
@@ -184,6 +511,8 @@
 			targets = (
 				CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */,
 				CFBD7B1A1F2AE65900D7BBA8 /* DWCollectionViewDemoTests */,
+				CFBD7B681F2AE75E00D7BBA8 /* DWCollection */,
+				CFBD7B701F2AE75E00D7BBA8 /* DWCollectionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,6 +535,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFBD7B671F2AE75E00D7BBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBD7B6F1F2AE75E00D7BBA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -213,9 +556,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBD7B591F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m in Sources */,
+				CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */,
+				CFBD7B631F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */,
+				CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
+				CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */,
+				CFBD7B581F2AE68200D7BBA8 /* DWCollectionCellMaker.m in Sources */,
+				CFBD7B5C1F2AE68200D7BBA8 /* DWMapperModel.m in Sources */,
+				CFBD7B5B1F2AE68200D7BBA8 /* DWCollectionView.m in Sources */,
+				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,
+				CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */,
+				CFBD7B571F2AE68200D7BBA8 /* DWCollectionDelegate.m in Sources */,
+				CFBD7B5E1F2AE68200D7BBA8 /* DWSection.m in Sources */,
+				CFBD7B5A1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */,
 				CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */,
+				CFBD7B541F2AE68200D7BBA8 /* DWCollectionViewCell.m in Sources */,
+				CFBD7B561F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */,
+				CFBD7B551F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +586,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFBD7B641F2AE75E00D7BBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */,
+				CFBD7BA51F2AE9E800D7BBA8 /* DWFooterCollectionReusableView.m in Sources */,
+				CFBD7BA61F2AE9E800D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */,
+				CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */,
+				CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */,
+				CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */,
+				CFBD7BAA1F2AE9E800D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */,
+				CFBD7BAB1F2AE9E800D7BBA8 /* DWCollectionView.m in Sources */,
+				CFBD7BAC1F2AE9E800D7BBA8 /* DWMapperModel.m in Sources */,
+				CFBD7BAD1F2AE9E800D7BBA8 /* DWProtocolMethodImplementation.m in Sources */,
+				CFBD7BAE1F2AE9E800D7BBA8 /* DWSection.m in Sources */,
+				CFBD7BAF1F2AE9E800D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBD7B6D1F2AE75E00D7BBA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFBD7B791F2AE75E00D7BBA8 /* DWCollectionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -234,6 +620,21 @@
 			isa = PBXTargetDependency;
 			target = CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */;
 			targetProxy = CFBD7B1C1F2AE65900D7BBA8 /* PBXContainerItemProxy */;
+		};
+		CFBD7B741F2AE75E00D7BBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFBD7B681F2AE75E00D7BBA8 /* DWCollection */;
+			targetProxy = CFBD7B731F2AE75E00D7BBA8 /* PBXContainerItemProxy */;
+		};
+		CFBD7B761F2AE75E00D7BBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */;
+			targetProxy = CFBD7B751F2AE75E00D7BBA8 /* PBXContainerItemProxy */;
+		};
+		CFBD7B7D1F2AE75E00D7BBA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFBD7B681F2AE75E00D7BBA8 /* DWCollection */;
+			targetProxy = CFBD7B7C1F2AE75E00D7BBA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -393,6 +794,74 @@
 			};
 			name = Release;
 		};
+		CFBD7B811F2AE75E00D7BBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DWCollection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CFBD7B821F2AE75E00D7BBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DWCollection/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollection;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CFBD7B851F2AE75E00D7BBA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWCollectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWCollectionViewDemo.app/DWCollectionViewDemo";
+			};
+			name = Debug;
+		};
+		CFBD7B861F2AE75E00D7BBA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DWCollectionTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollectionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DWCollectionViewDemo.app/DWCollectionViewDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,6 +887,22 @@
 			buildConfigurations = (
 				CFBD7B281F2AE65900D7BBA8 /* Debug */,
 				CFBD7B291F2AE65900D7BBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFBD7B801F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFBD7B811F2AE75E00D7BBA8 /* Debug */,
+				CFBD7B821F2AE75E00D7BBA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFBD7B841F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFBD7B851F2AE75E00D7BBA8 /* Debug */,
+				CFBD7B861F2AE75E00D7BBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DWCollectionViewCell.h
 //  DWCollectionViewDemo
 //
 //  Created by Dawn Wang on 2017/7/21.
@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DWCollectionViewCellProtocol.h"
 
-@interface ViewController : UIViewController
-
+@interface DWCollectionViewCell : UICollectionViewCell<DWCollectionViewCellProtocol>
 
 @end
-
