@@ -8,9 +8,7 @@
 
 #import "ViewController.h"
 
-//#import "DWCollectionView/DWCollectionView.h"
-
-#import "DWCollectionView.h"
+#import <DWCollection/DWCollection.h>
 #import "DWCollectionViewCell.h"
 
 
@@ -67,6 +65,13 @@
             LeagueHeaderReusableView *header = (LeagueHeaderReusableView *)reusableView;
             [header bindData:data];
         });
+    }];
+    
+    [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
+    [self.collectionView.refreshManager setupHeaderRefresh:^{
+        NSLog(@"header refresh");
+    } footerRefresh:^{
+        NSLog(@"footer refresh");
     }];
     
 }

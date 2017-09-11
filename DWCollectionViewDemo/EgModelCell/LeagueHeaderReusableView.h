@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DWCollectionViewCellProtocol.h"
+#import <DWCollection/DWCollection.h>
 #define height_header 40
 
 @interface LeagueHeaderReusableView : UICollectionReusableView<DWCollectionViewCellProtocol>

@@ -30,3 +30,6 @@ FOUNDATION_EXPORT const unsigned char DWCollectionVersionString[];
 #import <DWCollection/DWCollectionHeaderFooterMaker.h>
 #import <DWCollection/DWProtocolMethodImplementation.h>
 #import <DWCollection/DWCollectionDelegate.h>
+#import <DWCollection/DWRefreshManager.h>
+#import <DWCollection/DWMJRefreshFooter.h>
+#import <DWCollection/DWMJRefreshHeader.h>

@@ -17,6 +17,12 @@
 		CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; };
 		CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF1919041F665E33002DD31B /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
+		CF19191F1F668968002DD31B /* DWMJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */; };
+		CF1919201F668968002DD31B /* DWMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */; };
+		CF1919211F668A65002DD31B /* DWMJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1919191F668955002DD31B /* DWMJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF1919221F668A65002DD31B /* DWMJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF1919231F668A65002DD31B /* DWRefreshManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1919071F6664A9002DD31B /* DWRefreshManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF1919241F6692E3002DD31B /* DWRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919081F6664A9002DD31B /* DWRefreshManager.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -116,6 +122,12 @@
 		CF1918FC1F665C96002DD31B /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = "<group>"; };
 		CF1918FD1F665C96002DD31B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		CF1919051F665E81002DD31B /* DWCollectionGlobal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWCollectionGlobal.pch; sourceTree = "<group>"; };
+		CF1919071F6664A9002DD31B /* DWRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWRefreshManager.h; sourceTree = "<group>"; };
+		CF1919081F6664A9002DD31B /* DWRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWRefreshManager.m; sourceTree = "<group>"; };
+		CF1919191F668955002DD31B /* DWMJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshFooter.h; sourceTree = "<group>"; };
+		CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshFooter.m; sourceTree = "<group>"; };
+		CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshHeader.h; sourceTree = "<group>"; };
+		CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshHeader.m; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +228,26 @@
 			name = Framework;
 			sourceTree = "<group>";
 		};
+		CF1919061F666483002DD31B /* DWRefresher */ = {
+			isa = PBXGroup;
+			children = (
+				CF1919071F6664A9002DD31B /* DWRefreshManager.h */,
+				CF1919081F6664A9002DD31B /* DWRefreshManager.m */,
+			);
+			path = DWRefresher;
+			sourceTree = "<group>";
+		};
+		CF1919181F668955002DD31B /* EgRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				CF1919191F668955002DD31B /* DWMJRefreshFooter.h */,
+				CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */,
+				CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */,
+				CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */,
+			);
+			path = EgRefreshView;
+			sourceTree = "<group>";
+		};
 		CFBD7AF91F2AE65900D7BBA8 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +316,8 @@
 				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
 				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
 				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
+				CF1919181F668955002DD31B /* EgRefreshView */,
+				CF1919061F666483002DD31B /* DWRefresher */,
 				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
 				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
 				CFBD7B361F2AE68200D7BBA8 /* DWCollectionMaker */,
@@ -414,6 +448,9 @@
 				CFBD7B911F2AE78A00D7BBA8 /* DWProtocolMethodImplementation.h in Headers */,
 				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
 				CFBD7B931F2AE78A00D7BBA8 /* NSObject+MulArgPerformSel.h in Headers */,
+				CF1919211F668A65002DD31B /* DWMJRefreshFooter.h in Headers */,
+				CF1919221F668A65002DD31B /* DWMJRefreshHeader.h in Headers */,
+				CF1919231F668A65002DD31B /* DWRefreshManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +626,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DWCollection.framework",
 			);
 			outputPaths = (
 			);
@@ -627,6 +665,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1919241F6692E3002DD31B /* DWRefreshManager.m in Sources */,
+				CF19191F1F668968002DD31B /* DWMJRefreshFooter.m in Sources */,
+				CF1919201F668968002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,
 				CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */,

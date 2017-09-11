@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Dawn Wang. All rights reserved.
 //
 
-#import "DWCollectionViewCell.h"
+#import <DWCollection/DWCollection.h>
 
 @interface TeamInfoCell : DWCollectionViewCell
 

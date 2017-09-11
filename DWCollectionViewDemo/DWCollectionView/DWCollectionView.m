@@ -11,7 +11,6 @@
 #import "DWCollectionDelegate/DWCollectionDataSource.h"
 
 
-
 @interface DWCollectionView()
 
 @property (nonatomic, weak) id dw_delegate;
@@ -20,6 +19,7 @@
 
 @property (nonatomic, strong) DWCollectionViewDelegate *dwViewDelegate;
 @property (nonatomic, strong) DWCollectionDataSource *dwDataSource;
+
 
 
 @end
@@ -123,5 +123,12 @@
         });
     }
     
+}
+
+- (DWRefreshManager *)refreshManager {
+    if (!_refreshManager) {
+        _refreshManager = [[DWRefreshManager alloc] initWithScrollView:self];
+    }
+    return _refreshManager;
 }
 @end

@@ -68,16 +68,8 @@ typedef struct{
 }
 
 
-/*
-#define OriginalDelegateResponse(method) \
-if ([self.originalDelegate respondsToSelector:]) {\
-return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout insetForSectionAtIndex:section];\
-}
-*/
-
-
 #pragma mark - getter & setter
-- (void)setOriginalDelegate:(id)originalDelegate{
+- (void)setOriginalDelegate:(id)originalDelegate NS_REQUIRES_SUPER {
     _originalDelegate = originalDelegate;
 }
 @end
