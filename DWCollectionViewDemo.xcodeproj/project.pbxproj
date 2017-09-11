@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF1918ED1F6648D1002DD31B /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
+		CF1918EE1F6648D1002DD31B /* DWCollection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */; };
+		CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */; };
+		CF1918F51F664AA9002DD31B /* issue.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF1918F41F664AA9002DD31B /* issue.rtf */; };
+		CF1918FE1F665C96002DD31B /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
+		CF1918FF1F665C96002DD31B /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; };
+		CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF1919041F665E33002DD31B /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -23,8 +33,6 @@
 		CFBD7B721F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
 		CFBD7B791F2AE75E00D7BBA8 /* DWCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */; };
 		CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7B7E1F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
-		CFBD7B7F1F2AE75E00D7BBA8 /* DWCollection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFBD7B871F2AE78A00D7BBA8 /* DWCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B881F2AE78A00D7BBA8 /* DWCollectionViewCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B891F2AE78A00D7BBA8 /* DWFooterCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +61,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF1918EF1F6648D1002DD31B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFBD7B681F2AE75E00D7BBA8;
+			remoteInfo = DWCollection;
+		};
 		CFBD7B1C1F2AE65900D7BBA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
@@ -74,23 +89,18 @@
 			remoteGlobalIDString = CFBD7B011F2AE65900D7BBA8;
 			remoteInfo = DWCollectionViewDemo;
 		};
-		CFBD7B7C1F2AE75E00D7BBA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CFBD7AFA1F2AE65900D7BBA8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CFBD7B681F2AE75E00D7BBA8;
-			remoteInfo = DWCollection;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CFBD7B831F2AE75E00D7BBA8 /* Embed Frameworks */ = {
+		CF1918F11F6648D1002DD31B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CFBD7B7F1F2AE75E00D7BBA8 /* DWCollection.framework in Embed Frameworks */,
+				CF1918EE1F6648D1002DD31B /* DWCollection.framework in Embed Frameworks */,
+				CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */,
+				CF1918FF1F665C96002DD31B /* MJRefresh.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +108,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF1918E71F663F71002DD31B /* DWCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewDelegate.h; sourceTree = "<group>"; };
+		CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewDelegate.m; sourceTree = "<group>"; };
+		CF1918EA1F664005002DD31B /* DWCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionDataSource.h; sourceTree = "<group>"; };
+		CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionDataSource.m; sourceTree = "<group>"; };
+		CF1918F41F664AA9002DD31B /* issue.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = issue.rtf; sourceTree = "<group>"; };
+		CF1918FC1F665C96002DD31B /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = "<group>"; };
+		CF1918FD1F665C96002DD31B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		CF1919051F665E81002DD31B /* DWCollectionGlobal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWCollectionGlobal.pch; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,7 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBD7B7E1F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */,
+				CF1918ED1F6648D1002DD31B /* DWCollection.framework in Frameworks */,
+				CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */,
+				CF1918FE1F665C96002DD31B /* MJRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1919041F665E33002DD31B /* MJRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,9 +207,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF1919021F665CA1002DD31B /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				CF1918FC1F665C96002DD31B /* MJRefresh.framework */,
+				CF1918FD1F665C96002DD31B /* SDWebImage.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		CFBD7AF91F2AE65900D7BBA8 = {
 			isa = PBXGroup;
 			children = (
+				CF1919021F665CA1002DD31B /* Framework */,
 				CFBD7B041F2AE65900D7BBA8 /* DWCollectionViewDemo */,
 				CFBD7B1E1F2AE65900D7BBA8 /* DWCollectionViewDemoTests */,
 				CFBD7B6A1F2AE75E00D7BBA8 /* DWCollection */,
@@ -215,6 +246,7 @@
 				CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */,
 				CFBD7B0B1F2AE65900D7BBA8 /* ViewController.h */,
 				CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */,
+				CF1918F41F664AA9002DD31B /* issue.rtf */,
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CFBD7B0E1F2AE65900D7BBA8 /* Main.storyboard */,
 				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
@@ -230,6 +262,7 @@
 		CFBD7B051F2AE65900D7BBA8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF1919051F665E81002DD31B /* DWCollectionGlobal.pch */,
 				CFBD7B061F2AE65900D7BBA8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -279,6 +312,10 @@
 			children = (
 				CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */,
 				CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */,
+				CF1918E71F663F71002DD31B /* DWCollectionViewDelegate.h */,
+				CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */,
+				CF1918EA1F664005002DD31B /* DWCollectionDataSource.h */,
+				CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */,
 			);
 			path = DWCollectionDelegate;
 			sourceTree = "<group>";
@@ -390,12 +427,13 @@
 				CFBD7AFE1F2AE65900D7BBA8 /* Sources */,
 				CFBD7AFF1F2AE65900D7BBA8 /* Frameworks */,
 				CFBD7B001F2AE65900D7BBA8 /* Resources */,
-				CFBD7B831F2AE75E00D7BBA8 /* Embed Frameworks */,
+				CF1918F11F6648D1002DD31B /* Embed Frameworks */,
+				CF1919031F665D0B002DD31B /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CFBD7B7D1F2AE75E00D7BBA8 /* PBXTargetDependency */,
+				CF1918F01F6648D1002DD31B /* PBXTargetDependency */,
 			);
 			name = DWCollectionViewDemo;
 			productName = DWCollectionViewDemo;
@@ -512,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1918F51F664AA9002DD31B /* issue.rtf in Resources */,
 				CFBD7B151F2AE65900D7BBA8 /* LaunchScreen.storyboard in Resources */,
 				CFBD7B121F2AE65900D7BBA8 /* Assets.xcassets in Resources */,
 				CFBD7B101F2AE65900D7BBA8 /* Main.storyboard in Resources */,
@@ -540,6 +579,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CF1919031F665D0B002DD31B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "carthage copy-frameworks\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CFBD7AFE1F2AE65900D7BBA8 /* Sources */ = {
@@ -570,6 +627,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
+				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,
 				CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */,
 				CFBD7BA51F2AE9E800D7BBA8 /* DWFooterCollectionReusableView.m in Sources */,
 				CFBD7BA61F2AE9E800D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */,
@@ -596,6 +655,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF1918F01F6648D1002DD31B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFBD7B681F2AE75E00D7BBA8 /* DWCollection */;
+			targetProxy = CF1918EF1F6648D1002DD31B /* PBXContainerItemProxy */;
+		};
 		CFBD7B1D1F2AE65900D7BBA8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */;
@@ -610,11 +674,6 @@
 			isa = PBXTargetDependency;
 			target = CFBD7B011F2AE65900D7BBA8 /* DWCollectionViewDemo */;
 			targetProxy = CFBD7B751F2AE75E00D7BBA8 /* PBXContainerItemProxy */;
-		};
-		CFBD7B7D1F2AE75E00D7BBA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CFBD7B681F2AE75E00D7BBA8 /* DWCollection */;
-			targetProxy = CFBD7B7C1F2AE75E00D7BBA8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -732,8 +791,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = DWCollectionViewDemo/DWCollectionGlobal.pch;
 				INFOPLIST_FILE = DWCollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollectionViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -743,8 +809,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_PREFIX_HEADER = DWCollectionViewDemo/DWCollectionGlobal.pch;
 				INFOPLIST_FILE = DWCollectionViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = dawn.DWCollectionViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -783,6 +856,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DWCollection/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -806,6 +883,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DWCollection/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -7,7 +7,10 @@
 //
 
 #import "DWCollectionView.h"
-#import "DWCollectionDelegate.h"
+#import "DWCollectionDelegate/DWCollectionViewDelegate.h"
+#import "DWCollectionDelegate/DWCollectionDataSource.h"
+
+
 
 @interface DWCollectionView()
 
@@ -15,7 +18,10 @@
 
 @property (nonatomic, weak) id dw_dataSource;
 
-@property (nonatomic, strong) DWCollectionDelegate *dwDelegate;
+@property (nonatomic, strong) DWCollectionViewDelegate *dwViewDelegate;
+@property (nonatomic, strong) DWCollectionDataSource *dwDataSource;
+
+
 @end
 
 @implementation DWCollectionView
@@ -66,14 +72,16 @@
     if (maker_ojb.footerRegister.count) {
         [configerDic setObject:maker_ojb.footerRegister forKey:@"footer"];
     }
-    self.dwDelegate.configer = configerDic;
-    self.dwDelegate.originalDelegate = self.dw_delegate?:self.dw_dataSource;
-    self.delegate = self.dwDelegate;
-    self.dataSource = self.dwDelegate;
+    self.dwViewDelegate.configer = configerDic;
+    self.dwViewDelegate.originalDelegate = self.dw_delegate;
+    self.dwDataSource.configer = configerDic;
+    self.dwDataSource.originalDelegate = self.dw_dataSource;
+    self.delegate = self.dwViewDelegate;
+    self.dataSource = self.dwDataSource;
 }
 
 - (void)setDelegate:(id<UICollectionViewDelegate>)delegate {
-    if ([delegate isKindOfClass:[DWCollectionDelegate class]]) {
+    if ([delegate isKindOfClass:[DWCollectionViewDelegate class]]) {
         [super setDelegate:delegate];
         return;
     }
@@ -81,7 +89,7 @@
 }
 
 - (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {
-    if ([dataSource isKindOfClass:[DWCollectionDelegate class]]) {
+    if ([dataSource isKindOfClass:[DWCollectionDataSource class]]) {
         [super setDataSource:dataSource];
         return;
     }
@@ -90,15 +98,23 @@
 
 #pragma mark - setter & getter
 
-- (DWCollectionDelegate *)dwDelegate{
-    if (!_dwDelegate) {
-        _dwDelegate = [[DWCollectionDelegate alloc] init];
+- (DWCollectionViewDelegate *)dwViewDelegate{
+    if (!_dwViewDelegate) {
+        _dwViewDelegate = [[DWCollectionViewDelegate alloc] init];
     }
-    return _dwDelegate;
+    return _dwViewDelegate;
+}
+
+- (DWCollectionDataSource *)dwDataSource {
+    if (!_dwDataSource) {
+        _dwDataSource = [[DWCollectionDataSource alloc] init];
+    }
+    return _dwDataSource;
 }
 
 - (void)setData:(NSArray<DWSection *> *)data{
-    self.dwDelegate.data = data;
+    self.dwDataSource.data = data;
+    self.dwViewDelegate.data = data;
     if ([[NSThread currentThread] isMainThread]) {
         [self reloadData];
     }else {

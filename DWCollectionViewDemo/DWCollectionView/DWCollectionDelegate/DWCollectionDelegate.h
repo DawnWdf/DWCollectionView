@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "DWSection.h"
 
-@interface DWCollectionDelegate : NSObject<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface DWCollectionDelegate : NSObject
 
 @property (nonatomic, weak) id originalDelegate;
 
@@ -18,6 +18,12 @@
 
 @property (nonatomic, strong) NSArray<DWSection *> *data;
 
-@property (nonatomic, strong) UICollectionViewFlowLayout *vfLayout;
+
+
+- (NSString *)modelStringForCellForIndexPath:(NSIndexPath *)indexPath ;
+
+- (NSString *)modelStringForHeaderForIndexPath:(NSIndexPath *)indexPath ;
+
+- (NSString *)modelStringForFooterForIndexPath:(NSIndexPath *)indexPath ;
 
 @end

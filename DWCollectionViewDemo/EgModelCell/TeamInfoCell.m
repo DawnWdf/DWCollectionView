@@ -36,6 +36,11 @@
 - (void)bindData:(id)data {
     if ([data isKindOfClass:[TeamInfo class]]) {
         self.titleLabel.text = [(TeamInfo *)data teamNameCn];
+        NSString *logoString = [(TeamInfo *)data teamLogoUrl];
+        if (logoString && logoString.length) {
+            
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
+        }
     }
 }
 

@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 
-#import "DWCollectionView.h"
+//#import "DWCollectionView/DWCollectionView.h"
 
+#import "DWCollectionView.h"
 #import "DWCollectionViewCell.h"
 
 
