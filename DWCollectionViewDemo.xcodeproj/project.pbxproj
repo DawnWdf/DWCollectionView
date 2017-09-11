@@ -14,17 +14,7 @@
 		CFBD7B121F2AE65900D7BBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */; };
 		CFBD7B151F2AE65900D7BBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */; };
 		CFBD7B201F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */; };
-		CFBD7B541F2AE68200D7BBA8 /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */; };
-		CFBD7B551F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */; };
-		CFBD7B561F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */; };
-		CFBD7B571F2AE68200D7BBA8 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
-		CFBD7B581F2AE68200D7BBA8 /* DWCollectionCellMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */; };
-		CFBD7B591F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */; };
-		CFBD7B5A1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */; };
-		CFBD7B5B1F2AE68200D7BBA8 /* DWCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */; };
-		CFBD7B5C1F2AE68200D7BBA8 /* DWMapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */; };
 		CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */; };
-		CFBD7B5E1F2AE68200D7BBA8 /* DWSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B461F2AE68200D7BBA8 /* DWSection.m */; };
 		CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */; };
 		CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */; };
 		CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */; };
@@ -257,15 +247,15 @@
 		CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */,
+				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
+				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
+				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
 				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
 				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
 				CFBD7B361F2AE68200D7BBA8 /* DWCollectionMaker */,
-				CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */,
-				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
 				CFBD7B3F1F2AE68200D7BBA8 /* DWMapperModel */,
 				CFBD7B421F2AE68200D7BBA8 /* DWProtocolImplementation */,
-				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
-				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
 			);
 			path = DWCollectionView;
 			sourceTree = "<group>";
@@ -556,25 +546,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBD7B591F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m in Sources */,
 				CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */,
 				CFBD7B631F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */,
 				CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
 				CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */,
-				CFBD7B581F2AE68200D7BBA8 /* DWCollectionCellMaker.m in Sources */,
-				CFBD7B5C1F2AE68200D7BBA8 /* DWMapperModel.m in Sources */,
-				CFBD7B5B1F2AE68200D7BBA8 /* DWCollectionView.m in Sources */,
 				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,
 				CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */,
-				CFBD7B571F2AE68200D7BBA8 /* DWCollectionDelegate.m in Sources */,
-				CFBD7B5E1F2AE68200D7BBA8 /* DWSection.m in Sources */,
-				CFBD7B5A1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */,
 				CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */,
-				CFBD7B541F2AE68200D7BBA8 /* DWCollectionViewCell.m in Sources */,
-				CFBD7B561F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */,
-				CFBD7B551F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +861,7 @@
 				CFBD7B261F2AE65900D7BBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFBD7B271F2AE65900D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollectionViewDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -889,6 +870,7 @@
 				CFBD7B291F2AE65900D7BBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFBD7B801F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollection" */ = {
 			isa = XCConfigurationList;
@@ -897,6 +879,7 @@
 				CFBD7B821F2AE75E00D7BBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFBD7B841F2AE75E00D7BBA8 /* Build configuration list for PBXNativeTarget "DWCollectionTests" */ = {
 			isa = XCConfigurationList;
@@ -905,6 +888,7 @@
 				CFBD7B861F2AE75E00D7BBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

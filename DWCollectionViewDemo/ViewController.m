@@ -38,7 +38,12 @@
     DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     cv.backgroundColor = [UIColor whiteColor];
     cv.delegate = self;
+    cv.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     [self.view addSubview:cv];
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -100, CGRectGetWidth(cv.frame), 100)];
+    headerView.backgroundColor = [UIColor grayColor];
+    [cv addSubview:headerView];
     self.collectionView = cv;
     
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
@@ -60,13 +65,7 @@
         .adapter(^(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data){
             LeagueHeaderReusableView *header = (LeagueHeaderReusableView *)reusableView;
             [header bindData:data];
-        })
-        
-        ;
-   
-
-     
-        
+        });
     }];
     
 }
