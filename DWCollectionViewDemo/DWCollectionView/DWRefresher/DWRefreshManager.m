@@ -15,9 +15,6 @@
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
-@property (nonatomic, strong) DWMJRefreshHeader *header;
-
-@property (nonatomic, strong) DWMJRefreshFooter *footer;
 
 @property (nonatomic, copy) void(^footerRefresh)();
 
@@ -82,5 +79,21 @@
         }
     }];
     self.scrollView.mj_header = header;
+}
+
+- (void)beginHeaderRefresh {
+    [self.scrollView.mj_header beginRefreshing];
+}
+
+- (void)endHeaderRefresh {
+    [self.scrollView.mj_header endRefreshing];
+}
+
+- (void)beginFooterRefresh {
+    [self.scrollView.mj_footer beginRefreshing];
+}
+
+- (void)endFooterRefresh {
+    [self.scrollView.mj_footer endRefreshing];
 }
 @end

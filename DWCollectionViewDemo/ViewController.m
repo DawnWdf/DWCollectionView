@@ -37,12 +37,12 @@
     DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     cv.backgroundColor = [UIColor whiteColor];
     cv.delegate = self;
-    cv.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
+//    cv.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     [self.view addSubview:cv];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -100, CGRectGetWidth(cv.frame), 100)];
-    headerView.backgroundColor = [UIColor grayColor];
-    [cv addSubview:headerView];
+//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -100, CGRectGetWidth(cv.frame), 100)];
+//    headerView.backgroundColor = [UIColor grayColor];
+//    [cv addSubview:headerView];
     self.collectionView = cv;
     
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
@@ -68,10 +68,16 @@
     }];
     
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
+    
+    __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;
     [self.collectionView.refreshManager setupHeaderRefresh:^{
         NSLog(@"header refresh");
+        __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
+        [strongRefreshManager endHeaderRefresh];
     } footerRefresh:^{
         NSLog(@"footer refresh");
+        __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
+        [strongRefreshManager endFooterRefresh];
     }];
     
 }

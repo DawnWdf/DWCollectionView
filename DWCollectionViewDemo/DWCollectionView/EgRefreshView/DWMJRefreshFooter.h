@@ -8,6 +8,6 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface DWMJRefreshFooter : MJRefreshFooter
+@interface DWMJRefreshFooter : MJRefreshBackNormalFooter
 
 @end

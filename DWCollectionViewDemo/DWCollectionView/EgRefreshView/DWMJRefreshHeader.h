@@ -8,6 +8,6 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-@interface DWMJRefreshHeader : MJRefreshHeader
+@interface DWMJRefreshHeader : MJRefreshNormalHeader
 
 @end
