@@ -6,7 +6,8 @@
 //  Copyright © 2017年 Dawn Wang. All rights reserved.
 //
 
-#import <DWCollection/DWCollection.h>
+//#import <DWCollection/DWCollection.h>
+#import "DWCollectionDelegate.h"
 
 @interface DWCollectionDataSource : DWCollectionDelegate<UICollectionViewDataSource>
 

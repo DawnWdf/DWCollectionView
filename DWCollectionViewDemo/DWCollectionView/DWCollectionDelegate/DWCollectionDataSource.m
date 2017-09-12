@@ -7,6 +7,11 @@
 //
 
 #import "DWCollectionDataSource.h"
+#import "DWProtocolMethodImplementation.h"
+#import "DWMapperModel.h"
+#import "DWCollectionCellMaker.h"
+#import "DWCollectionHeaderFooterMaker.h"
+
 
 @implementation DWCollectionDataSource
 #pragma mark - UICollectionViewDataSource

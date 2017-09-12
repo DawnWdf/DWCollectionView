@@ -8,7 +8,10 @@
 
 #import "DWCollectionDelegateMaker.h"
 
+#import "DWMapperModel.h"
+
 @interface DWCollectionDelegateMaker()
+
 
 @end
 

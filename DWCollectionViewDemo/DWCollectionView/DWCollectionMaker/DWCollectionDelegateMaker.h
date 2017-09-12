@@ -10,13 +10,11 @@
 #import "DWCollectionCellMaker.h"
 #import "DWCollectionHeaderFooterMaker.h"
 
-#import "DWMapperModel.h"
-
 @interface DWCollectionDelegateMaker : NSObject
 
-@property (nonatomic, strong) NSMutableDictionary<NSString *,DWMapperModel *> *cellRegister;//modelclass = modelclass
-@property (nonatomic, strong) NSMutableDictionary<NSString *,DWMapperModel *> *headerRegister;
-@property (nonatomic, strong) NSMutableDictionary<NSString *,DWMapperModel *> *footerRegister;
+@property (nonatomic, strong) NSMutableDictionary *cellRegister;//modelclass = modelclass
+@property (nonatomic, strong) NSMutableDictionary *headerRegister;
+@property (nonatomic, strong) NSMutableDictionary *footerRegister; ///<NSString *,DWMapperModel *>
 
 
 - (DWCollectionCellMaker *(^)(Class cellClass,Class modelClass))registerCell;

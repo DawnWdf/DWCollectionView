@@ -10,7 +10,7 @@
 #import "DWProtocolMethodImplementation.h"
 #import "DWCollectionDelegateMaker.h"
 #import <objc/runtime.h>
-#import "NSObject+MulArgPerformSel.h"
+//#import "NSObject+MulArgPerformSel.h"
 
 typedef struct{
     CGFloat dw_f;

@@ -23,9 +23,5 @@ FOUNDATION_EXPORT const unsigned char DWCollectionVersionString[];
 #import <DWCollection/DWCollectionViewCellProtocol.h>
 
 #import <DWCollection/DWCollectionDelegateMaker.h>
-#import <DWCollection/DWMapperModel.h>
 #import <DWCollection/DWCollectionCellMaker.h>
 #import <DWCollection/DWCollectionHeaderFooterMaker.h>
-#import <DWCollection/DWProtocolMethodImplementation.h>
-#import <DWCollection/DWCollectionDelegate.h>
-#import <DWCollection/NSObject+MulArgPerformSel.h>

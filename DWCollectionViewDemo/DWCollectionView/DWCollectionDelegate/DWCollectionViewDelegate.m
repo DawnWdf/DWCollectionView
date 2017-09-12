@@ -7,6 +7,11 @@
 //
 
 #import "DWCollectionViewDelegate.h"
+#import "NSObject+MulArgPerformSel.h"
+#import "DWProtocolMethodImplementation.h"
+#import "DWMapperModel.h"
+#import "DWCollectionCellMaker.h"
+#import "DWCollectionHeaderFooterMaker.h"
 
 @implementation DWCollectionViewDelegate
 

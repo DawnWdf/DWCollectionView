@@ -9,6 +9,7 @@
 #import "DWCollectionView.h"
 #import "DWCollectionViewDelegate.h"
 #import "DWCollectionDataSource.h"
+#import "DWMapperModel.h"
 
 
 @interface DWCollectionView()
