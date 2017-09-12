@@ -1,18 +1,20 @@
 //
-//  DWMJRefreshFooter.m
+//  DWMJRefreshHeader.m
 //  DWCollectionViewDemo
 //
 //  Created by Dawn Wang on 2017/9/11.
 //  Copyright © 2017年 Dawn Wang. All rights reserved.
 //
 
-#import "DWMJRefreshFooter.h"
-@interface DWMJRefreshFooter()
+#import "DWMJRefreshHeader.h"
+
+@interface DWMJRefreshHeader()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @end
 
-@implementation DWMJRefreshFooter
+
+@implementation DWMJRefreshHeader
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -21,9 +23,10 @@
     // Drawing code
 }
 */
+
 - (void)prepare {
     [super prepare];
-    [self addSubview:self.titleLabel];
+//    [self addSubview:self.titleLabel];
 }
 
 - (void)placeSubviews {
@@ -33,7 +36,7 @@
 
 - (void)setState:(MJRefreshState)state {
     MJRefreshCheckState;
-    
+
     switch (state) {
         case MJRefreshStateIdle:
             self.titleLabel.text = @"闲置状态";
@@ -92,5 +95,4 @@
     }
     return _titleLabel;
 }
-
 @end

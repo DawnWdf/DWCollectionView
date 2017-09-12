@@ -7,8 +7,8 @@
 //
 
 #import "DWCollectionView.h"
-#import "DWCollectionDelegate/DWCollectionViewDelegate.h"
-#import "DWCollectionDelegate/DWCollectionDataSource.h"
+#import "DWCollectionViewDelegate.h"
+#import "DWCollectionDataSource.h"
 
 
 @interface DWCollectionView()
@@ -125,10 +125,4 @@
     
 }
 
-- (DWRefreshManager *)refreshManager {
-    if (!_refreshManager) {
-        _refreshManager = [[DWRefreshManager alloc] initWithScrollView:self];
-    }
-    return _refreshManager;
-}
 @end

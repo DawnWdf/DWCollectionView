@@ -18,18 +18,14 @@ FOUNDATION_EXPORT const unsigned char DWCollectionVersionString[];
 
 
 #import <DWCollection/DWCollectionView.h>
-#import <DWCollection/NSObject+MulArgPerformSel.h>
 #import <DWCollection/DWSection.h>
+#import <DWCollection/DWRefreshManagerProtocol.h>
 #import <DWCollection/DWCollectionViewCellProtocol.h>
-#import <DWCollection/DWCollectionViewCell.h>
-#import <DWCollection/DWHeaderCollectionReusableView.h>
-#import <DWCollection/DWFooterCollectionReusableView.h>
+
 #import <DWCollection/DWCollectionDelegateMaker.h>
 #import <DWCollection/DWMapperModel.h>
 #import <DWCollection/DWCollectionCellMaker.h>
 #import <DWCollection/DWCollectionHeaderFooterMaker.h>
 #import <DWCollection/DWProtocolMethodImplementation.h>
 #import <DWCollection/DWCollectionDelegate.h>
-#import <DWCollection/DWRefreshManager.h>
-#import <DWCollection/DWMJRefreshFooter.h>
-#import <DWCollection/DWMJRefreshHeader.h>
+#import <DWCollection/NSObject+MulArgPerformSel.h>

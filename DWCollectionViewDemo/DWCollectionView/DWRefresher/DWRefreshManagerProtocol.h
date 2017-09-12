@@ -1,14 +1,10 @@
 //
-//  DWRefreshManager.h
+//  DWRefreshManagerProtocol.h
 //  DWCollectionViewDemo
 //
-//  Created by Dawn Wang on 2017/9/11.
+//  Created by Dawn Wang on 2017/9/12.
 //  Copyright © 2017年 Dawn Wang. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 
 typedef NS_ENUM(NSUInteger, DWRefreshType) {
     DWRefreshTypeHeaderAndFooter,
@@ -16,8 +12,7 @@ typedef NS_ENUM(NSUInteger, DWRefreshType) {
     DWRefreshTypeFooter,
 };
 
-@interface DWRefreshManager : NSObject
-
+@protocol DWRefreshManagerProtocol <NSObject>
 
 - (instancetype)initWithScrollView:(__kindof UIScrollView *)scrollView;
 
@@ -32,5 +27,6 @@ typedef NS_ENUM(NSUInteger, DWRefreshType) {
 - (void)beginFooterRefresh;
 
 - (void)endFooterRefresh;
+
 
 @end

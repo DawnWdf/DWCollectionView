@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DWCollectionDelegateMaker.h"
 #import "DWSection.h"
-#import "DWRefreshManager.h"
+#import "DWRefreshManagerProtocol.h"
 
 
 typedef void (^DWCollectionViewCellMaker)();
@@ -18,7 +18,7 @@ typedef void (^DWCollectionViewCellMaker)();
 @interface DWCollectionView : UICollectionView
 
 
-@property (nonatomic, strong) DWRefreshManager *refreshManager;
+@property (nonatomic, strong) id <DWRefreshManagerProtocol> refreshManager;
 
 - (void)registerViewAndModel:(void(^)(DWCollectionDelegateMaker *maker))maker;
 

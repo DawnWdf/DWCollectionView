@@ -11,6 +11,8 @@
 #import <DWCollection/DWCollection.h>
 #import "DWCollectionViewCell.h"
 
+#import "DWRefreshManager.h"
+
 
 #import "TeamInfo.h"
 #import "LeagueInfo.h"
@@ -66,7 +68,7 @@
             [header bindData:data];
         });
     }];
-    
+    self.collectionView.refreshManager = (id<DWRefreshManagerProtocol>)[[DWRefreshManager alloc] initWithScrollView:self.collectionView];
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
     
     __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;

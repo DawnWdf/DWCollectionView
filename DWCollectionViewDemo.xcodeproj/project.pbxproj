@@ -17,12 +17,14 @@
 		CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; };
 		CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF1919041F665E33002DD31B /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
-		CF19191F1F668968002DD31B /* DWMJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */; };
-		CF1919201F668968002DD31B /* DWMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */; };
-		CF1919211F668A65002DD31B /* DWMJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1919191F668955002DD31B /* DWMJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF1919221F668A65002DD31B /* DWMJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF1919231F668A65002DD31B /* DWRefreshManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1919071F6664A9002DD31B /* DWRefreshManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CF1919241F6692E3002DD31B /* DWRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919081F6664A9002DD31B /* DWRefreshManager.m */; };
+		CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19192E1F67B707002DD31B /* DWRefreshManager.m */; };
+		CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919321F67B728002DD31B /* DWMJRefreshFooter.m */; };
+		CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919341F67B728002DD31B /* DWMJRefreshHeader.m */; };
+		CF1919371F67B75C002DD31B /* DWRefreshManagerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CF1919281F67B68E002DD31B /* DWRefreshManagerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919391F67BA68002DD31B /* DWCollectionViewCell.m */; };
+		CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */; };
+		CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */; };
+		CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -35,14 +37,10 @@
 		CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */; };
 		CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */; };
 		CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */; };
-		CFBD7B631F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CFBD7B721F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
 		CFBD7B791F2AE75E00D7BBA8 /* DWCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */; };
 		CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7B871F2AE78A00D7BBA8 /* DWCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B881F2AE78A00D7BBA8 /* DWCollectionViewCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7B891F2AE78A00D7BBA8 /* DWFooterCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7B8A1F2AE78A00D7BBA8 /* DWHeaderCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B8B1F2AE78A00D7BBA8 /* DWCollectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B8C1F2AE78A00D7BBA8 /* DWCollectionCellMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B371F2AE68200D7BBA8 /* DWCollectionCellMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B391F2AE68200D7BBA8 /* DWCollectionDelegateMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,9 +50,6 @@
 		CFBD7B911F2AE78A00D7BBA8 /* DWProtocolMethodImplementation.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B431F2AE68200D7BBA8 /* DWProtocolMethodImplementation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B451F2AE68200D7BBA8 /* DWSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B931F2AE78A00D7BBA8 /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */; };
-		CFBD7BA51F2AE9E800D7BBA8 /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */; };
-		CFBD7BA61F2AE9E800D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */; };
 		CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
 		CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */; };
 		CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */; };
@@ -122,12 +117,19 @@
 		CF1918FC1F665C96002DD31B /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = "<group>"; };
 		CF1918FD1F665C96002DD31B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		CF1919051F665E81002DD31B /* DWCollectionGlobal.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWCollectionGlobal.pch; sourceTree = "<group>"; };
-		CF1919071F6664A9002DD31B /* DWRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWRefreshManager.h; sourceTree = "<group>"; };
-		CF1919081F6664A9002DD31B /* DWRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWRefreshManager.m; sourceTree = "<group>"; };
-		CF1919191F668955002DD31B /* DWMJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshFooter.h; sourceTree = "<group>"; };
-		CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshFooter.m; sourceTree = "<group>"; };
-		CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshHeader.h; sourceTree = "<group>"; };
-		CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshHeader.m; sourceTree = "<group>"; };
+		CF1919281F67B68E002DD31B /* DWRefreshManagerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWRefreshManagerProtocol.h; sourceTree = "<group>"; };
+		CF19192D1F67B707002DD31B /* DWRefreshManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWRefreshManager.h; sourceTree = "<group>"; };
+		CF19192E1F67B707002DD31B /* DWRefreshManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWRefreshManager.m; sourceTree = "<group>"; };
+		CF1919311F67B728002DD31B /* DWMJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshFooter.h; sourceTree = "<group>"; };
+		CF1919321F67B728002DD31B /* DWMJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshFooter.m; sourceTree = "<group>"; };
+		CF1919331F67B728002DD31B /* DWMJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMJRefreshHeader.h; sourceTree = "<group>"; };
+		CF1919341F67B728002DD31B /* DWMJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMJRefreshHeader.m; sourceTree = "<group>"; };
+		CF1919381F67BA68002DD31B /* DWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewCell.h; sourceTree = "<group>"; };
+		CF1919391F67BA68002DD31B /* DWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewCell.m; sourceTree = "<group>"; };
+		CF19193A1F67BA68002DD31B /* DWFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFooterCollectionReusableView.h; sourceTree = "<group>"; };
+		CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFooterCollectionReusableView.m; sourceTree = "<group>"; };
+		CF19193C1F67BA68002DD31B /* DWHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,13 +143,7 @@
 		CFBD7B1B1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCollectionViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewDemoTests.m; sourceTree = "<group>"; };
 		CFBD7B211F2AE65900D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewCell.h; sourceTree = "<group>"; };
-		CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewCell.m; sourceTree = "<group>"; };
 		CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewCellProtocol.h; sourceTree = "<group>"; };
-		CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFooterCollectionReusableView.h; sourceTree = "<group>"; };
-		CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFooterCollectionReusableView.m; sourceTree = "<group>"; };
-		CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHeaderCollectionReusableView.h; sourceTree = "<group>"; };
-		CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionDelegate.h; sourceTree = "<group>"; };
 		CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionDelegate.m; sourceTree = "<group>"; };
 		CFBD7B371F2AE68200D7BBA8 /* DWCollectionCellMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionCellMaker.h; sourceTree = "<group>"; };
@@ -231,19 +227,28 @@
 		CF1919061F666483002DD31B /* DWRefresher */ = {
 			isa = PBXGroup;
 			children = (
-				CF1919071F6664A9002DD31B /* DWRefreshManager.h */,
-				CF1919081F6664A9002DD31B /* DWRefreshManager.m */,
+				CF1919281F67B68E002DD31B /* DWRefreshManagerProtocol.h */,
 			);
 			path = DWRefresher;
 			sourceTree = "<group>";
 		};
-		CF1919181F668955002DD31B /* EgRefreshView */ = {
+		CF19192C1F67B707002DD31B /* Refresh */ = {
 			isa = PBXGroup;
 			children = (
-				CF1919191F668955002DD31B /* DWMJRefreshFooter.h */,
-				CF19191A1F668955002DD31B /* DWMJRefreshFooter.m */,
-				CF19191B1F668955002DD31B /* DWMJRefreshHeader.h */,
-				CF19191C1F668955002DD31B /* DWMJRefreshHeader.m */,
+				CF19192D1F67B707002DD31B /* DWRefreshManager.h */,
+				CF19192E1F67B707002DD31B /* DWRefreshManager.m */,
+				CF1919301F67B728002DD31B /* EgRefreshView */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
+		CF1919301F67B728002DD31B /* EgRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				CF1919311F67B728002DD31B /* DWMJRefreshFooter.h */,
+				CF1919321F67B728002DD31B /* DWMJRefreshFooter.m */,
+				CF1919331F67B728002DD31B /* DWMJRefreshHeader.h */,
+				CF1919341F67B728002DD31B /* DWMJRefreshHeader.m */,
 			);
 			path = EgRefreshView;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 				CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */,
 				CFBD7B0B1F2AE65900D7BBA8 /* ViewController.h */,
 				CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */,
+				CF19192C1F67B707002DD31B /* Refresh */,
 				CF1918F41F664AA9002DD31B /* issue.rtf */,
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CFBD7B0E1F2AE65900D7BBA8 /* Main.storyboard */,
@@ -316,7 +322,6 @@
 				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
 				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
 				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
-				CF1919181F668955002DD31B /* EgRefreshView */,
 				CF1919061F666483002DD31B /* DWRefresher */,
 				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
 				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
@@ -330,13 +335,7 @@
 		CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				CFBD7B2C1F2AE68200D7BBA8 /* DWCollectionViewCell.h */,
-				CFBD7B2D1F2AE68200D7BBA8 /* DWCollectionViewCell.m */,
 				CFBD7B2E1F2AE68200D7BBA8 /* DWCollectionViewCellProtocol.h */,
-				CFBD7B2F1F2AE68200D7BBA8 /* DWFooterCollectionReusableView.h */,
-				CFBD7B301F2AE68200D7BBA8 /* DWFooterCollectionReusableView.m */,
-				CFBD7B311F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.h */,
-				CFBD7B321F2AE68200D7BBA8 /* DWHeaderCollectionReusableView.m */,
 			);
 			path = DWCollectionCell;
 			sourceTree = "<group>";
@@ -388,6 +387,12 @@
 		CFBD7B471F2AE68200D7BBA8 /* EgModelCell */ = {
 			isa = PBXGroup;
 			children = (
+				CF1919381F67BA68002DD31B /* DWCollectionViewCell.h */,
+				CF1919391F67BA68002DD31B /* DWCollectionViewCell.m */,
+				CF19193A1F67BA68002DD31B /* DWFooterCollectionReusableView.h */,
+				CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */,
+				CF19193C1F67BA68002DD31B /* DWHeaderCollectionReusableView.h */,
+				CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */,
 				CFBD7B481F2AE68200D7BBA8 /* LeagueHeaderReusableView.h */,
 				CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */,
 				CFBD7B4A1F2AE68200D7BBA8 /* LeagueInfo.h */,
@@ -435,10 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */,
-				CFBD7B871F2AE78A00D7BBA8 /* DWCollectionViewCell.h in Headers */,
 				CFBD7B881F2AE78A00D7BBA8 /* DWCollectionViewCellProtocol.h in Headers */,
-				CFBD7B891F2AE78A00D7BBA8 /* DWFooterCollectionReusableView.h in Headers */,
-				CFBD7B8A1F2AE78A00D7BBA8 /* DWHeaderCollectionReusableView.h in Headers */,
 				CFBD7B8B1F2AE78A00D7BBA8 /* DWCollectionDelegate.h in Headers */,
 				CFBD7B8C1F2AE78A00D7BBA8 /* DWCollectionCellMaker.h in Headers */,
 				CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */,
@@ -447,10 +449,8 @@
 				CFBD7B901F2AE78A00D7BBA8 /* DWMapperModel.h in Headers */,
 				CFBD7B911F2AE78A00D7BBA8 /* DWProtocolMethodImplementation.h in Headers */,
 				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
+				CF1919371F67B75C002DD31B /* DWRefreshManagerProtocol.h in Headers */,
 				CFBD7B931F2AE78A00D7BBA8 /* NSObject+MulArgPerformSel.h in Headers */,
-				CF1919211F668A65002DD31B /* DWMJRefreshFooter.h in Headers */,
-				CF1919221F668A65002DD31B /* DWMJRefreshHeader.h in Headers */,
-				CF1919231F668A65002DD31B /* DWRefreshManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,12 +641,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */,
 				CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */,
-				CFBD7B631F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m in Sources */,
+				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
+				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
 				CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
 				CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */,
+				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
+				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
+				CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */,
+				CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,
 				CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */,
 				CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */,
@@ -665,14 +671,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1919241F6692E3002DD31B /* DWRefreshManager.m in Sources */,
-				CF19191F1F668968002DD31B /* DWMJRefreshFooter.m in Sources */,
-				CF1919201F668968002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,
-				CFBD7BA41F2AE9E800D7BBA8 /* DWCollectionViewCell.m in Sources */,
-				CFBD7BA51F2AE9E800D7BBA8 /* DWFooterCollectionReusableView.m in Sources */,
-				CFBD7BA61F2AE9E800D7BBA8 /* DWHeaderCollectionReusableView.m in Sources */,
 				CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */,
 				CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */,
 				CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */,

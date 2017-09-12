@@ -13,8 +13,7 @@
 
 @interface DWRefreshManager()
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-
+@property (nonatomic, weak) UIScrollView *scrollView;
 
 @property (nonatomic, copy) void(^footerRefresh)();
 
