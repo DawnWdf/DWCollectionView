@@ -13,7 +13,7 @@
 
 @interface DWRefreshManager()
 
-@property (nonatomic, weak) UIScrollView *scrollView;
+@property (nonatomic, weak) UIScrollView *scrollView; ///此处使用weak 避免循环引用
 
 @property (nonatomic, copy) void(^footerRefresh)();
 

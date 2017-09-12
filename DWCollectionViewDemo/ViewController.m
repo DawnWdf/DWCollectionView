@@ -68,7 +68,7 @@
             [header bindData:data];
         });
     }];
-    self.collectionView.refreshManager = (id<DWRefreshManagerProtocol>)[[DWRefreshManager alloc] initWithScrollView:self.collectionView];
+    self.collectionView.refreshManager = [[DWRefreshManager alloc] initWithScrollView:self.collectionView];
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
     
     __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;
