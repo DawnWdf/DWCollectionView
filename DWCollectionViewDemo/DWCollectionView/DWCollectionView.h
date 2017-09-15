@@ -20,6 +20,9 @@ typedef void (^DWCollectionViewCellMaker)();
 
 @property (nonatomic, strong) id <DWRefreshManagerProtocol> refreshManager;
 
+/**
+    警惕循环引用
+ */
 - (void)registerViewAndModel:(void(^)(DWCollectionDelegateMaker *maker))maker;
 
 - (void)setData:(NSArray<DWSection *> *)data;

@@ -26,6 +26,7 @@
 
 /*
  1：自定义layout与下拉刷新结合，刷新时有闪烁
+ 2：自定义的layout像系统layout一样支持pin
  */
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching>
@@ -43,7 +44,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
-    
+    __weak typeof(self) weakSelf = self;
+
     //-----------配置自定义的布局--------------------------------------
     DWFlowLayout *flowLayout = [[DWFlowLayout alloc] init];
 //    flowLayout.estimatedItemSize
@@ -61,18 +63,22 @@
     flowLayout.headerHeight = 40;
     flowLayout.footerHeight = 40;
     
+    UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
+    sysLayout.sectionHeadersPinToVisibleBounds = YES;
+    sysLayout.sectionFootersPinToVisibleBounds = YES;
+    
     //------------创建collectionView--------------------------------------
     DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor whiteColor];
     cv.delegate = self;
     cv.prefetchDataSource = self;
     [self.view addSubview:cv];
+    self.collectionView = cv;
     
     //-------------在seciontView之上添加视图 如：滚动banner------------------------------------------
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(cv.frame), 100)];
     headerView.backgroundColor = [UIColor grayColor];
     [cv addSubview:headerView];
-    self.collectionView = cv;
     
     //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
@@ -84,7 +90,7 @@
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
             [newCell bindData:data];
-            [newCell setBackgroundColor:[self randomColor]];
+            [newCell setBackgroundColor:[weakSelf randomColor]];
         });
         
         
@@ -114,9 +120,11 @@
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
     
     __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;
+    
     [self.collectionView.refreshManager setupHeaderRefresh:^{
         //strong circle
-        [self requestData];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf requestData];
     } footerRefresh:^{
         __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
         [strongRefreshManager endFooterRefresh];
@@ -134,10 +142,13 @@
 }
 
 - (void)updateLayout {
-    DWFlowLayout *flowLayout = (DWFlowLayout *)self.collectionView.collectionViewLayout;
-    flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
-        return random()%100 + 50;
-    };
+    if ([self.collectionView.collectionViewLayout isKindOfClass:[DWFlowLayout class]]) {
+        DWFlowLayout *flowLayout = (DWFlowLayout *)self.collectionView.collectionViewLayout;
+        flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
+            return random()%100 + 50;
+        };
+        
+    }
 }
 
 #pragma mark - data corperation
