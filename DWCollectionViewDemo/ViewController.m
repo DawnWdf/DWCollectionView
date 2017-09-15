@@ -44,10 +44,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
     
+    //-----------配置自定义的布局--------------------------------------
     DWFlowLayout *flowLayout = [[DWFlowLayout alloc] init];
 //    flowLayout.estimatedItemSize
     flowLayout.numberOfColumn = 4;
-    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(30, 10, 10, 10);
+    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(100, 10, 10, 10);
     flowLayout.lineSpace = 10;
     flowLayout.interitemSpace = 10;
     flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
@@ -58,20 +59,22 @@
     };
     
     flowLayout.headerHeight = 40;
-    flowLayout.footerHeight = 20;
+    flowLayout.footerHeight = 40;
     
+    //------------创建collectionView--------------------------------------
     DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor whiteColor];
     cv.delegate = self;
     cv.prefetchDataSource = self;
-//    cv.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     [self.view addSubview:cv];
     
-//    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, -100, CGRectGetWidth(cv.frame), 100)];
-//    headerView.backgroundColor = [UIColor grayColor];
-//    [cv addSubview:headerView];
+    //-------------在seciontView之上添加视图 如：滚动banner------------------------------------------
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(cv.frame), 100)];
+    headerView.backgroundColor = [UIColor grayColor];
+    [cv addSubview:headerView];
     self.collectionView = cv;
     
+    //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
         
         maker.registerCell([TeamInfoCell class],[TeamInfo class])
@@ -80,8 +83,6 @@
         })
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
-        
-//            NSLog(@"bind data -========== %@",indexPath);
             [newCell bindData:data];
             [newCell setBackgroundColor:[self randomColor]];
         });
@@ -107,6 +108,8 @@
             [header setBackgroundColor:[UIColor yellowColor]];
         });
     }];
+    
+    //-----------------配置下拉刷新等---------------------------------------------
     self.collectionView.refreshManager = [[DWRefreshManager alloc] initWithScrollView:self.collectionView];
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
     
@@ -202,16 +205,124 @@
 }
 
 #pragma mark - UICollectionViewDataSource
+/*
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0);
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0);
 
+/// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(tvos(10.2));
+
+/// Returns the index path that corresponds to the given title / index. (e.g. "B",1)
+/// Return an index path with a single index to indicate an entire section, instead of a specific item.
+- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(tvos(10.2));
+*/
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
+/* 单击
+ -[ViewController collectionView:shouldHighlightItemAtIndexPath:]
+ -[ViewController collectionView:didHighlightItemAtIndexPath:]
+   {长按
+        -[ViewController collectionView:shouldShowMenuForItemAtIndexPath:]
+        -[ViewController collectionView:canPerformAction:forItemAtIndexPath:withSender:]//每一个sel/cell都调用一次
+        -[ViewController collectionView:didUnhighlightItemAtIndexPath:]
+        点击一个sel
+        -[ViewController collectionView:canPerformAction:forItemAtIndexPath:withSender:]//再次确认
+        -[ViewController collectionView:performAction:forItemAtIndexPath:withSender:]
+   }
+ -[ViewController collectionView:didUnhighlightItemAtIndexPath:]
+ -[ViewController collectionView:shouldSelectItemAtIndexPath:]
+ -[ViewController collectionView:didDeselectItemAtIndexPath:]
+ -[ViewController collectionView:didSelectItemAtIndexPath:]
+ */
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+    return YES;
 }
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
 
+}
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
 
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+    return YES;
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+    return YES;
+} // called when the user taps on an already-selected item in multi-select mode
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__func__);
+
 }
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+}
+
+//将要展示cell
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
+    NSLog(@"%s",__func__);
+
+}
+//将要展示头尾
+- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
+    NSLog(@"%s",__func__);
+
+}
+//cell划出屏幕
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+}
+//头尾滑动出屏幕
+- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+}
+
+// These methods provide support for copy/paste actions on cells.
+// All three should be implemented if any are.
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+
+    return NO;
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
+    NSLog(@"%s",__func__);
+    return YES;
+}
+- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
+    NSLog(@"%s",__func__);
+
+}
+
+// support for custom transition layout
+//- (nonnull UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout;
+
+// Focus
+- (BOOL)collectionView:(UICollectionView *)collectionView canFocusItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
+    NSLog(@"%s",__func__);
+    return YES;
+}
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context NS_AVAILABLE_IOS(9_0) {
+    NSLog(@"%s",__func__);
+    return YES;
+}
+- (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator NS_AVAILABLE_IOS(9_0) {
+    NSLog(@"%s",__func__);
+
+}
+//- (nullable NSIndexPath *)indexPathForPreferredFocusedViewInCollectionView:(UICollectionView *)collectionView NS_AVAILABLE_IOS(9_0);
+
+//- (NSIndexPath *)collectionView:(UICollectionView *)collectionView targetIndexPathForMoveFromItemAtIndexPath:(NSIndexPath *)originalIndexPath toProposedIndexPath:(NSIndexPath *)proposedIndexPath NS_AVAILABLE_IOS(9_0);
+
+//- (CGPoint)collectionView:(UICollectionView *)collectionView targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset NS_AVAILABLE_IOS(9_0); // customize the content offset to be applied during transition or update animations
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 

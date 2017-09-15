@@ -92,6 +92,18 @@
 }
 
 
+/*
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0);
+- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0);
+
+/// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(tvos(10.2));
+
+/// Returns the index path that corresponds to the given title / index. (e.g. "B",1)
+/// Return an index path with a single index to indicate an entire section, instead of a specific item.
+- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(tvos(10.2));
+*/
+
 #pragma mark - getter & setter
 - (void)setOriginalDelegate:(id)originalDelegate{
     [super setOriginalDelegate:originalDelegate];
