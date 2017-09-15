@@ -16,12 +16,14 @@
 
 @end
 
+
+static int indexC = 0;
 @implementation LeagueHeaderReusableView
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, height_header)];
-        tLabel.backgroundColor = [UIColor whiteColor];
+        //tLabel.backgroundColor = [UIColor whiteColor];
         tLabel.textColor = [UIColor blackColor];
         [self addSubview:tLabel];
         self.titleLabel = tLabel;
@@ -30,7 +32,8 @@
 }
 - (void)bindData:(id)data {
     if ([data isKindOfClass:[LeagueInfo class]]) {
-        self.titleLabel.text = [(LeagueInfo *)data leagueTypeCn];
+        self.titleLabel.text = [NSString stringWithFormat:@"%@ + %d",[(LeagueInfo *)data leagueTypeCn], indexC];
+        indexC++;
     }
 }
 @end

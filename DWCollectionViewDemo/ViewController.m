@@ -18,8 +18,17 @@
 #import "LeagueInfo.h"
 #import "TeamInfoCell.h"
 #import "LeagueHeaderReusableView.h"
+#import "DWFooterCollectionReusableView.h"
 
-@interface ViewController ()<UICollectionViewDelegate>
+#import "DWFlowLayout.h"
+
+
+
+/*
+ 1：自定义layout与下拉刷新结合，刷新时有闪烁
+ */
+
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching>
 
 @property (nonatomic,strong) DWCollectionView *collectionView;
 
@@ -35,10 +44,26 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
     
+    DWFlowLayout *flowLayout = [[DWFlowLayout alloc] init];
+//    flowLayout.estimatedItemSize
+    flowLayout.numberOfColumn = 4;
+    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(30, 10, 10, 10);
+    flowLayout.lineSpace = 10;
+    flowLayout.interitemSpace = 10;
+    flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+        return UIEdgeInsetsZero;
+    };
+    flowLayout.footerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+        return UIEdgeInsetsZero;
+    };
     
-    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
+    flowLayout.headerHeight = 40;
+    flowLayout.footerHeight = 20;
+    
+    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor whiteColor];
     cv.delegate = self;
+    cv.prefetchDataSource = self;
 //    cv.contentInset = UIEdgeInsetsMake(100, 0, 0, 0);
     [self.view addSubview:cv];
     
@@ -55,7 +80,10 @@
         })
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
+        
+//            NSLog(@"bind data -========== %@",indexPath);
             [newCell bindData:data];
+            [newCell setBackgroundColor:[self randomColor]];
         });
         
         
@@ -66,6 +94,17 @@
         .adapter(^(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data){
             LeagueHeaderReusableView *header = (LeagueHeaderReusableView *)reusableView;
             [header bindData:data];
+            [header setBackgroundColor:[UIColor redColor]];
+        });
+        
+        maker.registerFooter([DWFooterCollectionReusableView class],[NSString class])
+        .sizeConfiger(^ CGSize (UICollectionViewLayout *layout , NSInteger section, id data){
+            return CGSizeMake(300, height_header);
+        })
+        .adapter(^(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data){
+            DWFooterCollectionReusableView *header = (DWFooterCollectionReusableView *)reusableView;
+            [header bindData:data];
+            [header setBackgroundColor:[UIColor yellowColor]];
         });
     }];
     self.collectionView.refreshManager = [[DWRefreshManager alloc] initWithScrollView:self.collectionView];
@@ -73,11 +112,9 @@
     
     __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;
     [self.collectionView.refreshManager setupHeaderRefresh:^{
-        NSLog(@"header refresh");
-        __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
-        [strongRefreshManager endHeaderRefresh];
+        //strong circle
+        [self requestData];
     } footerRefresh:^{
-        NSLog(@"footer refresh");
         __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
         [strongRefreshManager endFooterRefresh];
     }];
@@ -91,6 +128,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateLayout {
+    DWFlowLayout *flowLayout = (DWFlowLayout *)self.collectionView.collectionViewLayout;
+    flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
+        return random()%100 + 50;
+    };
 }
 
 #pragma mark - data corperation
@@ -107,6 +151,7 @@
                 league.maxRound = [obj[@"maxRound"] longValue];
                 league.season = obj[@"season"];
                 section.headerData = league;
+                section.footerData = @"footer";
                 
                 NSArray *teamInfos = obj[@"teamInfoSet"];
                 NSMutableArray *teams = [NSMutableArray array];
@@ -124,6 +169,7 @@
     
     self.list = result;
     [self.collectionView setData:self.list];
+    [self updateLayout];
 
 }
 
@@ -145,6 +191,7 @@
             NSInteger code = [resultDic[@"retCode"] integerValue];
             if (code == 200) {
                 [self listFrom:resultDic[@"result"]];
+                [self.collectionView.refreshManager endHeaderRefresh];
             }else{
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:resultDic[@"msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
                 [alert showViewController:self sender:nil];
@@ -178,4 +225,19 @@
     return 40;
 }
 
+#pragma mark - UICollectionViewDataSourcePrefetching
+- (void)collectionView:(UICollectionView *)collectionView prefetchItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths NS_AVAILABLE_IOS(10_0) {
+//    NSLog(@"%s   ---------    %@",__func__, indexPaths);
+}
+
+
+#pragma mark - private
+
+-(UIColor *) randomColor
+{
+    CGFloat hue = ( arc4random() % 256 / 256.0 ); //0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0,away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5; //0.5 to 1.0,away from black
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
 @end

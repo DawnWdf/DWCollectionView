@@ -27,6 +27,7 @@
 		CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CF1919431F67BF5B002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CF1919441F67C117002DD31B /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -130,6 +131,8 @@
 		CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		CF19193C1F67BA68002DD31B /* DWHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
+		CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -253,6 +256,15 @@
 			path = EgRefreshView;
 			sourceTree = "<group>";
 		};
+		CF9555661F6A28AE007A4B32 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */,
+				CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
 		CFBD7AF91F2AE65900D7BBA8 = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +299,7 @@
 				CF1918F41F664AA9002DD31B /* issue.rtf */,
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CFBD7B0E1F2AE65900D7BBA8 /* Main.storyboard */,
+				CF9555661F6A28AE007A4B32 /* FlowLayout */,
 				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
 				CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */,
 				CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */,
@@ -651,6 +664,7 @@
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
+				CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */,
 				CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,

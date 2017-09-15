@@ -39,7 +39,7 @@
         NSString *logoString = [(TeamInfo *)data teamLogoUrl];
         if (logoString && logoString.length) {
             
-            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
+            //[self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
         }
     }
 }
