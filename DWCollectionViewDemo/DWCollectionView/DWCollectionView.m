@@ -11,7 +11,6 @@
 #import "DWCollectionDataSource.h"
 #import "DWMapperModel.h"
 
-
 @interface DWCollectionView()
 
 @property (nonatomic, weak) id dw_delegate;
@@ -20,8 +19,6 @@
 
 @property (nonatomic, strong) DWCollectionViewDelegate *dwViewDelegate;
 @property (nonatomic, strong) DWCollectionDataSource *dwDataSource;
-
-
 
 @end
 
@@ -125,6 +122,5 @@
     }
     
 }
-
 
 @end

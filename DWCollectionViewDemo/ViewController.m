@@ -20,7 +20,7 @@
 #import "LeagueHeaderReusableView.h"
 #import "DWFooterCollectionReusableView.h"
 
-#import "DWFlowLayout.h"
+#import "DWFlowAutoMoveLayout.h"
 
 
 
@@ -32,7 +32,7 @@
  5：自定义瀑布流，可以支持长按移动item
  */
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource,DWFlowAutoMoveLayoutDelegate>
 
 @property (nonatomic,strong) DWCollectionView *collectionView;
 
@@ -50,7 +50,7 @@
     __weak typeof(self) weakSelf = self;
 
     //-----------配置自定义的布局--------------------------------------
-    DWFlowLayout *flowLayout = [[DWFlowLayout alloc] init];
+    DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
 //    flowLayout.estimatedItemSize
     flowLayout.numberOfColumn = 4;
     flowLayout.boundEdgeInsets = UIEdgeInsetsMake(100, 10, 10, 10);
@@ -72,7 +72,7 @@
 //    sysLayout.sectionFootersPinToVisibleBounds = YES;
     
     //------------创建collectionView--------------------------------------
-    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:sysLayout];
+    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor whiteColor];
     cv.dataSource = self;
     cv.delegate = self;
@@ -136,8 +136,13 @@
     }];
     
     //--------------------ios9 拖拽-----------------------------------------------------------
-    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressOnCollectionView:)];
-    [self.collectionView addGestureRecognizer:longGesture];
+    /*
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
+        
+        UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressOnCollectionView:)];
+        [self.collectionView addGestureRecognizer:longGesture];
+    }
+    */
 }
 
 - (void)dealloc{
@@ -152,27 +157,30 @@
     CGPoint point = [recognizer locationInView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
 
-    switch (recognizer.state) {
-        case UIGestureRecognizerStateBegan:
-        {
-            if (indexPath) {
-               [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9) {
+        //不支持多section之间移动
+        switch (recognizer.state) {
+            case UIGestureRecognizerStateBegan:
+            {
+                if (indexPath) {
+                    [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+                }
             }
+                break;
+            case UIGestureRecognizerStateEnded:
+            {
+                [self.collectionView endInteractiveMovement];
+            }
+                break;
+            case UIGestureRecognizerStateChanged:
+            {
+                [self.collectionView updateInteractiveMovementTargetPosition:point];
+            }
+                break;
+            default:
+                [self.collectionView cancelInteractiveMovement];
+                break;
         }
-            break;
-        case UIGestureRecognizerStateEnded:
-        {
-            [self.collectionView endInteractiveMovement];
-        }
-            break;
-        case UIGestureRecognizerStateChanged:
-        {
-            [self.collectionView updateInteractiveMovementTargetPosition:point];
-        }
-            break;
-        default:
-            [self.collectionView cancelInteractiveMovement];
-            break;
     }
 }
 
@@ -396,7 +404,11 @@
 - (void)collectionView:(UICollectionView *)collectionView prefetchItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths NS_AVAILABLE_IOS(10_0) {
 //    NSLog(@"%s   ---------    %@",__func__, indexPaths);
 }
-
+#pragma mark - DWFlowAutoMoveLayoutDelegate
+- (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+    return YES;
+}
 
 #pragma mark - private
 

@@ -130,7 +130,21 @@
 /// Return an index path with a single index to indicate an entire section, instead of a specific item.
 - (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(tvos(10.2));
 */
-
+#pragma mark - DWFlowAutoMoveLayoutDelegate
+- (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
+    NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,indexPath, nil];
+    
+    if (value){
+        return [value boolValue];
+    }else {
+        value = [NSObject dw_target:self.originalDelegate performSel:@selector(dw_collectionView:canMoveItemAtIndex:) arguments:collectionView,indexPath, nil];
+        if (value) {
+            return [value boolValue];
+        }
+    }
+    return NO;
+}
 #pragma mark - getter & setter
 - (void)setOriginalDelegate:(id)originalDelegate{
     [super setOriginalDelegate:originalDelegate];

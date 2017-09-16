@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
+		CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0370CD1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m */; };
 		CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */; };
 		CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */; };
 		CF1918F51F664AA9002DD31B /* issue.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF1918F41F664AA9002DD31B /* issue.rtf */; };
@@ -102,6 +103,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF0370CC1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowAutoMoveLayout.h; sourceTree = "<group>"; };
+		CF0370CD1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowAutoMoveLayout.m; sourceTree = "<group>"; };
 		CF1918E71F663F71002DD31B /* DWCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewDelegate.h; sourceTree = "<group>"; };
 		CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewDelegate.m; sourceTree = "<group>"; };
 		CF1918EA1F664005002DD31B /* DWCollectionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionDataSource.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 			children = (
 				CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */,
 				CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */,
+				CF0370CC1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.h */,
+				CF0370CD1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m */,
 			);
 			path = FlowLayout;
 			sourceTree = "<group>";
@@ -647,6 +652,7 @@
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
 				CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */,
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
+				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
 				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
 				CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */,

@@ -37,12 +37,15 @@
         [self.columnHeight addObject:@(self.boundEdgeInsets.top)];
     }
     [self.attributes removeAllObjects];
+    
+}
+- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSInteger sectionNumber = [self.collectionView numberOfSections];
     for (int section = 0; section < sectionNumber; section++) {
         
         UICollectionViewLayoutAttributes *headerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:section]];
         
-        if (headerAttributes) {
+        if (headerAttributes && CGRectIntersectsRect(rect, headerAttributes.frame)) {
             [self.attributes addObject:headerAttributes];
         }
         
@@ -51,24 +54,25 @@
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
             
             UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:indexPath];
-            [self.attributes addObject:attributes];
+            if (attributes && CGRectIntersectsRect(rect, attributes.frame)) {
+                [self.attributes addObject:attributes];
+            }
+            
         }
         
-      
+        
         UICollectionViewLayoutAttributes *footerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathWithIndex:section]];
-        if (footerAttributes) {
+        if (footerAttributes && CGRectIntersectsRect(rect, footerAttributes.frame)) {
             [self.attributes addObject:footerAttributes];
         }
         
     }
-}
-- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
-    
     return self.attributes;
     
 }
 
 - (nullable UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"%s == %@",__func__,indexPath);
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     CGSize collectionSize = self.collectionView.frame.size;
