@@ -639,7 +639,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MJRefresh.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/DWCollection.framework",
 			);
 			outputPaths = (
 			);
