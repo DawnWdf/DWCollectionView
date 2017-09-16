@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF1918ED1F6648D1002DD31B /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
-		CF1918EE1F6648D1002DD31B /* DWCollection.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
 		CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */; };
 		CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */; };
 		CF1918F51F664AA9002DD31B /* issue.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF1918F41F664AA9002DD31B /* issue.rtf */; };
@@ -47,7 +46,6 @@
 		CFBD7B8E1F2AE78A00D7BBA8 /* DWCollectionHeaderFooterMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B3B1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B8F1F2AE78A00D7BBA8 /* DWCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B3D1F2AE68200D7BBA8 /* DWCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B451F2AE68200D7BBA8 /* DWSection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B351F2AE68200D7BBA8 /* DWCollectionDelegate.m */; };
 		CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B381F2AE68200D7BBA8 /* DWCollectionCellMaker.m */; };
 		CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3A1F2AE68200D7BBA8 /* DWCollectionDelegateMaker.m */; };
 		CFBD7BAA1F2AE9E800D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B3C1F2AE68200D7BBA8 /* DWCollectionHeaderFooterMaker.m */; };
@@ -95,7 +93,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CF1918EE1F6648D1002DD31B /* DWCollection.framework in Embed Frameworks */,
 				CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */,
 				CF1918FF1F665C96002DD31B /* MJRefresh.framework in Embed Frameworks */,
 			);
@@ -181,7 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1918ED1F6648D1002DD31B /* DWCollection.framework in Frameworks */,
 				CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */,
 				CF1918FE1F665C96002DD31B /* MJRefresh.framework in Frameworks */,
 			);
@@ -674,10 +670,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */,
 				CF1919431F67BF5B002DD31B /* NSObject+MulArgPerformSel.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,
-				CFBD7BA71F2AE9E800D7BBA8 /* DWCollectionDelegate.m in Sources */,
 				CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */,
 				CFBD7BA91F2AE9E800D7BBA8 /* DWCollectionDelegateMaker.m in Sources */,
 				CFBD7BAA1F2AE9E800D7BBA8 /* DWCollectionHeaderFooterMaker.m in Sources */,

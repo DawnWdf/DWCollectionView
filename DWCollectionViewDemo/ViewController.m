@@ -28,6 +28,8 @@
  1：自定义layout与下拉刷新结合，刷新时有闪烁
  2：自定义的layout像系统layout一样支持pin
  3：collectionView依赖其他framework，localDemo在carthage update的时候也会自动加载，去掉？
+ 4：使用桥接模式将refresh管理起来
+ 5：自定义瀑布流，可以支持长按移动item
  */
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching>
