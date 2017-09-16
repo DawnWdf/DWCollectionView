@@ -37,15 +37,12 @@
         [self.columnHeight addObject:@(self.boundEdgeInsets.top)];
     }
     [self.attributes removeAllObjects];
-    
-}
-- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
     NSInteger sectionNumber = [self.collectionView numberOfSections];
     for (int section = 0; section < sectionNumber; section++) {
         
         UICollectionViewLayoutAttributes *headerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:section]];
         
-        if (headerAttributes && CGRectIntersectsRect(rect, headerAttributes.frame)) {
+        if (headerAttributes) {
             [self.attributes addObject:headerAttributes];
         }
         
@@ -54,7 +51,7 @@
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
             
             UICollectionViewLayoutAttributes *attributes = [self layoutAttributesForItemAtIndexPath:indexPath];
-            if (attributes && CGRectIntersectsRect(rect, attributes.frame)) {
+            if (attributes) {
                 [self.attributes addObject:attributes];
             }
             
@@ -62,11 +59,14 @@
         
         
         UICollectionViewLayoutAttributes *footerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathWithIndex:section]];
-        if (footerAttributes && CGRectIntersectsRect(rect, footerAttributes.frame)) {
+        if (footerAttributes) {
             [self.attributes addObject:footerAttributes];
         }
         
     }
+}
+- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
+    
     return self.attributes;
     
 }
