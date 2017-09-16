@@ -27,6 +27,7 @@
 /*
  1：自定义layout与下拉刷新结合，刷新时有闪烁
  2：自定义的layout像系统layout一样支持pin
+ 3：collectionView依赖其他framework，localDemo在carthage update的时候也会自动加载，去掉？
  */
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching>
