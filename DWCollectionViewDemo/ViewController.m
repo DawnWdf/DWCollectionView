@@ -32,7 +32,7 @@
  5：自定义瀑布流，可以支持长按移动item
  */
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource>
 
 @property (nonatomic,strong) DWCollectionView *collectionView;
 
@@ -67,12 +67,14 @@
     flowLayout.footerHeight = 40;
     
     UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
-    sysLayout.sectionHeadersPinToVisibleBounds = YES;
-    sysLayout.sectionFootersPinToVisibleBounds = YES;
+    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
+//    sysLayout.sectionHeadersPinToVisibleBounds = YES;
+//    sysLayout.sectionFootersPinToVisibleBounds = YES;
     
     //------------创建collectionView--------------------------------------
-    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
+    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:sysLayout];
     cv.backgroundColor = [UIColor whiteColor];
+    cv.dataSource = self;
     cv.delegate = self;
     cv.prefetchDataSource = self;
     [self.view addSubview:cv];
@@ -81,7 +83,7 @@
     //-------------在seciontView之上添加视图 如：滚动banner------------------------------------------
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(cv.frame), 100)];
     headerView.backgroundColor = [UIColor grayColor];
-    [cv addSubview:headerView];
+//    [cv addSubview:headerView];
     
     //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
@@ -133,6 +135,9 @@
         [strongRefreshManager endFooterRefresh];
     }];
     
+    //--------------------ios9 拖拽-----------------------------------------------------------
+    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressOnCollectionView:)];
+    [self.collectionView addGestureRecognizer:longGesture];
 }
 
 - (void)dealloc{
@@ -142,6 +147,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)longPressOnCollectionView:(UILongPressGestureRecognizer *)recognizer {
+    CGPoint point = [recognizer locationInView:self.collectionView];
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
+
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            if (indexPath) {
+               [self.collectionView beginInteractiveMovementForItemAtIndexPath:indexPath];
+            }
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        {
+            [self.collectionView endInteractiveMovement];
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            [self.collectionView updateInteractiveMovementTargetPosition:point];
+        }
+            break;
+        default:
+            [self.collectionView cancelInteractiveMovement];
+            break;
+    }
 }
 
 - (void)updateLayout {
@@ -219,10 +251,19 @@
 }
 
 #pragma mark - UICollectionViewDataSource
-/*
-- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0);
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0);
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 0;
+}
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return nil;
+}
 
+- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
+    return YES;
+}
+/*
 /// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
 - (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(tvos(10.2));
 
@@ -248,6 +289,7 @@
  -[ViewController collectionView:didDeselectItemAtIndexPath:]
  -[ViewController collectionView:didSelectItemAtIndexPath:]
  */
+
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__func__);
     return YES;

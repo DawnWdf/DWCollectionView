@@ -14,8 +14,8 @@
 
 + (void)dw_class:(Class)aclass protocolMethodImplementationFrom:(Class)original {
     
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
         //协议需要实现的方法
         unsigned int protocolCount = 0;
         //获取当前类所有的协议
@@ -48,7 +48,7 @@
             }
         }
 
-    });
+//    });
     
 
 }
