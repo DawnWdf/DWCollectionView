@@ -188,6 +188,7 @@
     if ([self.collectionView.collectionViewLayout isKindOfClass:[DWFlowLayout class]]) {
         DWFlowLayout *flowLayout = (DWFlowLayout *)self.collectionView.collectionViewLayout;
         flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
+            return 80;
             return random()%100 + 50;
         };
         
@@ -322,7 +323,6 @@
 } // called when the user taps on an already-selected item in multi-select mode
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__func__);
-
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__func__);
@@ -408,6 +408,25 @@
 - (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
     NSLog(@"%s",__func__);
     return YES;
+}
+- (void)dw_collectionView:(UICollectionView *)collectionView didMoveItemAtIndex:(NSIndexPath *)fromIndexPath toIndex:(NSIndexPath *)toIndexPath {
+    if (fromIndexPath == toIndexPath) {
+        return;
+    }
+    DWSection *sourceSection = self.list[fromIndexPath.section];
+    id sourceObj = sourceSection.items[fromIndexPath.row];
+    
+    DWSection *destinationSection = self.list[toIndexPath.section];
+    id destinationObj = destinationSection.items[toIndexPath.row];
+    
+    NSMutableArray *fromItem = [sourceSection.items mutableCopy];
+    [fromItem removeObject:sourceObj];
+    sourceSection.items = fromItem;
+    
+    NSMutableArray *toItem = [destinationSection.items mutableCopy];
+    [toItem insertObject:destinationObj atIndex:toIndexPath.row];
+    destinationSection.items = toItem;
+    
 }
 
 #pragma mark - private

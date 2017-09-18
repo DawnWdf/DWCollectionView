@@ -15,6 +15,8 @@ typedef UIEdgeInsets(^DWCollectionViewFlowLayoutFooterEdgeInsets)(NSInteger sect
 
 @interface DWFlowLayout : UICollectionViewFlowLayout
 
+@property (nonatomic, strong, readonly) NSMutableArray *attributes;
+
 ///collectionView的边距
 @property (nonatomic) UIEdgeInsets boundEdgeInsets;
 

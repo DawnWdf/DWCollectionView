@@ -40,6 +40,9 @@
 - (void)longPressRecognizer:(UILongPressGestureRecognizer *)recognizer {
     CGPoint point = [recognizer locationInView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
+    UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    [self.collectionView bringSubviewToFront:cell];
+    BOOL hasChanged = NO;
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
         {
@@ -53,9 +56,22 @@
             break;
         case UIGestureRecognizerStateChanged:
         {
+            cell.center = point;
+
+            for (UICollectionViewLayoutAttributes *attributes in self.attributes) {
+                if (CGRectContainsPoint(attributes.frame, point)) {
+                    if (indexPath && (indexPath != attributes.indexPath)) {
+                        hasChanged = YES;
+                        [self.collectionView moveItemAtIndexPath:indexPath toIndexPath:attributes.indexPath];
+                    }
+                }
+            }
         }
             break;
         default:
+            if (!hasChanged) {
+                cell.center = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath].center;
+            }
             break;
     }
 }

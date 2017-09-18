@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *columnHeight;
 
-@property (nonatomic, strong) NSMutableArray *attributes;
+@property (nonatomic, strong, readwrite) NSMutableArray *attributes;
 
 @property (nonatomic) CGFloat longestHeight;
 

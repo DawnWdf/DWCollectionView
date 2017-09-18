@@ -101,22 +101,7 @@
     return NO;
 }
 - (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0) {
-    
-    NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,sourceIndexPath,destinationIndexPath, nil];
-
-    if(value){
-        return;
-    }
-    DWSection *sourceSection = self.data[sourceIndexPath.section];
-    id sourceObj = sourceSection.items[sourceIndexPath.row];
-    
-    DWSection *destinationSection = self.data[sourceIndexPath.section];
-    id destinationObj = destinationSection.items[sourceIndexPath.row];
-    
-    id cach = sourceObj;
-    sourceObj = destinationObj;
-    destinationObj = cach;
-    
+    [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,sourceIndexPath,destinationIndexPath, nil];
 }
 
 /*
@@ -145,6 +130,11 @@
     }
     return NO;
 }
+
+- (void)dw_collectionView:(UICollectionView *)collectionView didMoveItemAtIndex:(NSIndexPath *)fromIndexPath toIndex:(NSIndexPath *)toIndexPath {
+    [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:fromIndexPath,toIndexPath, nil];
+}
+
 #pragma mark - getter & setter
 - (void)setOriginalDelegate:(id)originalDelegate{
     [super setOriginalDelegate:originalDelegate];
