@@ -17,14 +17,14 @@ typedef void (^DWCollectionViewCellMaker)();
 
 @interface DWCollectionView : UICollectionView
 
+@property (nonatomic, strong) NSArray<DWSection *> *data;
 
 @property (nonatomic, strong) id <DWRefreshManagerProtocol> refreshManager;
+
 
 /**
     警惕循环引用
  */
 - (void)registerViewAndModel:(void(^)(DWCollectionDelegateMaker *maker))maker;
-
-- (void)setData:(NSArray<DWSection *> *)data;
 
 @end

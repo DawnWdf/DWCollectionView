@@ -92,48 +92,6 @@
     return nil;
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
-    NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,indexPath, nil];
-  
-    if (value){
-        return [value boolValue];
-    }
-    return NO;
-}
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0) {
-    [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,sourceIndexPath,destinationIndexPath, nil];
-}
-
-/*
-- (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0);
-- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath*)destinationIndexPath NS_AVAILABLE_IOS(9_0);
-
-/// Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
-- (nullable NSArray<NSString *> *)indexTitlesForCollectionView:(UICollectionView *)collectionView API_AVAILABLE(tvos(10.2));
-
-/// Returns the index path that corresponds to the given title / index. (e.g. "B",1)
-/// Return an index path with a single index to indicate an entire section, instead of a specific item.
-- (NSIndexPath *)collectionView:(UICollectionView *)collectionView indexPathForIndexTitle:(NSString *)title atIndex:(NSInteger)index API_AVAILABLE(tvos(10.2));
-*/
-#pragma mark - DWFlowAutoMoveLayoutDelegate
-- (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
-    NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,indexPath, nil];
-    
-    if (value){
-        return [value boolValue];
-    }else {
-        value = [NSObject dw_target:self.originalDelegate performSel:@selector(dw_collectionView:canMoveItemAtIndex:) arguments:collectionView,indexPath, nil];
-        if (value) {
-            return [value boolValue];
-        }
-    }
-    return NO;
-}
-
-- (void)dw_collectionView:(UICollectionView *)collectionView didMoveItemAtIndex:(NSIndexPath *)fromIndexPath toIndex:(NSIndexPath *)toIndexPath {
-    [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:fromIndexPath,toIndexPath, nil];
-}
 
 #pragma mark - getter & setter
 - (void)setOriginalDelegate:(id)originalDelegate{

@@ -104,7 +104,7 @@
     CGFloat originX = self.boundEdgeInsets.left + shortestIndex * (width + self.interitemSpace);
     CGFloat originY = shortestHeight;
     
-    self.columnHeight[shortestIndex] = @(originY + height + self.interitemSpace);
+    self.columnHeight[shortestIndex] = @(originY + height + self.lineSpace);
     
     
     attribute.frame = CGRectMake(originX, originY, width, height);

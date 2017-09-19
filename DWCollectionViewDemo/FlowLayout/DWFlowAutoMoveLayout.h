@@ -9,11 +9,13 @@
 #import "DWFlowLayout.h"
 
 @protocol DWFlowAutoMoveLayoutDelegate <NSObject>
-
+@optional
 - (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath;
 - (void)dw_collectionView:(UICollectionView *)collectionView didMoveItemAtIndex:(NSIndexPath *)fromIndexPath toIndex:(NSIndexPath *)toIndexPath;
 @end
 
 @interface DWFlowAutoMoveLayout : DWFlowLayout
+
+@property (nonatomic, weak) id<DWFlowAutoMoveLayoutDelegate> delegate;
 
 @end

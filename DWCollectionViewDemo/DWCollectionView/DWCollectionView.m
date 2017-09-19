@@ -13,12 +13,13 @@
 
 @interface DWCollectionView()
 
-@property (nonatomic, weak) id dw_delegate;
-
-@property (nonatomic, weak) id dw_dataSource;
-
 @property (nonatomic, strong) DWCollectionViewDelegate *dwViewDelegate;
 @property (nonatomic, strong) DWCollectionDataSource *dwDataSource;
+
+
+@property (nonatomic, weak) id originalDelegate;
+
+@property (nonatomic, weak) id originalDataSource;
 
 @end
 
@@ -41,6 +42,7 @@
 #endif
 }
 
+#pragma mark - public method
 - (void)registerViewAndModel:(void(^)(DWCollectionDelegateMaker *maker))maker {
     if (!maker) {
         return;
@@ -71,19 +73,22 @@
         [configerDic setObject:maker_ojb.footerRegister forKey:@"footer"];
     }
     self.dwViewDelegate.configer = configerDic;
-    self.dwViewDelegate.originalDelegate = self.dw_delegate;
+    self.dwViewDelegate.originalDelegate = self.originalDelegate;
     self.dwDataSource.configer = configerDic;
-    self.dwDataSource.originalDelegate = self.dw_dataSource;
+    self.dwDataSource.originalDelegate = self.originalDataSource;
     self.delegate = self.dwViewDelegate;
     self.dataSource = self.dwDataSource;
 }
 
+
+#pragma mark - setter & getter
+#pragma mark - super
 - (void)setDelegate:(id<UICollectionViewDelegate>)delegate {
     if ([delegate isKindOfClass:[DWCollectionViewDelegate class]]) {
         [super setDelegate:delegate];
         return;
     }
-    self.dw_delegate = delegate;
+    self.originalDelegate = delegate;
 }
 
 - (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {
@@ -91,11 +96,10 @@
         [super setDataSource:dataSource];
         return;
     }
-    self.dw_dataSource = dataSource;
+    self.originalDataSource = dataSource;
 }
 
-#pragma mark - setter & getter
-
+#pragma mark - private
 - (DWCollectionViewDelegate *)dwViewDelegate{
     if (!_dwViewDelegate) {
         _dwViewDelegate = [[DWCollectionViewDelegate alloc] init];
@@ -109,7 +113,7 @@
     }
     return _dwDataSource;
 }
-
+#pragma mark - public
 - (void)setData:(NSArray<DWSection *> *)data{
     self.dwDataSource.data = data;
     self.dwViewDelegate.data = data;

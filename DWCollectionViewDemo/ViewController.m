@@ -29,7 +29,8 @@
  2：自定义的layout像系统layout一样支持pin
  3：collectionView依赖其他framework，localDemo在carthage update的时候也会自动加载，去掉？
  4：使用桥接模式将refresh管理起来
- 5：自定义瀑布流，可以支持长按移动item
+ 5：自定义瀑布流，可以支持长按移动item，并在不同的section之间移动        ------Done （动画效果需要优化）
+ 6：当移动item到空白位置时的处理
  */
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource,DWFlowAutoMoveLayoutDelegate>
@@ -65,12 +66,13 @@
     
     flowLayout.headerHeight = 40;
     flowLayout.footerHeight = 40;
+    flowLayout.delegate = self;
     
     UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
-    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
+//    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
 //    sysLayout.sectionHeadersPinToVisibleBounds = YES;
 //    sysLayout.sectionFootersPinToVisibleBounds = YES;
-    
+    sysLayout.minimumLineSpacing = 50;
     //------------创建collectionView--------------------------------------
     DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor whiteColor];
@@ -83,14 +85,14 @@
     //-------------在seciontView之上添加视图 如：滚动banner------------------------------------------
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(cv.frame), 100)];
     headerView.backgroundColor = [UIColor grayColor];
-//    [cv addSubview:headerView];
+    [cv addSubview:headerView];
     
     //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
         
         maker.registerCell([TeamInfoCell class],[TeamInfo class])
         .itemSize(^(NSIndexPath *indexPath, id data){
-            return CGSizeMake(150, 150);
+            return CGSizeMake(150, 120);
         })
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
@@ -187,9 +189,14 @@
 - (void)updateLayout {
     if ([self.collectionView.collectionViewLayout isKindOfClass:[DWFlowLayout class]]) {
         DWFlowLayout *flowLayout = (DWFlowLayout *)self.collectionView.collectionViewLayout;
+        
+        __weak NSMutableArray *weakList = self.list;
         flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
-            return 80;
-            return random()%100 + 50;
+            __strong NSMutableArray *strongList = weakList;
+            DWSection *section = strongList[indexPath.section];
+            TeamInfo *info = section.items[indexPath.row];
+            NSString *name = info.teamNameCn;
+            return name.length * 20;
         };
         
     }
@@ -394,7 +401,7 @@
     return UIEdgeInsetsMake(10, 30, 10, 30);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 10;
+    return 100;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     return 40;
@@ -405,27 +412,31 @@
 //    NSLog(@"%s   ---------    %@",__func__, indexPaths);
 }
 #pragma mark - DWFlowAutoMoveLayoutDelegate
+#pragma mark - DWFlowAutoMoveLayoutDelegate
 - (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+    
     return YES;
 }
+
 - (void)dw_collectionView:(UICollectionView *)collectionView didMoveItemAtIndex:(NSIndexPath *)fromIndexPath toIndex:(NSIndexPath *)toIndexPath {
-    if (fromIndexPath == toIndexPath) {
-        return;
-    }
+    
     DWSection *sourceSection = self.list[fromIndexPath.section];
     id sourceObj = sourceSection.items[fromIndexPath.row];
     
     DWSection *destinationSection = self.list[toIndexPath.section];
-    id destinationObj = destinationSection.items[toIndexPath.row];
     
     NSMutableArray *fromItem = [sourceSection.items mutableCopy];
-    [fromItem removeObject:sourceObj];
-    sourceSection.items = fromItem;
-    
     NSMutableArray *toItem = [destinationSection.items mutableCopy];
-    [toItem insertObject:destinationObj atIndex:toIndexPath.row];
-    destinationSection.items = toItem;
+    if (sourceSection == destinationSection) {
+        [fromItem removeObject:sourceObj];
+        [fromItem insertObject:sourceObj atIndex:toIndexPath.row];
+        sourceSection.items = fromItem;
+    } else {
+        [fromItem removeObject:sourceObj];
+        sourceSection.items = fromItem;
+        [toItem insertObject:sourceObj atIndex:toIndexPath.row];
+        destinationSection.items = toItem;
+    }
     
 }
 

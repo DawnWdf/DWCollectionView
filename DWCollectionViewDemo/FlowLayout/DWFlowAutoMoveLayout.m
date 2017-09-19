@@ -13,7 +13,10 @@
 @interface DWFlowAutoMoveLayout()
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGesture;
 
-@property (nonatomic, weak) id<DWFlowAutoMoveLayoutDelegate> delegate;
+
+@property (nonatomic, strong) UICollectionViewCell *moveingCell;
+
+@property (nonatomic, strong) NSIndexPath *moveingIndexPath;
 
 @end
 
@@ -41,7 +44,6 @@
     CGPoint point = [recognizer locationInView:self.collectionView];
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:point];
     UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-    [self.collectionView bringSubviewToFront:cell];
     BOOL hasChanged = NO;
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
@@ -51,35 +53,44 @@
                 if (!canMove) {
                     return;
                 }
+                self.moveingCell = cell;
+                self.moveingIndexPath = indexPath;
+                [self.collectionView bringSubviewToFront:cell];
             }
         }
             break;
         case UIGestureRecognizerStateChanged:
         {
-            cell.center = point;
-
-            for (UICollectionViewLayoutAttributes *attributes in self.attributes) {
-                if (CGRectContainsPoint(attributes.frame, point)) {
-                    if (indexPath && (indexPath != attributes.indexPath)) {
-                        hasChanged = YES;
-                        [self.collectionView moveItemAtIndexPath:indexPath toIndexPath:attributes.indexPath];
-                    }
-                }
-            }
+            self.moveingCell.center = point;
         }
             break;
         default:
-            if (!hasChanged) {
-                cell.center = [self.collectionView layoutAttributesForItemAtIndexPath:indexPath].center;
+        {
+            BOOL blankSpce = YES;
+            for (UICollectionViewLayoutAttributes *attributes in [self.attributes mutableCopy]) {
+                blankSpce = NO;
+                if (CGRectContainsPoint(CGRectMake(attributes.frame.origin.x - self.interitemSpace / 2, attributes.frame.origin.y - self.lineSpace / 2, attributes.frame.size.width + self.interitemSpace, attributes.frame.size.height + self.lineSpace), point)) {
+                    if (self.moveingIndexPath != attributes.indexPath) {
+                        hasChanged = YES;
+                        if ([self.delegate respondsToSelector:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:)]) {
+                            [self.delegate dw_collectionView:self.collectionView didMoveItemAtIndex:self.moveingIndexPath toIndex:attributes.indexPath];
+                            [self.collectionView moveItemAtIndexPath:self.moveingIndexPath toIndexPath:attributes.indexPath];
+                        }
+                    }
+                }
             }
+            if (blankSpce) {
+                NSLog(@"blank space");
+            }
+            if (!hasChanged) {
+                self.moveingCell.center = [self.collectionView layoutAttributesForItemAtIndexPath:self.moveingIndexPath].center;
+            }
+        }
             break;
     }
 }
 
 #pragma mark - getter & setter
 
-- (id<DWFlowAutoMoveLayoutDelegate>)delegate {
-    
-    return (id<DWFlowAutoMoveLayoutDelegate>)self.collectionView.dataSource?:(id<DWFlowAutoMoveLayoutDelegate>)self.collectionView.delegate;
-}
+
 @end
