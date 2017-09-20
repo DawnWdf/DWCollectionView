@@ -44,8 +44,8 @@
         //需要根据header/footer返回的cgsize来判断是否需要调用layoutAttributes的方法
         //否则当cgsize=cgsizezero的时候也调用viewForSupplementaryElementOfKind会因为不符合collection的代理标准而导致崩溃
         //
-        id headerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForHeaderInSection:) arguments:self.collectionView,self,section, nil];
-        if ([NSValue valueWithCGSize:CGSizeZero] == headerSize) {
+        NSValue *headerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForHeaderInSection:) arguments:self.collectionView,self,section, nil];
+        if (![[NSValue valueWithCGSize:CGSizeZero] isEqualToValue: headerSize]) {
             
             UICollectionViewLayoutAttributes *headerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:section]];
             
@@ -67,8 +67,8 @@
             
         }
         
-        id footerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForFooterInSection:) arguments:self.collectionView,self,section, nil];
-        if ([NSValue valueWithCGSize:CGSizeZero] == footerSize) {
+        NSValue *footerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForFooterInSection:) arguments:self.collectionView,self,section, nil];
+        if (![[NSValue valueWithCGSize:CGSizeZero] isEqualToValue:footerSize]) {
             
             UICollectionViewLayoutAttributes *footerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathWithIndex:section]];
             if (footerAttributes) {
@@ -123,7 +123,7 @@
     
 
     attribute.frame = CGRectMake(originX, originY, width, height);
-        
+    
     
     for (int i = 0; i < self.columnHeight.count; i++) {
         CGFloat itemHeight = [self.columnHeight[i] floatValue];

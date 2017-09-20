@@ -217,8 +217,8 @@
                 league.leagueTypeCn = obj[@"leagueTypeCn"];
                 league.maxRound = [obj[@"maxRound"] longValue];
                 league.season = obj[@"season"];
-              //  section.headerData = league;
-              //  section.footerData = @"footer";
+                section.headerData = league;
+               // section.footerData = @"footer";
                 
                 NSArray *teamInfos = obj[@"teamInfoSet"];
                 NSMutableArray *teams = [NSMutableArray array];

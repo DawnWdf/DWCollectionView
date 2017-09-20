@@ -21,10 +21,15 @@
 @property (nonatomic, strong) UICollectionViewCell *moveingCell;
 @property (nonatomic, strong) NSIndexPath *moveingIndexPath;
 @property (nonatomic) CGPoint moveingCellCenter;
+//目标cell
+@property (nonatomic, strong) UICollectionViewCell *destinationCell;
+@property (nonatomic, strong) NSIndexPath *destinationIndexPath;
+@property (nonatomic) CGPoint destinationCellCenter;
 //假视图
 @property (nonatomic, strong) UIView *faceView;
 //辅助参数
 @property (nonatomic, assign) CGPoint panTranslation;
+@property (nonatomic, strong) NSIndexPath *cachIndexPathToReorder;
 
 
 @end
@@ -82,6 +87,7 @@ static dispatch_once_t onceToken;
                 }
                 self.moveingCell = cell;
                 self.moveingIndexPath = indexPath;
+                self.cachIndexPathToReorder = indexPath;
                 self.moveingCellCenter = cell.center;
                 //创建所选cell的替身
                 self.faceView = [[UIView alloc]initWithFrame:cell.frame];
@@ -108,34 +114,22 @@ static dispatch_once_t onceToken;
             }
         }
             break;
-        case UIGestureRecognizerStateChanged:
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
         {
-            
+            [UIView animateWithDuration:0.3 animations:^{
+                self.faceView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+                self.faceView.center = self.destinationCellCenter;
+                
+            } completion:^(BOOL finished) {
+                self.destinationCell.alpha = 1.0;
+                [self.faceView removeFromSuperview];
+                
+            }];
         }
             break;
         default:
         {
-            /*
-            BOOL blankSpce = YES;
-            for (UICollectionViewLayoutAttributes *attributes in [self.attributes mutableCopy]) {
-                blankSpce = NO;
-                if (CGRectContainsPoint(CGRectMake(attributes.frame.origin.x - self.interitemSpace / 2, attributes.frame.origin.y - self.lineSpace / 2, attributes.frame.size.width + self.interitemSpace, attributes.frame.size.height + self.lineSpace), point)) {
-                    if (self.moveingIndexPath != attributes.indexPath) {
-                        hasChanged = YES;
-                        if ([self.delegate respondsToSelector:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:)]) {
-                            [self.delegate dw_collectionView:self.collectionView didMoveItemAtIndex:self.moveingIndexPath toIndex:attributes.indexPath];
-                            [self.collectionView moveItemAtIndexPath:self.moveingIndexPath toIndexPath:attributes.indexPath];
-                        }
-                    }
-                }
-            }
-            if (blankSpce) {
-                NSLog(@"blank space");
-            }
-            if (!hasChanged) {
-                self.moveingCell.center = [self.collectionView layoutAttributesForItemAtIndexPath:self.moveingIndexPath].center;
-            }
-             */
         }
             break;
     }
@@ -157,15 +151,19 @@ static dispatch_once_t onceToken;
             
             //判断是否可以移动
             //将要移动
-            __block  NSIndexPath *cachIndexPath = self.moveingIndexPath;
+            __block  NSIndexPath *cachIndexPath = self.cachIndexPathToReorder;
             [self.collectionView performBatchUpdates:^{
                 [self.collectionView moveItemAtIndexPath:cachIndexPath toIndexPath:toIndexPath];
                 
                 if ([self.delegate respondsToSelector:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:)]) {
                     [self.delegate dw_collectionView:self.collectionView didMoveItemAtIndex:cachIndexPath toIndex:toIndexPath];
                 }
-                cachIndexPath = toIndexPath;
-                
+                _cachIndexPathToReorder = toIndexPath;
+                UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
+                toCell.alpha = 0.5;
+                self.destinationCell = toCell;
+                self.destinationIndexPath = toIndexPath;
+                self.destinationCellCenter = toCell.center;
             } completion:^(BOOL finished) {
                 
             }];
