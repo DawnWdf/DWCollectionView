@@ -54,7 +54,7 @@
     DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
 //    flowLayout.estimatedItemSize
     flowLayout.numberOfColumn = 4;
-    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(100, 10, 10, 10);
+    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
     flowLayout.lineSpace = 10;
     flowLayout.interitemSpace = 10;
     flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
@@ -85,7 +85,7 @@
     //-------------在seciontView之上添加视图 如：滚动banner------------------------------------------
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(cv.frame), 100)];
     headerView.backgroundColor = [UIColor grayColor];
-    [cv addSubview:headerView];
+//    [cv addSubview:headerView];
     
     //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
@@ -120,6 +120,7 @@
             [header bindData:data];
             [header setBackgroundColor:[UIColor yellowColor]];
         });
+         
     }];
     
     //-----------------配置下拉刷新等---------------------------------------------
@@ -192,6 +193,7 @@
         
         __weak NSMutableArray *weakList = self.list;
         flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
+            return 50;
             __strong NSMutableArray *strongList = weakList;
             DWSection *section = strongList[indexPath.section];
             TeamInfo *info = section.items[indexPath.row];
@@ -215,8 +217,8 @@
                 league.leagueTypeCn = obj[@"leagueTypeCn"];
                 league.maxRound = [obj[@"maxRound"] longValue];
                 league.season = obj[@"season"];
-                section.headerData = league;
-                section.footerData = @"footer";
+              //  section.headerData = league;
+              //  section.footerData = @"footer";
                 
                 NSArray *teamInfos = obj[@"teamInfoSet"];
                 NSMutableArray *teams = [NSMutableArray array];
@@ -233,7 +235,7 @@
     }];
     
     self.list = result;
-    [self.collectionView setData:self.list];
+    [self.collectionView setData:result];
     [self updateLayout];
 
 }

@@ -30,16 +30,17 @@
     va_list list;
     va_start(list, firstObj);
     int i = 0;
-    for (id temp = firstObj;temp != nil;temp = va_arg(list, id)){
+    //由于参数可能是NSInteger所以此处要使用__unsafe_unretained 否则会崩溃，不确定是否因为在ARC情况下使用强引用来setArgument是不安全的，我不知道我在说什么乱七八糟的
+    for (__unsafe_unretained id temp = firstObj;temp != nil;temp = va_arg(list, id)){
         if (i >= numberOfArguments - 2){
             break;
         }
         [invocation setArgument:&temp atIndex:i + 2];
         i++;
     }
+    
     [invocation retainArguments];
     va_end(list);
-    
     if ([invocation.target respondsToSelector:invocation.selector]) {
         [invocation invokeWithTarget:invocation.target];
     }else{

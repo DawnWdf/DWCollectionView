@@ -26,6 +26,7 @@
 		CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CF1919431F67BF5B002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
 		CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */; };
+		CF95556D1F70EE9B007A4B32 /* UIImage+DWViewShot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -33,7 +34,6 @@
 		CFBD7B121F2AE65900D7BBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */; };
 		CFBD7B151F2AE65900D7BBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */; };
 		CFBD7B201F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */; };
-		CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */; };
 		CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */; };
 		CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */; };
 		CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */; };
@@ -128,6 +128,8 @@
 		CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
+		CF95556B1F70EE9B007A4B32 /* UIImage+DWViewShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DWViewShot.h"; sourceTree = "<group>"; };
+		CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DWViewShot.m"; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -260,6 +262,15 @@
 			path = FlowLayout;
 			sourceTree = "<group>";
 		};
+		CF95556A1F70EE75007A4B32 /* UIImageExtention */ = {
+			isa = PBXGroup;
+			children = (
+				CF95556B1F70EE9B007A4B32 /* UIImage+DWViewShot.h */,
+				CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */,
+			);
+			path = UIImageExtention;
+			sourceTree = "<group>";
+		};
 		CFBD7AF91F2AE65900D7BBA8 = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +308,7 @@
 				CF9555661F6A28AE007A4B32 /* FlowLayout */,
 				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
 				CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */,
+				CF95556A1F70EE75007A4B32 /* UIImageExtention */,
 				CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */,
 				CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */,
 				CFBD7B161F2AE65900D7BBA8 /* Info.plist */,
@@ -645,7 +657,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */,
-				CFBD7B5D1F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m in Sources */,
 				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
 				CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */,
@@ -655,6 +666,7 @@
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
 				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
+				CF95556D1F70EE9B007A4B32 /* UIImage+DWViewShot.m in Sources */,
 				CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */,
 				CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */,

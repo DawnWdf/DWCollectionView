@@ -7,6 +7,7 @@
 //
 
 #import "DWFlowLayout.h"
+#import "NSObject+MulArgPerformSel.h"
 
 @interface DWFlowLayout()
 
@@ -38,13 +39,22 @@
     }
     [self.attributes removeAllObjects];
     NSInteger sectionNumber = [self.collectionView numberOfSections];
-    for (int section = 0; section < sectionNumber; section++) {
+    for (NSInteger section = 0; section < sectionNumber; section++) {
         
-        UICollectionViewLayoutAttributes *headerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:section]];
-        
-        if (headerAttributes) {
-            [self.attributes addObject:headerAttributes];
+        //需要根据header/footer返回的cgsize来判断是否需要调用layoutAttributes的方法
+        //否则当cgsize=cgsizezero的时候也调用viewForSupplementaryElementOfKind会因为不符合collection的代理标准而导致崩溃
+        //
+        id headerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForHeaderInSection:) arguments:self.collectionView,self,section, nil];
+        if ([NSValue valueWithCGSize:CGSizeZero] == headerSize) {
+            
+            UICollectionViewLayoutAttributes *headerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathWithIndex:section]];
+            
+            if (headerAttributes) {
+                [self.attributes addObject:headerAttributes];
+            }
         }
+       
+        
         
         NSInteger numberOfItem = [self.collectionView numberOfItemsInSection:section];
         for (int row = 0; row < numberOfItem; row++) {
@@ -57,11 +67,15 @@
             
         }
         
-        
-        UICollectionViewLayoutAttributes *footerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathWithIndex:section]];
-        if (footerAttributes) {
-            [self.attributes addObject:footerAttributes];
+        id footerSize = [NSObject dw_target:self.collectionView.delegate performSel:@selector(collectionView:layout:referenceSizeForFooterInSection:) arguments:self.collectionView,self,section, nil];
+        if ([NSValue valueWithCGSize:CGSizeZero] == footerSize) {
+            
+            UICollectionViewLayoutAttributes *footerAttributes = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathWithIndex:section]];
+            if (footerAttributes) {
+                [self.attributes addObject:footerAttributes];
+            }
         }
+        
         
     }
 }
@@ -74,6 +88,7 @@
 - (nullable UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"%s == %@",__func__,indexPath);
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    
     
     CGSize collectionSize = self.collectionView.frame.size;
     
@@ -106,9 +121,9 @@
     
     self.columnHeight[shortestIndex] = @(originY + height + self.lineSpace);
     
-    
+
     attribute.frame = CGRectMake(originX, originY, width, height);
-    
+        
     
     for (int i = 0; i < self.columnHeight.count; i++) {
         CGFloat itemHeight = [self.columnHeight[i] floatValue];
