@@ -193,7 +193,7 @@
         
         __weak NSMutableArray *weakList = self.list;
         flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
-            return 50;
+           // return 50;
             __strong NSMutableArray *strongList = weakList;
             DWSection *section = strongList[indexPath.section];
             TeamInfo *info = section.items[indexPath.row];
@@ -266,6 +266,9 @@
         }
     }];
     [task resume];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSLog(@"%s",__func__);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -416,7 +419,9 @@
 #pragma mark - DWFlowAutoMoveLayoutDelegate
 #pragma mark - DWFlowAutoMoveLayoutDelegate
 - (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
-    
+    if (indexPath.row == 3) {
+        return NO;
+    }
     return YES;
 }
 

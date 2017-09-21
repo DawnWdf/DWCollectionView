@@ -9,6 +9,7 @@
 #import "DWFlowAutoMoveLayout.h"
 #import "DWCollectionView.h"
 #import <objc/runtime.h>
+#import "NSObject+MulArgPerformSel.h"
 
 #import "UIImage+DWViewShot.h"
 
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) UICollectionViewCell *moveingCell;
 @property (nonatomic, strong) NSIndexPath *moveingIndexPath;
 @property (nonatomic) CGPoint moveingCellCenter;
+@property (nonatomic) BOOL canMove;
 //目标cell
 @property (nonatomic, strong) UICollectionViewCell *destinationCell;
 @property (nonatomic, strong) NSIndexPath *destinationIndexPath;
@@ -82,6 +84,7 @@ static dispatch_once_t onceToken;
             UICollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
             if ([self.delegate respondsToSelector:@selector(dw_collectionView:canMoveItemAtIndex:)]) {
                 BOOL canMove = [self.delegate dw_collectionView:self.collectionView canMoveItemAtIndex:indexPath];
+                self.canMove = canMove;
                 if (!canMove) {
                     return;
                 }
@@ -103,7 +106,6 @@ static dispatch_once_t onceToken;
                 
                 [self.collectionView addSubview:self.faceView];
                 [self.faceView addSubview:cellFakeImageView];
-                //[self invalidateLayout];
                 //animation
                 [UIView animateWithDuration:0.3f animations:^{
                     self.faceView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
@@ -137,6 +139,9 @@ static dispatch_once_t onceToken;
 
 
 - (void)panRecognizer:(UIPanGestureRecognizer *)recognizer {
+    if (!self.canMove) {
+        return;
+    }
     switch (recognizer.state) {
         case UIGestureRecognizerStateChanged:
         {
@@ -148,22 +153,24 @@ static dispatch_once_t onceToken;
             if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
                 return;
             }
+
+            UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
+            toCell.alpha = 0.5;
             
-            //判断是否可以移动
+            self.destinationCell = toCell;
+            self.destinationIndexPath = toIndexPath;
+            self.destinationCellCenter = toCell.center;
             //将要移动
+            
+            [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,toIndexPath, nil];
+            
             __block  NSIndexPath *cachIndexPath = self.cachIndexPathToReorder;
             [self.collectionView performBatchUpdates:^{
                 [self.collectionView moveItemAtIndexPath:cachIndexPath toIndexPath:toIndexPath];
                 
-                if ([self.delegate respondsToSelector:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:)]) {
-                    [self.delegate dw_collectionView:self.collectionView didMoveItemAtIndex:cachIndexPath toIndex:toIndexPath];
-                }
+                [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:) arguments:self.collectionView,cachIndexPath,toIndexPath, nil];
                 _cachIndexPathToReorder = toIndexPath;
-                UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
-                toCell.alpha = 0.5;
-                self.destinationCell = toCell;
-                self.destinationIndexPath = toIndexPath;
-                self.destinationCellCenter = toCell.center;
+                
             } completion:^(BOOL finished) {
                 
             }];
