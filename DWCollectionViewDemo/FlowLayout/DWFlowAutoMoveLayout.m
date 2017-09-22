@@ -119,6 +119,7 @@ static dispatch_once_t onceToken;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:
         {
+            [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willEndMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,self.destinationIndexPath, nil];
             [UIView animateWithDuration:0.3 animations:^{
                 self.faceView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
                 self.faceView.center = self.destinationCellCenter;
@@ -126,7 +127,7 @@ static dispatch_once_t onceToken;
             } completion:^(BOOL finished) {
                 self.destinationCell.alpha = 1.0;
                 [self.faceView removeFromSuperview];
-                
+                [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didEndMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,self.destinationIndexPath, nil];
             }];
         }
             break;
