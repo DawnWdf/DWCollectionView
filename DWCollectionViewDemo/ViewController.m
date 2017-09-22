@@ -33,7 +33,7 @@
  6：当移动item到空白位置时的处理
  */
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource,DWFlowAutoMoveLayoutDelegate>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource,DWFlowAutoMoveLayoutDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,strong) DWCollectionView *collectionView;
 
@@ -268,7 +268,7 @@
     [task resume];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%s",__func__);
+    NSLog(@"%s  %@ ~~~~  %ld",__func__,NSStringFromCGPoint(scrollView.contentOffset),(long)scrollView.contentInset.top);
 }
 
 #pragma mark - UICollectionViewDataSource

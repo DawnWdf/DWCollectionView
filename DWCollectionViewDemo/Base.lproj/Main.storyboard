@@ -38,9 +38,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPp-mW-f9I">
-                                <rect key="frame" x="16" y="81" width="212" height="38"/>
+                                <rect key="frame" x="7" y="80" width="212" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="collection flow layout"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="P78-D7-Cj5"/>
                                 </connections>
@@ -52,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zg-ec-Xvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613.60000000000002" y="234.33283358320841"/>
+            <point key="canvasLocation" x="-354" y="155"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

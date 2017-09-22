@@ -182,6 +182,9 @@ static dispatch_once_t onceToken;
             if (CGRectGetMaxY(self.faceView.frame) > self.collectionView.contentOffset.y + CGRectGetHeight(self.collectionView.frame)) {
                 //向下滚动
                 NSLog(@"down  down ");
+                [UIView animateWithDuration:.07f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x, CGRectGetMaxY(self.faceView.frame) - CGRectGetHeight(self.collectionView.frame));
+                } completion:nil];
             }else if (CGRectGetMinY(self.faceView.frame) < self.collectionView.contentOffset.y){
                 //向上滚动
                 NSLog(@"up up up ");

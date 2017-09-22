@@ -8,6 +8,6 @@
 
 #import "DWCollectionDelegate.h"
 
-@interface DWCollectionViewDelegate : DWCollectionDelegate <UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface DWCollectionViewDelegate : DWCollectionDelegate <UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate>
 
 @end
