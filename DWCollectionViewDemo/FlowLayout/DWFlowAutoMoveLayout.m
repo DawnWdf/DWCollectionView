@@ -152,16 +152,15 @@ static dispatch_once_t onceToken;
             NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:self.faceView.center];
             
             UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
-            toCell.alpha = 0.5;
             
             self.destinationCell = toCell;
             self.destinationIndexPath = toIndexPath;
             self.destinationCellCenter = toCell.center;
-            
+
             if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
                 return;
             }
-
+            toCell.alpha = 0.5;
             //将要移动
             
             [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,toIndexPath, nil];
@@ -169,13 +168,24 @@ static dispatch_once_t onceToken;
             __block  NSIndexPath *cachIndexPath = self.cachIndexPathToReorder;
             [self.collectionView performBatchUpdates:^{
                 [self.collectionView moveItemAtIndexPath:cachIndexPath toIndexPath:toIndexPath];
-                
+                //已经移动
                 [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:) arguments:self.collectionView,cachIndexPath,toIndexPath, nil];
                 _cachIndexPathToReorder = toIndexPath;
                 
             } completion:^(BOOL finished) {
                 
             }];
+            
+            
+            //自动滚动
+            
+            if (CGRectGetMaxY(self.faceView.frame) > self.collectionView.contentOffset.y + CGRectGetHeight(self.collectionView.frame)) {
+                //向下滚动
+                NSLog(@"down  down ");
+            }else if (CGRectGetMinY(self.faceView.frame) < self.collectionView.contentOffset.y){
+                //向上滚动
+                NSLog(@"up up up ");
+            }
 
         }
             break;
@@ -190,10 +200,12 @@ static dispatch_once_t onceToken;
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     if ([_panGesture isEqual:gestureRecognizer]) {
+        //当前为移动的手势，但是长按的手势失败了，则不开识别行移动的手势，因为移动cell要在已经长按选择一个cell后才有效。
         if (_longPressGesture.state == 0 || _longPressGesture.state == 5) {
             return NO;
         }
     }else if ([_longPressGesture isEqual:gestureRecognizer]) {
+        //当前为长按的手势，但是正在滚动当前的collectionView，则不开始识别长按的手势。
         if (self.collectionView.panGestureRecognizer.state != 0 && self.collectionView.panGestureRecognizer.state != 5) {
             return NO;
         }
@@ -204,6 +216,8 @@ static dispatch_once_t onceToken;
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     if ([_panGesture isEqual:gestureRecognizer]) {
+        //当前为移动的手势，如果长按的手势也识别成功，则两个手势可以同时进行
+        //但是如果otherGestureRecognizer=UIScreenEdgePanGestureRecognizer则两个手势不能同时进行
         if (_longPressGesture.state != 0 && _longPressGesture.state != 5) {
             if ([_longPressGesture isEqual:otherGestureRecognizer]) {
                 return YES;
