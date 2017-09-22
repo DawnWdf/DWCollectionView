@@ -151,16 +151,17 @@ static dispatch_once_t onceToken;
             
             NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:self.faceView.center];
             
-            if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
-                return;
-            }
-
             UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
             toCell.alpha = 0.5;
             
             self.destinationCell = toCell;
             self.destinationIndexPath = toIndexPath;
             self.destinationCellCenter = toCell.center;
+            
+            if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
+                return;
+            }
+
             //将要移动
             
             [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,toIndexPath, nil];
