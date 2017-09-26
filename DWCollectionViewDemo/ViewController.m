@@ -268,7 +268,7 @@
     [task resume];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"%s  %@ ~~~~  %ld",__func__,NSStringFromCGPoint(scrollView.contentOffset),(long)scrollView.contentInset.top);
+//    NSLog(@"%s  %@ ~~~~  %ld",__func__,NSStringFromCGPoint(scrollView.contentOffset),(long)scrollView.contentInset.top);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -312,69 +312,69 @@
  */
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 - (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
     return YES;
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
     return YES;
 } // called when the user taps on an already-selected item in multi-select mode
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 
 //将要展示cell
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 //将要展示头尾
 - (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 //cell划出屏幕
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 //头尾滑动出屏幕
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 
 // These methods provide support for copy/paste actions on cells.
 // All three should be implemented if any are.
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
     return NO;
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 
@@ -383,15 +383,15 @@
 
 // Focus
 - (BOOL)collectionView:(UICollectionView *)collectionView canFocusItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
     return YES;
 }
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context NS_AVAILABLE_IOS(9_0) {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator NS_AVAILABLE_IOS(9_0) {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 
 }
 //- (nullable NSIndexPath *)indexPathForPreferredFocusedViewInCollectionView:(UICollectionView *)collectionView NS_AVAILABLE_IOS(9_0);

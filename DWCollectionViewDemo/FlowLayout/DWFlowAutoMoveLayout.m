@@ -13,6 +13,14 @@
 
 #import "UIImage+DWViewShot.h"
 
+
+typedef enum : NSUInteger {
+    DWScrollDirectionDown,
+    DWScrollDirectionUp,
+    DWScrollDirectionLeft,
+    DWScrollDirectionRight,
+} DWScrollDirection;
+
 @interface DWFlowAutoMoveLayout()<UIGestureRecognizerDelegate>
 
 //手势
@@ -32,7 +40,8 @@
 //辅助参数
 @property (nonatomic, assign) CGPoint panTranslation;
 @property (nonatomic, strong) NSIndexPath *cachIndexPathToReorder;
-
+@property (nonatomic, strong) CADisplayLink *displayLink;
+@property (nonatomic) DWScrollDirection scrollDirectionForMoving;
 
 @end
 
@@ -71,7 +80,24 @@ static dispatch_once_t onceToken;
     
 }
 
+#pragma mark displaylink
 
+- (void)invalidateDisplayLink {
+    [_displayLink invalidate];
+    _displayLink = nil;
+}
+
+- (void)autoScroll {
+    CGPoint contentOffset = self.collectionView.contentOffset;
+    UIEdgeInsets contentInsets = self.collectionView.contentInset;
+    CGSize boundsSize = self.collectionView.bounds.size;
+    CGSize contentSize = self.collectionView.contentSize;
+    NSLog(@"%@\n%@\n%@\n%@\n",NSStringFromCGPoint(contentOffset),[NSValue valueWithUIEdgeInsets:contentInsets],NSStringFromCGSize(boundsSize),NSStringFromCGSize(contentSize));
+    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x, self.collectionView.contentOffset.y + 10);
+    if (CGRectGetMaxY(self.faceView.frame) - contentOffset.y - boundsSize.height > 0) {
+        
+    }
+}
 #pragma mark - action
 
 
@@ -129,6 +155,7 @@ static dispatch_once_t onceToken;
                 [self.faceView removeFromSuperview];
                 [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didEndMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,self.destinationIndexPath, nil];
             }];
+            [self invalidateDisplayLink];
         }
             break;
         default:
@@ -149,55 +176,60 @@ static dispatch_once_t onceToken;
             self.panTranslation = [recognizer translationInView:self.collectionView];
             self.faceView.center = CGPointMake(self.moveingCellCenter.x + _panTranslation.x, self.moveingCellCenter.y + _panTranslation.y);
             
-            NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:self.faceView.center];
             
-            UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
-            
-            self.destinationCell = toCell;
-            self.destinationIndexPath = toIndexPath;
-            self.destinationCellCenter = toCell.center;
-
-            if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
-                return;
-            }
-            toCell.alpha = 0.5;
-            //将要移动
-            
-            [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,toIndexPath, nil];
-            
-            __block  NSIndexPath *cachIndexPath = self.cachIndexPathToReorder;
-            [self.collectionView performBatchUpdates:^{
-                [self.collectionView moveItemAtIndexPath:cachIndexPath toIndexPath:toIndexPath];
-                //已经移动
-                [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:) arguments:self.collectionView,cachIndexPath,toIndexPath, nil];
-                _cachIndexPathToReorder = toIndexPath;
-                
-            } completion:^(BOOL finished) {
-                
-            }];
-            
+            [self moveItemsIfNeed];
             
             //自动滚动
             
             if (CGRectGetMaxY(self.faceView.frame) > self.collectionView.contentOffset.y + CGRectGetHeight(self.collectionView.frame)) {
                 //向下滚动
-                NSLog(@"down  down ");
-                [UIView animateWithDuration:.07f delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-                    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x, CGRectGetMaxY(self.faceView.frame) - CGRectGetHeight(self.collectionView.frame));
-                } completion:nil];
+                self.scrollDirectionForMoving = DWScrollDirectionDown;
             }else if (CGRectGetMinY(self.faceView.frame) < self.collectionView.contentOffset.y){
                 //向上滚动
-                NSLog(@"up up up ");
+                self.scrollDirectionForMoving = DWScrollDirectionUp;
             }
 
+            [self displayLink];
         }
             break;
-            
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateFailed:
+        case UIGestureRecognizerStateCancelled:
+            [self invalidateDisplayLink];
+            break;
         default:
             break;
     }
 }
 
+- (void)moveItemsIfNeed {
+    NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:self.faceView.center];
+    
+    UICollectionViewCell *toCell = [self.collectionView cellForItemAtIndexPath:toIndexPath];
+    
+    self.destinationCell = toCell;
+    self.destinationIndexPath = toIndexPath;
+    self.destinationCellCenter = toCell.center;
+    
+    if (!toIndexPath || [self.moveingIndexPath isEqual:toIndexPath]) {
+        return;
+    }
+    toCell.alpha = 0.5;
+    //将要移动
+    
+    [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:willMoveItemAtIndex:toIndex:) arguments:self.collectionView,self.moveingIndexPath,toIndexPath, nil];
+    
+    __block  NSIndexPath *cachIndexPath = self.cachIndexPathToReorder;
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView moveItemAtIndexPath:cachIndexPath toIndexPath:toIndexPath];
+        //已经移动
+        [NSObject dw_target:self.delegate performSel:@selector(dw_collectionView:didMoveItemAtIndex:toIndex:) arguments:self.collectionView,cachIndexPath,toIndexPath, nil];
+        _cachIndexPathToReorder = toIndexPath;
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+}
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
@@ -242,5 +274,11 @@ static dispatch_once_t onceToken;
 
 #pragma mark - getter & setter
 
-
+- (CADisplayLink *)displayLink {
+    if (!_displayLink) {
+        _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(autoScroll)];
+        [_displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    }
+    return _displayLink;
+}
 @end
