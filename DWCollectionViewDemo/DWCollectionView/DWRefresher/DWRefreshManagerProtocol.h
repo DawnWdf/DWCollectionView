@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, DWRefreshType) {
 
 - (void)setupRefreshType:(DWRefreshType)refreshType;
 
-- (void)setupHeaderRefresh:(void(^)())header footerRefresh:(void(^)())footer;
+- (void)setupHeaderRefresh:(void(^)(void))header footerRefresh:(void(^)(void))footer;
 
 - (void)beginHeaderRefresh;
 

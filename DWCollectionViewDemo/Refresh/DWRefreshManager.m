@@ -15,9 +15,9 @@
 
 @property (nonatomic, weak) UIScrollView *scrollView; ///此处使用weak 避免循环引用
 
-@property (nonatomic, copy) void(^footerRefresh)();
+@property (nonatomic, copy) void(^footerRefresh)(void);
 
-@property (nonatomic, copy) void(^headerRefresh)();
+@property (nonatomic, copy) void(^headerRefresh)(void);
 
 @end
 
@@ -48,7 +48,7 @@
     }
 }
 
-- (void)setupHeaderRefresh:(void(^)())header footerRefresh:(void(^)())footer {
+- (void)setupHeaderRefresh:(void(^)(void))header footerRefresh:(void(^)(void))footer {
     self.footerRefresh = footer;
     self.headerRefresh = header;
 }

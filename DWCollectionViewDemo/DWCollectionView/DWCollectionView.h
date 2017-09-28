@@ -12,7 +12,7 @@
 #import "DWRefreshManagerProtocol.h"
 
 
-typedef void (^DWCollectionViewCellMaker)();
+typedef void (^DWCollectionViewCellMaker)(void);
 
 
 @interface DWCollectionView : UICollectionView

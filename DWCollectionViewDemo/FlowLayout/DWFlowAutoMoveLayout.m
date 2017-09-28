@@ -89,11 +89,19 @@ static dispatch_once_t onceToken;
 
 - (void)autoScroll {
     CGPoint contentOffset = self.collectionView.contentOffset;
-    UIEdgeInsets contentInsets = self.collectionView.contentInset;
+    UIEdgeInsets contentInset = self.collectionView.contentInset;
     CGSize boundsSize = self.collectionView.bounds.size;
     CGSize contentSize = self.collectionView.contentSize;
-    NSLog(@"%@\n%@\n%@\n%@\n",NSStringFromCGPoint(contentOffset),[NSValue valueWithUIEdgeInsets:contentInsets],NSStringFromCGSize(boundsSize),NSStringFromCGSize(contentSize));
-    self.collectionView.contentOffset = CGPointMake(self.collectionView.contentOffset.x, self.collectionView.contentOffset.y + 10);
+//    NSLog(@"%@\n%@\n%@\n%@\n",NSStringFromCGPoint(contentOffset),[NSValue valueWithUIEdgeInsets:contentInset],NSStringFromCGSize(boundsSize),NSStringFromCGSize(contentSize));
+    NSLog(@"%@",NSStringFromCGPoint(self.panTranslation));
+    [UIView animateWithDuration:0.07f/*1/16秒*/ animations:^{
+        
+        CGFloat diff = contentSize.height - boundsSize.height - contentInset.bottom - contentOffset.y;
+        self.collectionView.contentOffset = CGPointMake(contentOffset.x, contentSize.height - boundsSize.height - contentInset.bottom);
+        self.moveingCellCenter = CGPointMake(self.moveingCellCenter.x, self.moveingCellCenter.y + diff);
+        self.faceView.center = CGPointMake(self.moveingCellCenter.x + self.panTranslation.x, self.moveingCellCenter.y + self.panTranslation.y);
+    }];
+    [self moveItemsIfNeed];
     if (CGRectGetMaxY(self.faceView.frame) - contentOffset.y - boundsSize.height > 0) {
         
     }

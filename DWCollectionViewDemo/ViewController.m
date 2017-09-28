@@ -193,7 +193,7 @@
         
         __weak NSMutableArray *weakList = self.list;
         flowLayout.itemHeightBlock = ^CGFloat(NSIndexPath *indexPath) {
-           // return 50;
+            // return 50;
             __strong NSMutableArray *strongList = weakList;
             DWSection *section = strongList[indexPath.section];
             TeamInfo *info = section.items[indexPath.row];
@@ -236,7 +236,14 @@
     
     self.list = result;
     [self.collectionView setData:result];
-    [self updateLayout];
+    if ([NSThread isMainThread]) {
+        [self updateLayout];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self updateLayout];
+        });
+    }
 
 }
 
@@ -258,10 +265,16 @@
             NSInteger code = [resultDic[@"retCode"] integerValue];
             if (code == 200) {
                 [self listFrom:resultDic[@"result"]];
-                [self.collectionView.refreshManager endHeaderRefresh];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    [self.collectionView.refreshManager endHeaderRefresh];
+                });
             }else{
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:resultDic[@"msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
-                [alert showViewController:self sender:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:resultDic[@"msg"] message:nil preferredStyle:UIAlertControllerStyleAlert];
+                    [alert showViewController:self sender:nil];
+                });
             }
         }
     }];
