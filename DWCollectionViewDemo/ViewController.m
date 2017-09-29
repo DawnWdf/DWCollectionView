@@ -103,6 +103,9 @@
         
         maker.registerHeader([LeagueHeaderReusableView class],[LeagueInfo class])
         .sizeConfiger(^ CGSize (UICollectionViewLayout *layout , NSInteger section, id data){
+#ifdef DEBUG
+//            NSLog(@"%s",__func__);
+#endif
             return CGSizeMake(300, height_header);
         })
         .adapter(^(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data){
@@ -198,6 +201,9 @@
             DWSection *section = strongList[indexPath.section];
             TeamInfo *info = section.items[indexPath.row];
             NSString *name = info.teamNameCn;
+#ifdef DEBUG
+            NSLog(@"%s",__func__);
+#endif
             return name.length * 20;
         };
         

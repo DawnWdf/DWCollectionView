@@ -86,7 +86,7 @@
 }
 
 - (nullable UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s == %@",__func__,indexPath);
+    NSLog(@"%s == %@",__func__,indexPath);
     UICollectionViewLayoutAttributes *attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
     

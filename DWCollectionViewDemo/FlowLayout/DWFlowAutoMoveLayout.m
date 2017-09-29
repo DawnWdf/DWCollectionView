@@ -15,6 +15,7 @@
 
 
 typedef enum : NSUInteger {
+    DWScrollDirectionUnknow,
     DWScrollDirectionDown,
     DWScrollDirectionUp,
     DWScrollDirectionLeft,
@@ -92,19 +93,39 @@ static dispatch_once_t onceToken;
     UIEdgeInsets contentInset = self.collectionView.contentInset;
     CGSize boundsSize = self.collectionView.bounds.size;
     CGSize contentSize = self.collectionView.contentSize;
-//    NSLog(@"%@\n%@\n%@\n%@\n",NSStringFromCGPoint(contentOffset),[NSValue valueWithUIEdgeInsets:contentInset],NSStringFromCGSize(boundsSize),NSStringFromCGSize(contentSize));
+    NSLog(@"%@\n%@\n%@\n%@\n",NSStringFromCGPoint(contentOffset),[NSValue valueWithUIEdgeInsets:contentInset],NSStringFromCGSize(boundsSize),NSStringFromCGSize(contentSize));
     NSLog(@"%@",NSStringFromCGPoint(self.panTranslation));
-    [UIView animateWithDuration:0.07f/*1/16秒*/ animations:^{
-        
-        CGFloat diff = contentSize.height - boundsSize.height - contentInset.bottom - contentOffset.y;
-        self.collectionView.contentOffset = CGPointMake(contentOffset.x, contentSize.height - boundsSize.height - contentInset.bottom);
-        self.moveingCellCenter = CGPointMake(self.moveingCellCenter.x, self.moveingCellCenter.y + diff);
-        self.faceView.center = CGPointMake(self.moveingCellCenter.x + self.panTranslation.x, self.moveingCellCenter.y + self.panTranslation.y);
-    }];
-    [self moveItemsIfNeed];
-    if (CGRectGetMaxY(self.faceView.frame) - contentOffset.y - boundsSize.height > 0) {
-        
+    CGFloat increment = 0;
+    
+    if (self.scrollDirectionForMoving == DWScrollDirectionDown) {
+        CGFloat percentage = (((CGRectGetMaxY(self.faceView.frame) - contentOffset.y) - (boundsSize.height - 50)) / 50);
+        increment = 10 * percentage;
+        if (increment >= 10.f) {
+            increment = 10.f;
+        }
+    }else if (self.scrollDirectionForMoving == DWScrollDirectionUp) {
+        CGFloat percentage = (1.f - ((CGRectGetMinY(self.faceView.frame) - contentOffset.y - 50) / 50));
+        increment = -10.f * percentage;
+        if (increment <= -10.f) {
+            increment = -10.f;
+        }
     }
+    
+    NSLog(@"%f",increment);
+    [self.collectionView performBatchUpdates:^{
+        self.moveingCellCenter = CGPointMake(self.moveingCellCenter.x, self.moveingCellCenter.y + increment);
+        self.faceView.center = CGPointMake(self.moveingCellCenter.x + self.panTranslation.x, self.moveingCellCenter.y + self.panTranslation.y);
+        self.collectionView.contentOffset = CGPointMake(contentOffset.x, contentOffset.y + increment);
+    } completion:nil];
+    [self moveItemsIfNeed];
+//    [UIView animateWithDuration:0.07f/*1/16秒*/ animations:^{
+//
+//        CGFloat diff = contentSize.height - boundsSize.height - contentInset.bottom - contentOffset.y;
+//        self.collectionView.contentOffset = CGPointMake(contentOffset.x, contentSize.height - boundsSize.height - contentInset.bottom);
+//        self.moveingCellCenter = CGPointMake(self.moveingCellCenter.x, self.moveingCellCenter.y + diff);
+//        self.faceView.center = CGPointMake(self.moveingCellCenter.x + self.panTranslation.x, self.moveingCellCenter.y + self.panTranslation.y);
+//    }];
+
 }
 #pragma mark - action
 
@@ -140,6 +161,7 @@ static dispatch_once_t onceToken;
                 
                 [self.collectionView addSubview:self.faceView];
                 [self.faceView addSubview:cellFakeImageView];
+                [self invalidateLayout];
                 //animation
                 [UIView animateWithDuration:0.3f animations:^{
                     self.faceView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.1, 1.1);
@@ -192,12 +214,19 @@ static dispatch_once_t onceToken;
             if (CGRectGetMaxY(self.faceView.frame) > self.collectionView.contentOffset.y + CGRectGetHeight(self.collectionView.frame)) {
                 //向下滚动
                 self.scrollDirectionForMoving = DWScrollDirectionDown;
+                [self displayLink];
+
             }else if (CGRectGetMinY(self.faceView.frame) < self.collectionView.contentOffset.y){
                 //向上滚动
                 self.scrollDirectionForMoving = DWScrollDirectionUp;
+                [self displayLink];
+
+            }else{
+                //faceView在当前可视视图内移动 scrollView不需要滚动
+                self.scrollDirectionForMoving = DWScrollDirectionUnknow;
+                [self invalidateDisplayLink];
             }
 
-            [self displayLink];
         }
             break;
         case UIGestureRecognizerStateEnded:
