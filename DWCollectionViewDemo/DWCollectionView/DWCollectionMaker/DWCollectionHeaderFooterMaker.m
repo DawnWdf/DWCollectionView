@@ -35,4 +35,10 @@
         return self;
     };
 }
+- (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterDidSelectedBlock))didSelect {
+    return ^DWCollectionHeaderFooterMaker *(DWCollectionHeaderFooterDidSelectedBlock block){
+        self.configer.didSelectBlock = block;
+        return self;
+    };
+}
 @end

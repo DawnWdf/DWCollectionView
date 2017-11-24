@@ -11,11 +11,13 @@
 
 typedef void (^DWCollectionHeaderFooterAdapterBlcok)(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data);
 typedef CGSize(^DWCollectionHeaderFooterSizeBlock)(UICollectionViewLayout *layout,NSInteger section, id data);
+typedef void (^DWCollectionHeaderFooterDidSelectedBlock)(UITapGestureRecognizer *recognizer, NSInteger section , id data);
 
 @interface DWCollectionHeaderFooterConfiger : NSObject
 
 @property (nonatomic, copy) DWCollectionHeaderFooterAdapterBlcok adapterBlock;
 @property (nonatomic, copy) DWCollectionHeaderFooterSizeBlock sizeBlock;
+@property (nonatomic, copy) DWCollectionHeaderFooterDidSelectedBlock didSelectBlock;
 @end
 
 @interface DWCollectionHeaderFooterMaker : NSObject
@@ -25,4 +27,5 @@ typedef CGSize(^DWCollectionHeaderFooterSizeBlock)(UICollectionViewLayout *layou
 
 - (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterAdapterBlcok))adapter;
 - (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterSizeBlock))sizeConfiger;
+- (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterDidSelectedBlock))didSelect;///TODO:
 @end

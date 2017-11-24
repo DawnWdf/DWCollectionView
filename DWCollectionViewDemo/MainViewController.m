@@ -14,7 +14,6 @@
 #import "MainViewController.h"
 #import "NormalViewController.h"
 #import "DataManager.h"
-#import "GDemoViewController.h"
 
 @interface MainViewController ()
 
@@ -50,7 +49,7 @@
     [self.navigationController pushViewController:[NormalViewController new] animated:YES];
 }
 - (IBAction)pushToGDemoVC:(id)sender {
-    [self.navigationController pushViewController:[GDemoViewController new] animated:YES];
+//    [self.navigationController pushViewController:[GDemoViewController new] animated:YES];
 
 }
 

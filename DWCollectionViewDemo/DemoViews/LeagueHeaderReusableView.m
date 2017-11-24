@@ -22,8 +22,8 @@ static int indexC = 0;
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, height_header)];
-        //tLabel.backgroundColor = [UIColor whiteColor];
+        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, height_header)];
+        tLabel.backgroundColor = [UIColor colorWithRed:123.0/255.0 green:223.0/255.0 blue:13.0/255.0 alpha:1.0];
         tLabel.textColor = [UIColor blackColor];
         [self addSubview:tLabel];
         self.titleLabel = tLabel;

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollectionViewBaseViewController.h"
 
 
-
-@interface NormalViewController : UIViewController
+@interface NormalViewController : CollectionViewBaseViewController
 
 @end

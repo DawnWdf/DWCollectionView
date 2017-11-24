@@ -12,6 +12,9 @@
 #import "DWMapperModel.h"
 
 @interface DWCollectionView()
+{
+    DWCollectionDelegateMaker *_maker_ojb;
+}
 
 @property (nonatomic, strong) DWCollectionViewDelegate *dwViewDelegate;
 @property (nonatomic, strong) DWCollectionDataSource *dwDataSource;
@@ -47,30 +50,32 @@
     if (!maker) {
         return;
     }
+    if (!_maker_ojb) {
+        DWCollectionDelegateMaker *maker_ojb = [[DWCollectionDelegateMaker alloc] init];
+        _maker_ojb = maker_ojb;
+    }
+    maker(_maker_ojb);
     
-    DWCollectionDelegateMaker *maker_ojb = [[DWCollectionDelegateMaker alloc] init];
-    maker(maker_ojb);
-    
-    for (DWMapperModel *mapperModel in maker_ojb.cellRegister.allValues) {
+    for (DWMapperModel *mapperModel in _maker_ojb.cellRegister.allValues) {
         [self registerClass:NSClassFromString(mapperModel.viewClass) forCellWithReuseIdentifier:mapperModel.viewClass];
     }
     
-    for (DWMapperModel *mapperModel in maker_ojb.headerRegister.allValues) {
+    for (DWMapperModel *mapperModel in _maker_ojb.headerRegister.allValues) {
         [self registerClass:NSClassFromString(mapperModel.viewClass) forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:mapperModel.viewClass];
     }
     
-    for (DWMapperModel *mapperModel in maker_ojb.footerRegister.allValues) {
+    for (DWMapperModel *mapperModel in _maker_ojb.footerRegister.allValues) {
         [self registerClass:NSClassFromString(mapperModel.viewClass) forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:mapperModel.viewClass];
     }
     NSMutableDictionary *configerDic = [NSMutableDictionary dictionary];
-    if (maker_ojb.cellRegister.count) {
-        [configerDic setObject:maker_ojb.cellRegister forKey:@"cell"];
+    if (_maker_ojb.cellRegister.count) {
+        [configerDic setObject:_maker_ojb.cellRegister forKey:@"cell"];
     }
-    if (maker_ojb.headerRegister.count) {
-        [configerDic setObject:maker_ojb.headerRegister forKey:@"header"];
+    if (_maker_ojb.headerRegister.count) {
+        [configerDic setObject:_maker_ojb.headerRegister forKey:@"header"];
     }
-    if (maker_ojb.footerRegister.count) {
-        [configerDic setObject:maker_ojb.footerRegister forKey:@"footer"];
+    if (_maker_ojb.footerRegister.count) {
+        [configerDic setObject:_maker_ojb.footerRegister forKey:@"footer"];
     }
     self.dwViewDelegate.configer = configerDic;
     self.dwViewDelegate.originalDelegate = self.originalDelegate;

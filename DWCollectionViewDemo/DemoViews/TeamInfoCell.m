@@ -20,12 +20,13 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+       
+        
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.width)];
+        [self.contentView addSubview:imageView];
+        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame), frame.size.width, frame.size.height - CGRectGetMaxX(imageView.frame))];
         tLabel.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.2];
         tLabel.textColor = [UIColor blackColor];
-        
-        UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
-        [self.contentView addSubview:imageView];
         [self.contentView addSubview:tLabel];
 
         self.logoImageView = imageView;
@@ -39,7 +40,9 @@
         NSString *logoString = [(TeamInfo *)data teamLogoUrl];
         if (logoString && logoString.length) {
             
-            //[self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
+            [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
+        }else{
+            self.logoImageView.image = nil;
         }
     }
 }

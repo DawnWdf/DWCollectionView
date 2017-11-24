@@ -23,20 +23,21 @@
 		CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919391F67BA68002DD31B /* DWCollectionViewCell.m */; };
 		CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */; };
 		CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */; };
-		CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
-		CF1919431F67BF5B002DD31B /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */; };
-		CF2FBD2F1F98741200247FDB /* GDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FBD2E1F98741200247FDB /* GDemoViewController.m */; };
-		CF2FBD341F98756600247FDB /* IconModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FBD331F98756500247FDB /* IconModel.m */; };
-		CF2FBD371F98757E00247FDB /* IconCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2FBD361F98757E00247FDB /* IconCollectionViewCell.m */; };
+		CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */; };
+		CF4BBC871FC7C6C60007EF74 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC851FC7C6C60007EF74 /* TeamInfo.m */; };
+		CF4BBC881FC7C6C60007EF74 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC861FC7C6C60007EF74 /* LeagueInfo.m */; };
+		CF4BBC8B1FC7C6CD0007EF74 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC8A1FC7C6CD0007EF74 /* TeamInfoCell.m */; };
+		CF4BBC961FC7C7170007EF74 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC8E1FC7C7170007EF74 /* NSObject+Class.m */; };
+		CF4BBC971FC7C7170007EF74 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC901FC7C7170007EF74 /* NSObject+Coding.m */; };
+		CF4BBC981FC7C7170007EF74 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */; };
+		CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC951FC7C7170007EF74 /* UIImage+DWViewShot.m */; };
+		CF4BBC9C1FC7D5730007EF74 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
-		CF71D4661F8DB1F400E8FD99 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4631F8CF2DF00E8FD99 /* NSObject+Coding.m */; };
-		CF71D4671F8DB1F400E8FD99 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4651F8DB15E00E8FD99 /* NSObject+Class.m */; };
 		CF85BC6C1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */; };
 		CF85BC6D1FA4396E000A9D5A /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */; };
 		CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */; };
-		CF95556D1F70EE9B007A4B32 /* UIImage+DWViewShot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
 		CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B0C1F2AE65900D7BBA8 /* ViewController.m */; };
@@ -44,10 +45,6 @@
 		CFBD7B121F2AE65900D7BBA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */; };
 		CFBD7B151F2AE65900D7BBA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */; };
 		CFBD7B201F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B1F1F2AE65900D7BBA8 /* DWCollectionViewDemoTests.m */; };
-		CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */; };
-		CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */; };
-		CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */; };
-		CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */; };
 		CFBD7B721F2AE75E00D7BBA8 /* DWCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */; };
 		CFBD7B791F2AE75E00D7BBA8 /* DWCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */; };
 		CFBD7B7B1F2AE75E00D7BBA8 /* DWCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,28 +133,34 @@
 		CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFooterCollectionReusableView.m; sourceTree = "<group>"; };
 		CF19193C1F67BA68002DD31B /* DWHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWHeaderCollectionReusableView.h; sourceTree = "<group>"; };
 		CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWHeaderCollectionReusableView.m; sourceTree = "<group>"; };
-		CF2FBD2D1F98741200247FDB /* GDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDemoViewController.h; sourceTree = "<group>"; };
-		CF2FBD2E1F98741200247FDB /* GDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDemoViewController.m; sourceTree = "<group>"; };
-		CF2FBD321F98756500247FDB /* IconModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconModel.h; sourceTree = "<group>"; };
-		CF2FBD331F98756500247FDB /* IconModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconModel.m; sourceTree = "<group>"; };
-		CF2FBD351F98757E00247FDB /* IconCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconCollectionViewCell.h; sourceTree = "<group>"; };
-		CF2FBD361F98757E00247FDB /* IconCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconCollectionViewCell.m; sourceTree = "<group>"; };
+		CF4BBC801FC7C4270007EF74 /* CollectionViewBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewBaseViewController.h; sourceTree = "<group>"; };
+		CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewBaseViewController.m; sourceTree = "<group>"; };
+		CF4BBC831FC7C6C60007EF74 /* LeagueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueInfo.h; sourceTree = "<group>"; };
+		CF4BBC841FC7C6C60007EF74 /* TeamInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfo.h; sourceTree = "<group>"; };
+		CF4BBC851FC7C6C60007EF74 /* TeamInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfo.m; sourceTree = "<group>"; };
+		CF4BBC861FC7C6C60007EF74 /* LeagueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueInfo.m; sourceTree = "<group>"; };
+		CF4BBC891FC7C6CD0007EF74 /* TeamInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoCell.h; sourceTree = "<group>"; };
+		CF4BBC8A1FC7C6CD0007EF74 /* TeamInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoCell.m; sourceTree = "<group>"; };
+		CF4BBC8D1FC7C7170007EF74 /* NSObject+Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Class.h"; sourceTree = "<group>"; };
+		CF4BBC8E1FC7C7170007EF74 /* NSObject+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Class.m"; sourceTree = "<group>"; };
+		CF4BBC8F1FC7C7170007EF74 /* NSObject+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
+		CF4BBC901FC7C7170007EF74 /* NSObject+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
+		CF4BBC911FC7C7170007EF74 /* NSObject+MulArgPerformSel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MulArgPerformSel.h"; sourceTree = "<group>"; };
+		CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MulArgPerformSel.m"; sourceTree = "<group>"; };
+		CF4BBC941FC7C7170007EF74 /* UIImage+DWViewShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DWViewShot.h"; sourceTree = "<group>"; };
+		CF4BBC951FC7C7170007EF74 /* UIImage+DWViewShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DWViewShot.m"; sourceTree = "<group>"; };
+		CF4BBC9A1FC7D5730007EF74 /* LeagueHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueHeaderReusableView.h; sourceTree = "<group>"; };
+		CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueHeaderReusableView.m; sourceTree = "<group>"; };
 		CF71D4521F8CA2A700E8FD99 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CF71D4531F8CA2A700E8FD99 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
 		CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
 		CF71D45A1F8CA4C100E8FD99 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		CF71D45B1F8CA4C100E8FD99 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		CF71D4621F8CF2DF00E8FD99 /* NSObject+Coding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
-		CF71D4631F8CF2DF00E8FD99 /* NSObject+Coding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
-		CF71D4641F8DB15E00E8FD99 /* NSObject+Class.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Class.h"; sourceTree = "<group>"; };
-		CF71D4651F8DB15E00E8FD99 /* NSObject+Class.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Class.m"; sourceTree = "<group>"; };
 		CF85BC6A1FA438F7000A9D5A /* DWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
-		CF95556B1F70EE9B007A4B32 /* UIImage+DWViewShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DWViewShot.h"; sourceTree = "<group>"; };
-		CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DWViewShot.m"; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B061F2AE65900D7BBA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -188,16 +191,6 @@
 		CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWProtocolMethodImplementation.m; sourceTree = "<group>"; };
 		CFBD7B451F2AE68200D7BBA8 /* DWSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWSection.h; sourceTree = "<group>"; };
 		CFBD7B461F2AE68200D7BBA8 /* DWSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWSection.m; sourceTree = "<group>"; };
-		CFBD7B481F2AE68200D7BBA8 /* LeagueHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueHeaderReusableView.h; sourceTree = "<group>"; };
-		CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueHeaderReusableView.m; sourceTree = "<group>"; };
-		CFBD7B4A1F2AE68200D7BBA8 /* LeagueInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueInfo.h; sourceTree = "<group>"; };
-		CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueInfo.m; sourceTree = "<group>"; };
-		CFBD7B4C1F2AE68200D7BBA8 /* TeamInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfo.h; sourceTree = "<group>"; };
-		CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfo.m; sourceTree = "<group>"; };
-		CFBD7B4E1F2AE68200D7BBA8 /* TeamInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamInfoCell.h; sourceTree = "<group>"; };
-		CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamInfoCell.m; sourceTree = "<group>"; };
-		CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MulArgPerformSel.h"; sourceTree = "<group>"; };
-		CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MulArgPerformSel.m"; sourceTree = "<group>"; };
 		CFBD7B691F2AE75E00D7BBA8 /* DWCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DWCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B6B1F2AE75E00D7BBA8 /* DWCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWCollection.h; sourceTree = "<group>"; };
 		CFBD7B6C1F2AE75E00D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -282,8 +275,10 @@
 		CF2FBD301F98754200247FDB /* DemoViews */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FBD351F98757E00247FDB /* IconCollectionViewCell.h */,
-				CF2FBD361F98757E00247FDB /* IconCollectionViewCell.m */,
+				CF4BBC891FC7C6CD0007EF74 /* TeamInfoCell.h */,
+				CF4BBC8A1FC7C6CD0007EF74 /* TeamInfoCell.m */,
+				CF4BBC9A1FC7D5730007EF74 /* LeagueHeaderReusableView.h */,
+				CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */,
 			);
 			path = DemoViews;
 			sourceTree = "<group>";
@@ -291,10 +286,34 @@
 		CF2FBD311F98754300247FDB /* DemoModels */ = {
 			isa = PBXGroup;
 			children = (
-				CF2FBD321F98756500247FDB /* IconModel.h */,
-				CF2FBD331F98756500247FDB /* IconModel.m */,
+				CF4BBC831FC7C6C60007EF74 /* LeagueInfo.h */,
+				CF4BBC861FC7C6C60007EF74 /* LeagueInfo.m */,
+				CF4BBC841FC7C6C60007EF74 /* TeamInfo.h */,
+				CF4BBC851FC7C6C60007EF74 /* TeamInfo.m */,
 			);
 			path = DemoModels;
+			sourceTree = "<group>";
+		};
+		CF4BBC8C1FC7C7170007EF74 /* NSObjectExtention */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBC8D1FC7C7170007EF74 /* NSObject+Class.h */,
+				CF4BBC8E1FC7C7170007EF74 /* NSObject+Class.m */,
+				CF4BBC8F1FC7C7170007EF74 /* NSObject+Coding.h */,
+				CF4BBC901FC7C7170007EF74 /* NSObject+Coding.m */,
+				CF4BBC911FC7C7170007EF74 /* NSObject+MulArgPerformSel.h */,
+				CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */,
+			);
+			path = NSObjectExtention;
+			sourceTree = "<group>";
+		};
+		CF4BBC931FC7C7170007EF74 /* UIImageExtention */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBC941FC7C7170007EF74 /* UIImage+DWViewShot.h */,
+				CF4BBC951FC7C7170007EF74 /* UIImage+DWViewShot.m */,
+			);
+			path = UIImageExtention;
 			sourceTree = "<group>";
 		};
 		CF71D4551F8CA2FA00E8FD99 /* DemoVCs */ = {
@@ -302,8 +321,8 @@
 			children = (
 				CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */,
 				CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */,
-				CF2FBD2D1F98741200247FDB /* GDemoViewController.h */,
-				CF2FBD2E1F98741200247FDB /* GDemoViewController.m */,
+				CF4BBC801FC7C4270007EF74 /* CollectionViewBaseViewController.h */,
+				CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */,
 			);
 			path = DemoVCs;
 			sourceTree = "<group>";
@@ -320,20 +339,10 @@
 		CF71D4601F8CF2DF00E8FD99 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				CF71D4611F8CF2DF00E8FD99 /* NSObject */,
+				CF4BBC8C1FC7C7170007EF74 /* NSObjectExtention */,
+				CF4BBC931FC7C7170007EF74 /* UIImageExtention */,
 			);
 			path = Extention;
-			sourceTree = "<group>";
-		};
-		CF71D4611F8CF2DF00E8FD99 /* NSObject */ = {
-			isa = PBXGroup;
-			children = (
-				CF71D4621F8CF2DF00E8FD99 /* NSObject+Coding.h */,
-				CF71D4631F8CF2DF00E8FD99 /* NSObject+Coding.m */,
-				CF71D4641F8DB15E00E8FD99 /* NSObject+Class.h */,
-				CF71D4651F8DB15E00E8FD99 /* NSObject+Class.m */,
-			);
-			path = NSObject;
 			sourceTree = "<group>";
 		};
 		CF85BC691FA438F7000A9D5A /* DWCollectionLayout */ = {
@@ -354,15 +363,6 @@
 				CF0370CD1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m */,
 			);
 			path = FlowLayout;
-			sourceTree = "<group>";
-		};
-		CF95556A1F70EE75007A4B32 /* UIImageExtention */ = {
-			isa = PBXGroup;
-			children = (
-				CF95556B1F70EE9B007A4B32 /* UIImage+DWViewShot.h */,
-				CF95556C1F70EE9B007A4B32 /* UIImage+DWViewShot.m */,
-			);
-			path = UIImageExtention;
 			sourceTree = "<group>";
 		};
 		CFBD7AF91F2AE65900D7BBA8 = {
@@ -408,8 +408,6 @@
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CF9555661F6A28AE007A4B32 /* FlowLayout */,
 				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
-				CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */,
-				CF95556A1F70EE75007A4B32 /* UIImageExtention */,
 				CFBD7B111F2AE65900D7BBA8 /* Assets.xcassets */,
 				CFBD7B131F2AE65900D7BBA8 /* LaunchScreen.storyboard */,
 				CFBD7B161F2AE65900D7BBA8 /* Info.plist */,
@@ -515,25 +513,8 @@
 				CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */,
 				CF19193C1F67BA68002DD31B /* DWHeaderCollectionReusableView.h */,
 				CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */,
-				CFBD7B481F2AE68200D7BBA8 /* LeagueHeaderReusableView.h */,
-				CFBD7B491F2AE68200D7BBA8 /* LeagueHeaderReusableView.m */,
-				CFBD7B4A1F2AE68200D7BBA8 /* LeagueInfo.h */,
-				CFBD7B4B1F2AE68200D7BBA8 /* LeagueInfo.m */,
-				CFBD7B4C1F2AE68200D7BBA8 /* TeamInfo.h */,
-				CFBD7B4D1F2AE68200D7BBA8 /* TeamInfo.m */,
-				CFBD7B4E1F2AE68200D7BBA8 /* TeamInfoCell.h */,
-				CFBD7B4F1F2AE68200D7BBA8 /* TeamInfoCell.m */,
 			);
 			path = EgModelCell;
-			sourceTree = "<group>";
-		};
-		CFBD7B501F2AE68200D7BBA8 /* NSObjectExtention */ = {
-			isa = PBXGroup;
-			children = (
-				CFBD7B511F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.h */,
-				CFBD7B521F2AE68200D7BBA8 /* NSObject+MulArgPerformSel.m */,
-			);
-			path = NSObjectExtention;
 			sourceTree = "<group>";
 		};
 		CFBD7B6A1F2AE75E00D7BBA8 /* DWCollection */ = {
@@ -758,32 +739,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2FBD371F98757E00247FDB /* IconCollectionViewCell.m in Sources */,
-				CF71D4661F8DB1F400E8FD99 /* NSObject+Coding.m in Sources */,
-				CF71D4671F8DB1F400E8FD99 /* NSObject+Class.m in Sources */,
-				CF1919411F67BB03002DD31B /* NSObject+MulArgPerformSel.m in Sources */,
+				CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */,
 				CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */,
 				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
+				CF4BBC961FC7C7170007EF74 /* NSObject+Class.m in Sources */,
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
-				CFBD7B611F2AE68200D7BBA8 /* TeamInfo.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
-				CFBD7B621F2AE68200D7BBA8 /* TeamInfoCell.m in Sources */,
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
-				CFBD7B601F2AE68200D7BBA8 /* LeagueInfo.m in Sources */,
 				CF85BC6C1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m in Sources */,
 				CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */,
+				CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */,
+				CF4BBC8B1FC7C6CD0007EF74 /* TeamInfoCell.m in Sources */,
+				CF4BBC9C1FC7D5730007EF74 /* LeagueHeaderReusableView.m in Sources */,
+				CF4BBC871FC7C6C60007EF74 /* TeamInfo.m in Sources */,
 				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
-				CF95556D1F70EE9B007A4B32 /* UIImage+DWViewShot.m in Sources */,
 				CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */,
-				CF2FBD341F98756600247FDB /* IconModel.m in Sources */,
 				CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */,
+				CF4BBC881FC7C6C60007EF74 /* LeagueInfo.m in Sources */,
 				CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */,
-				CF2FBD2F1F98741200247FDB /* GDemoViewController.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,
-				CFBD7B5F1F2AE68200D7BBA8 /* LeagueHeaderReusableView.m in Sources */,
+				CF4BBC981FC7C7170007EF74 /* NSObject+MulArgPerformSel.m in Sources */,
 				CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */,
+				CF4BBC971FC7C7170007EF74 /* NSObject+Coding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,7 +780,6 @@
 			files = (
 				CF85BC6D1FA4396E000A9D5A /* DWCollectionViewFlowLayout.m in Sources */,
 				CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */,
-				CF1919431F67BF5B002DD31B /* NSObject+MulArgPerformSel.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,
 				CFBD7BA81F2AE9E800D7BBA8 /* DWCollectionCellMaker.m in Sources */,
