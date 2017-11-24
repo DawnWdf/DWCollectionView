@@ -28,21 +28,30 @@
         }
     }
     NSValue *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
-    UIEdgeInsets insets = UIEdgeInsetsZero;
-    [value getValue:&insets];
-    return insets;
+    if (value) {
+        UIEdgeInsets insets = UIEdgeInsetsZero;
+        [value getValue:&insets];
+        return insets;
+    }
+    if(collectionViewLayout){
+        if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
+            return [(UICollectionViewFlowLayout *)collectionViewLayout sectionInset];
+        }
+    }
+    return UIEdgeInsetsZero;
 }
 
 
 
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    
     NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
     
     if (value) {
         return [value floatValue];
-    }else if(collectionViewLayout){
+    }
+    
+    if(collectionViewLayout){
         if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
             return [(UICollectionViewFlowLayout *)collectionViewLayout minimumLineSpacing];
         }
@@ -53,7 +62,8 @@
     NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
     if (value) {
         return [value floatValue];
-    }else if(collectionViewLayout){
+    }
+    if(collectionViewLayout){
         if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
             return [(UICollectionViewFlowLayout *)collectionViewLayout minimumInteritemSpacing];
         }
@@ -71,18 +81,13 @@
         if (cellConfiger.itemSizeBlock) {
             
             return cellConfiger.itemSizeBlock(indexPath, [self.data[indexPath.section] items][indexPath.row]);
-        }else if ([self.originalDelegate respondsToSelector:_cmd]){
-            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
-        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
-            return [(UICollectionViewFlowLayout *)collectionViewLayout itemSize];
-            
-        } else {
-            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN)",__func__);
         }
         
-    } else if ([self.originalDelegate respondsToSelector:_cmd]){
+    }
+    if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
-    }else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+    }
+    if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
         return [(UICollectionViewFlowLayout *)collectionViewLayout itemSize];
         
     }
@@ -101,18 +106,13 @@
         if (cellConfiger.sizeBlock) {
             
             return cellConfiger.sizeBlock(collectionViewLayout,section,self.data[section].headerData);
-        } else if ([self.originalDelegate respondsToSelector:_cmd]){
-            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
-        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
-            return [(UICollectionViewFlowLayout *)collectionViewLayout headerReferenceSize];
-            
-        } else {
-            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeZero",__func__);
         }
         
-    } else if ([self.originalDelegate respondsToSelector:_cmd]){
+    }
+    if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
-    } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+    }
+    if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
         return [(UICollectionViewFlowLayout *)collectionViewLayout headerReferenceSize];
         
     }
@@ -132,18 +132,13 @@
         if (cellConfiger.sizeBlock) {
             
             return cellConfiger.sizeBlock(collectionViewLayout, section, self.data[section].footerData);
-        } else if ([self.originalDelegate respondsToSelector:_cmd]){
-            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
-        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
-            return [(UICollectionViewFlowLayout *)collectionViewLayout footerReferenceSize];
-            
-        } else {
-            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeZero",__func__);
         }
         
-    } else if ([self.originalDelegate respondsToSelector:_cmd]){
+    }
+    if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForFooterInSection:section];
-    } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+    }
+    if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
         return [(UICollectionViewFlowLayout *)collectionViewLayout footerReferenceSize];
         
     }
