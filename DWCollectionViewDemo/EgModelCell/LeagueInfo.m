@@ -7,7 +7,8 @@
 //
 
 #import "LeagueInfo.h"
+#import <objc/runtime.h>
 
 @implementation LeagueInfo
-
+DWObjectCodingImplmentation
 @end

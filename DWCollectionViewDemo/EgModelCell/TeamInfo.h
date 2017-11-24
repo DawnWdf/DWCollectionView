@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TeamInfo : NSObject
+@interface TeamInfo : NSObject<NSCoding>
 
 @property (nonatomic, copy) NSString *teamNameCn;
 @property (nonatomic, copy) NSString *teamLogoUrl;

@@ -12,6 +12,7 @@
 #import "DWMapperModel.h"
 #import "DWCollectionCellMaker.h"
 #import "DWCollectionHeaderFooterMaker.h"
+#import "DWCollectionViewFlowLayout.h"
 
 @implementation DWCollectionViewDelegate
 
@@ -19,8 +20,14 @@
 
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    
-    NSValue *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout, nil];
+    if ([collectionViewLayout isKindOfClass:[DWCollectionViewFlowLayout class]]) {
+        DWCollectionViewFlowLayout *viewLayout = (DWCollectionViewFlowLayout *)collectionViewLayout;
+        if (viewLayout.dw_insetForSection) {
+            UIEdgeInsets insets = viewLayout.dw_insetForSection(section);
+            return insets;
+        }
+    }
+    NSValue *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
     UIEdgeInsets insets = UIEdgeInsetsZero;
     [value getValue:&insets];
     return insets;
@@ -33,17 +40,25 @@
     
     NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
     
-    if (!value) {
-        return CGFLOAT_MIN;
+    if (value) {
+        return [value floatValue];
+    }else if(collectionViewLayout){
+        if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
+            return [(UICollectionViewFlowLayout *)collectionViewLayout minimumLineSpacing];
+        }
     }
-    return [value floatValue];
+    return CGFLOAT_MIN;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     NSNumber *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
-    if (!value) {
-        return CGFLOAT_MIN;
+    if (value) {
+        return [value floatValue];
+    }else if(collectionViewLayout){
+        if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]) {
+            return [(UICollectionViewFlowLayout *)collectionViewLayout minimumInteritemSpacing];
+        }
     }
-    return [value floatValue];
+    return CGFLOAT_MIN;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,10 +71,20 @@
         if (cellConfiger.itemSizeBlock) {
             
             return cellConfiger.itemSizeBlock(indexPath, [self.data[indexPath.section] items][indexPath.row]);
+        }else if ([self.originalDelegate respondsToSelector:_cmd]){
+            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+            return [(UICollectionViewFlowLayout *)collectionViewLayout itemSize];
+            
+        } else {
+            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN)",__func__);
         }
         
     } else if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+    }else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+        return [(UICollectionViewFlowLayout *)collectionViewLayout itemSize];
+        
     }
     
     return CGSizeMake(CGFLOAT_MIN, CGFLOAT_MIN);
@@ -76,10 +101,20 @@
         if (cellConfiger.sizeBlock) {
             
             return cellConfiger.sizeBlock(collectionViewLayout,section,self.data[section].headerData);
+        } else if ([self.originalDelegate respondsToSelector:_cmd]){
+            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
+        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+            return [(UICollectionViewFlowLayout *)collectionViewLayout headerReferenceSize];
+            
+        } else {
+            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeZero",__func__);
         }
         
     } else if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
+    } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+        return [(UICollectionViewFlowLayout *)collectionViewLayout headerReferenceSize];
+        
     }
     
     return CGSizeZero;
@@ -97,15 +132,45 @@
         if (cellConfiger.sizeBlock) {
             
             return cellConfiger.sizeBlock(collectionViewLayout, section, self.data[section].footerData);
+        } else if ([self.originalDelegate respondsToSelector:_cmd]){
+            return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForHeaderInSection:section];
+        } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+            return [(UICollectionViewFlowLayout *)collectionViewLayout footerReferenceSize];
+            
+        } else {
+            NSLog(@"请注意%s:没配置block也没有实现代理，默认返回CGSizeZero",__func__);
         }
         
     } else if ([self.originalDelegate respondsToSelector:_cmd]){
         return [self.originalDelegate collectionView:collectionView layout:collectionViewLayout referenceSizeForFooterInSection:section];
+    } else if ([collectionViewLayout isKindOfClass:[UICollectionViewFlowLayout class]]){
+        return [(UICollectionViewFlowLayout *)collectionViewLayout footerReferenceSize];
+        
     }
     
     return CGSizeZero;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *modelString = [self modelStringForCellForIndexPath:indexPath];
+    DWMapperModel *configerModel = self.configer[@"cell"][modelString];
+    
+    if ((configerModel.makerConfig) && [configerModel.makerConfig isKindOfClass:[DWCollectionCellConfiger class]]) {
+        DWCollectionCellConfiger *cellConfiger = (DWCollectionCellConfiger *)configerModel.makerConfig;
+        if (cellConfiger.didSelectBlock) {
+            
+            cellConfiger.didSelectBlock(indexPath, [self.data[indexPath.section] items][indexPath.row]);
+        }
+        
+    }
+      
+    if ([self.originalDelegate respondsToSelector:_cmd]){
+     
+        [self.originalDelegate collectionView:collectionView didSelectItemAtIndexPath:indexPath];
+    }
+}
 #pragma mark - UICollectionViewDelegate
 
 #pragma mark - getter & setter

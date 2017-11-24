@@ -13,11 +13,13 @@ typedef CGSize(^DWCollectionCellItemSizeBlock)(NSIndexPath *indexPath, id data);
 
 typedef void (^DWCollectionCellAdapterBlock)(UICollectionViewCell *cell , NSIndexPath *indexPath, id data);
 
+typedef void(^DWCollectionCellDidSelectBlock)(NSIndexPath*indexPath, id data);
+
 @interface DWCollectionCellConfiger : NSObject
 
 @property (nonatomic, copy) DWCollectionCellItemSizeBlock itemSizeBlock;
 @property (nonatomic, copy) DWCollectionCellAdapterBlock adapterBlock;
-
+@property (nonatomic, copy) DWCollectionCellDidSelectBlock didSelectBlock;
 @end
 
 @interface DWCollectionCellMaker : NSObject
@@ -26,5 +28,6 @@ typedef void (^DWCollectionCellAdapterBlock)(UICollectionViewCell *cell , NSInde
 
 - (DWCollectionCellMaker *(^)(DWCollectionCellItemSizeBlock))itemSize;
 - (DWCollectionCellMaker *(^)(DWCollectionCellAdapterBlock))adapter;
+- (DWCollectionCellMaker *(^)(DWCollectionCellDidSelectBlock))didSelect;
 
 @end

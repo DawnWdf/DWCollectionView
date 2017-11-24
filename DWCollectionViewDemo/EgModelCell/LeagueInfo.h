@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+Coding.h"
 
-@interface LeagueInfo : NSObject
+@interface LeagueInfo : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *leagueTypeCn;
 @property (nonatomic, copy) NSString *season;

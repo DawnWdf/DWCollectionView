@@ -51,6 +51,9 @@
         NSString *modelString = [self modelStringForHeaderForIndexPath:indexPath];
         DWMapperModel *configerModel = self.configer[@"header"][modelString];
         if (!configerModel) {
+            if ([self.originalDelegate respondsToSelector:_cmd]){
+                return [self.originalDelegate collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
+            }
             return nil;
         }
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:configerModel.viewClass forIndexPath:indexPath];
@@ -73,6 +76,9 @@
         NSString *modelString = [self modelStringForFooterForIndexPath:indexPath];
         DWMapperModel *configerModel = self.configer[@"footer"][modelString];
         if (!configerModel) {
+            if ([self.originalDelegate respondsToSelector:_cmd]){
+                return [self.originalDelegate collectionView:collectionView viewForSupplementaryElementOfKind:kind atIndexPath:indexPath];
+            }
             return nil;
         }
         UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:configerModel.viewClass forIndexPath:indexPath];

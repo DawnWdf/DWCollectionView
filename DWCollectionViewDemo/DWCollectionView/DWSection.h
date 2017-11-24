@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DWSection : NSObject
+@interface DWSection : NSObject <NSCoding>
 @property (nonatomic, strong) id headerData;
 @property (nonatomic, strong) id footerData;
 @property (nonatomic, strong) NSArray *items;

@@ -35,7 +35,7 @@
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSourcePrefetching,UICollectionViewDataSource,DWFlowAutoMoveLayoutDelegate,UIScrollViewDelegate>
 
-@property (nonatomic,strong) DWCollectionView *collectionView;
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic, strong) NSMutableArray *list;
 
@@ -48,37 +48,34 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
-    __weak typeof(self) weakSelf = self;
-
     //-----------配置自定义的布局--------------------------------------
-    DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
-//    flowLayout.estimatedItemSize
-    flowLayout.numberOfColumn = 4;
-    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-    flowLayout.lineSpace = 10;
-    flowLayout.interitemSpace = 10;
-    flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
-        return UIEdgeInsetsZero;
-    };
-    flowLayout.footerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
-        return UIEdgeInsetsZero;
-    };
-    
-    flowLayout.headerHeight = 40;
-    flowLayout.footerHeight = 40;
-    flowLayout.delegate = self;
+//    DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
+////    flowLayout.estimatedItemSize
+//    flowLayout.numberOfColumn = 4;
+//    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+//    flowLayout.lineSpace = 10;
+//    flowLayout.interitemSpace = 10;
+//    flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+//        return UIEdgeInsetsZero;
+//    };
+//    flowLayout.footerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+//        return UIEdgeInsetsZero;
+//    };
+//
+//    flowLayout.headerHeight = 40;
+//    flowLayout.footerHeight = 40;
+//    flowLayout.delegate = self;
     
     UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
 //    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
 //    sysLayout.sectionHeadersPinToVisibleBounds = YES;
 //    sysLayout.sectionFootersPinToVisibleBounds = YES;
-    sysLayout.minimumLineSpacing = 50;
+//    sysLayout.minimumLineSpacing = 50;
     //------------创建collectionView--------------------------------------
-    DWCollectionView *cv= [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:flowLayout];
+    UICollectionView *cv= [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:sysLayout];
     cv.backgroundColor = [UIColor whiteColor];
     cv.dataSource = self;
     cv.delegate = self;
-    cv.prefetchDataSource = self;
     [self.view addSubview:cv];
     self.collectionView = cv;
     
@@ -87,7 +84,10 @@
     headerView.backgroundColor = [UIColor grayColor];
 //    [cv addSubview:headerView];
     
+    [self.collectionView registerClass:[TeamInfoCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerClass:[LeagueHeaderReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     //--------------注册cell/header/footer，并绑定数据---------------------------------------------------
+    /*
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
         
         maker.registerCell([TeamInfoCell class],[TeamInfo class])
@@ -98,14 +98,14 @@
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
             [newCell bindData:data];
             [newCell setBackgroundColor:[weakSelf randomColor]];
+        })
+        .didSelect(^(NSIndexPath *indexPath, id data){
+            NSLog(@"did select block : 如果vc中实现了didSelect的代理方法，则在此block后执行");
         });
         
         
         maker.registerHeader([LeagueHeaderReusableView class],[LeagueInfo class])
         .sizeConfiger(^ CGSize (UICollectionViewLayout *layout , NSInteger section, id data){
-#ifdef DEBUG
-//            NSLog(@"%s",__func__);
-#endif
             return CGSizeMake(300, height_header);
         })
         .adapter(^(UICollectionReusableView *reusableView,NSIndexPath *indexPath, id data){
@@ -125,7 +125,7 @@
         });
          
     }];
-    
+   
     //-----------------配置下拉刷新等---------------------------------------------
     self.collectionView.refreshManager = [[DWRefreshManager alloc] initWithScrollView:self.collectionView];
     [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
@@ -140,7 +140,7 @@
         __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
         [strongRefreshManager endFooterRefresh];
     }];
-    
+     */
     //--------------------ios9 拖拽-----------------------------------------------------------
     /*
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0) {
@@ -241,12 +241,12 @@
     }];
     
     self.list = result;
-    [self.collectionView setData:result];
     if ([NSThread isMainThread]) {
+        [self.collectionView reloadData];
         [self updateLayout];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+        [self.collectionView reloadData];
             [self updateLayout];
         });
     }
@@ -273,7 +273,7 @@
                 [self listFrom:resultDic[@"result"]];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
-                    [self.collectionView.refreshManager endHeaderRefresh];
+//                    [self.collectionView.refreshManager endHeaderRefresh];
                 });
             }else{
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -291,13 +291,27 @@
 }
 
 #pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+   
+    return self.list.count;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 0;
+    return [[[self.list objectAtIndex:section] items] count];
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    return nil;
+    TeamInfoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    id data = [[[self.list objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row];
+    [cell bindData:data];
+    return cell;
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    LeagueHeaderReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header" forIndexPath:indexPath];
+    id data = [[self.list objectAtIndex:indexPath.section] headerData];
+    [view bindData:data];
+    return view;
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView canMoveItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
@@ -330,112 +344,40 @@
  -[ViewController collectionView:didSelectItemAtIndexPath:]
  */
 
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-    return YES;
-}
-- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-}
-- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-}
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-    return YES;
-}
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-    return YES;
-} // called when the user taps on an already-selected item in multi-select mode
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-}
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-}
-
-//将要展示cell
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
-//    NSLog(@"%s",__func__);
-
-}
-//将要展示头尾
-- (void)collectionView:(UICollectionView *)collectionView willDisplaySupplementaryView:(UICollectionReusableView *)view forElementKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(8_0) {
-//    NSLog(@"%s",__func__);
-
-}
-//cell划出屏幕
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-}
-//头尾滑动出屏幕
-- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingSupplementaryView:(UICollectionReusableView *)view forElementOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-}
-
-// These methods provide support for copy/paste actions on cells.
-// All three should be implemented if any are.
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%s",__func__);
-
-    return NO;
-}
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
-//    NSLog(@"%s",__func__);
-    return YES;
-}
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(nullable id)sender {
-//    NSLog(@"%s",__func__);
-
-}
-
-// support for custom transition layout
-//- (nonnull UICollectionViewTransitionLayout *)collectionView:(UICollectionView *)collectionView transitionLayoutForOldLayout:(UICollectionViewLayout *)fromLayout newLayout:(UICollectionViewLayout *)toLayout;
-
-// Focus
-- (BOOL)collectionView:(UICollectionView *)collectionView canFocusItemAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(9_0) {
-//    NSLog(@"%s",__func__);
-    return YES;
-}
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context NS_AVAILABLE_IOS(9_0) {
-//    NSLog(@"%s",__func__);
-    return YES;
-}
-- (void)collectionView:(UICollectionView *)collectionView didUpdateFocusInContext:(UICollectionViewFocusUpdateContext *)context withAnimationCoordinator:(UIFocusAnimationCoordinator *)coordinator NS_AVAILABLE_IOS(9_0) {
-//    NSLog(@"%s",__func__);
-
-}
-//- (nullable NSIndexPath *)indexPathForPreferredFocusedViewInCollectionView:(UICollectionView *)collectionView NS_AVAILABLE_IOS(9_0);
-
-//- (NSIndexPath *)collectionView:(UICollectionView *)collectionView targetIndexPathForMoveFromItemAtIndexPath:(NSIndexPath *)originalIndexPath toProposedIndexPath:(NSIndexPath *)proposedIndexPath NS_AVAILABLE_IOS(9_0);
-
-//- (CGPoint)collectionView:(UICollectionView *)collectionView targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset NS_AVAILABLE_IOS(9_0); // customize the content offset to be applied during transition or update animations
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(10, 30, 10, 30);
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 100;
+    return 10;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 40;
+    return 10;
 }
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    id data = [[[self.list objectAtIndex:indexPath.section] items] objectAtIndex:indexPath.row];
+
+    CGSize size = [[(TeamInfo *)data teamNameCn] sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17 weight:UIFontWeightRegular]}];
+
+    
+    return CGSizeMake(size.width + 20, 30);
+    
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    
+    return CGSizeMake(320, 40);
+}
+
+
 
 #pragma mark - UICollectionViewDataSourcePrefetching
 - (void)collectionView:(UICollectionView *)collectionView prefetchItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths NS_AVAILABLE_IOS(10_0) {
 //    NSLog(@"%s   ---------    %@",__func__, indexPaths);
 }
-#pragma mark - DWFlowAutoMoveLayoutDelegate
 #pragma mark - DWFlowAutoMoveLayoutDelegate
 - (BOOL)dw_collectionView:(UICollectionView *)collectionView canMoveItemAtIndex:(NSIndexPath *)indexPath {
     if (indexPath.row == 3) {

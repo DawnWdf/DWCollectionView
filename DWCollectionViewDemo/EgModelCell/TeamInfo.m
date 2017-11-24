@@ -7,7 +7,7 @@
 //
 
 #import "TeamInfo.h"
-
+#import "NSObject+Coding.h"
 @implementation TeamInfo
-
+DWObjectCodingImplmentation
 @end

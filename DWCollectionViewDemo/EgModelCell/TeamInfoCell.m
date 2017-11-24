@@ -20,7 +20,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, 40)];
+        UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         tLabel.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.2];
         tLabel.textColor = [UIColor blackColor];
         

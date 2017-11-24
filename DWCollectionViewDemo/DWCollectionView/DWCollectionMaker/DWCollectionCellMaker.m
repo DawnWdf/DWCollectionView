@@ -36,4 +36,13 @@
         return self;
     };
 }
+
+- (DWCollectionCellMaker *(^)(DWCollectionCellDidSelectBlock))didSelect {
+   
+    return ^DWCollectionCellMaker *(DWCollectionCellDidSelectBlock block) {
+        self.cellConfiger.didSelectBlock = block;
+        return self;
+    };
+}
+
 @end
