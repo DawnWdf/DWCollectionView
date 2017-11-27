@@ -9,4 +9,6 @@
 #import "DWCollectionViewCell.h"
 @interface TeamInfoCell : DWCollectionViewCell
 
+@property (nonatomic) BOOL showImage;
+
 @end

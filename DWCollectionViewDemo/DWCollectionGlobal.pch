@@ -16,3 +16,5 @@
 #import <MJRefresh/MJRefresh.h>
 
 #endif /* DWCollectionGlobal_pch */
+
+#define _LineColor  [UIColor colorWithWhite:1.0 alpha:0.8]

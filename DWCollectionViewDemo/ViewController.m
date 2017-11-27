@@ -49,22 +49,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self requestData];
     //-----------配置自定义的布局--------------------------------------
-//    DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
-////    flowLayout.estimatedItemSize
-//    flowLayout.numberOfColumn = 4;
-//    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
-//    flowLayout.lineSpace = 10;
-//    flowLayout.interitemSpace = 10;
-//    flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
-//        return UIEdgeInsetsZero;
-//    };
-//    flowLayout.footerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
-//        return UIEdgeInsetsZero;
-//    };
-//
-//    flowLayout.headerHeight = 40;
-//    flowLayout.footerHeight = 40;
-//    flowLayout.delegate = self;
+    DWFlowAutoMoveLayout *flowLayout = [[DWFlowAutoMoveLayout alloc] init];
+//    flowLayout.estimatedItemSize
+    flowLayout.numberOfColumn = 4;
+    flowLayout.boundEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
+    flowLayout.lineSpace = 10;
+    flowLayout.interitemSpace = 10;
+    flowLayout.headerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+        return UIEdgeInsetsZero;
+    };
+    flowLayout.footerEdgeInsets = ^UIEdgeInsets(NSInteger section) {
+        return UIEdgeInsetsZero;
+    };
+
+    flowLayout.headerHeight = 40;
+    flowLayout.footerHeight = 40;
+    flowLayout.delegate = self;
     
     UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
 //    sysLayout.estimatedItemSize = CGSizeMake(100, 150);

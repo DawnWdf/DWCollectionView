@@ -1,5 +1,5 @@
 //
-//  GASCollectionViewFlowLayout.m
+//  CollectionViewFlowLayout.m
 //  GomeAfterSales
 //
 //  Created by Dawn Wang on 2017/10/28.

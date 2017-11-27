@@ -38,11 +38,20 @@
     if ([data isKindOfClass:[TeamInfo class]]) {
         self.titleLabel.text = [(TeamInfo *)data teamNameCn];
         NSString *logoString = [(TeamInfo *)data teamLogoUrl];
-        if (logoString && logoString.length) {
+        if (logoString && logoString.length && self.showImage) {
             
             [self.logoImageView sd_setImageWithURL:[NSURL URLWithString:logoString]];
         }else{
             self.logoImageView.image = nil;
+        }
+        CGRect frame = self.frame;
+        if (self.showImage) {
+            self.logoImageView.frame = CGRectMake(0, 0, frame.size.width, frame.size.width);
+            self.titleLabel.frame = CGRectMake(0, CGRectGetMaxY(self.logoImageView.frame), frame.size.width, frame.size.height - CGRectGetMaxX(self.logoImageView.frame));
+            
+        }else {
+            self.logoImageView.frame = CGRectZero;
+            self.titleLabel.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         }
     }
 }

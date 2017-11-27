@@ -32,6 +32,16 @@
 		CF4BBC981FC7C7170007EF74 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */; };
 		CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC951FC7C7170007EF74 /* UIImage+DWViewShot.m */; };
 		CF4BBC9C1FC7D5730007EF74 /* LeagueHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */; };
+		CF4BBCA21FC8277C0007EF74 /* UserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCA01FC8277C0007EF74 /* UserCenterViewController.m */; };
+		CF4BBCAC1FC827830007EF74 /* UserCenterEntryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCA51FC827830007EF74 /* UserCenterEntryModel.m */; };
+		CF4BBCAD1FC827830007EF74 /* UserCenterHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCA71FC827830007EF74 /* UserCenterHeaderModel.m */; };
+		CF4BBCAE1FC827830007EF74 /* UserCenterInforModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCA91FC827830007EF74 /* UserCenterInforModel.m */; };
+		CF4BBCB91FC827890007EF74 /* UserCenterEntryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCB21FC827890007EF74 /* UserCenterEntryCollectionViewCell.m */; };
+		CF4BBCBA1FC827890007EF74 /* UserCenterHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCB41FC827890007EF74 /* UserCenterHeaderCollectionReusableView.m */; };
+		CF4BBCBB1FC827890007EF74 /* UserCenterInforCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCB61FC827890007EF74 /* UserCenterInforCollectionViewCell.m */; };
+		CF4BBCC01FC8282E0007EF74 /* UserCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCBF1FC8282E0007EF74 /* UserCenterViewModel.m */; };
+		CF4BBCC41FC8290D0007EF74 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC31FC8290D0007EF74 /* BadgeView.m */; };
+		CF4BBCC81FCBBB040007EF74 /* FlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
@@ -151,6 +161,26 @@
 		CF4BBC951FC7C7170007EF74 /* UIImage+DWViewShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DWViewShot.m"; sourceTree = "<group>"; };
 		CF4BBC9A1FC7D5730007EF74 /* LeagueHeaderReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeagueHeaderReusableView.h; sourceTree = "<group>"; };
 		CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeagueHeaderReusableView.m; sourceTree = "<group>"; };
+		CF4BBCA01FC8277C0007EF74 /* UserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewController.m; sourceTree = "<group>"; };
+		CF4BBCA11FC8277C0007EF74 /* UserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterViewController.h; sourceTree = "<group>"; };
+		CF4BBCA41FC827830007EF74 /* UserCenterEntryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterEntryModel.h; sourceTree = "<group>"; };
+		CF4BBCA51FC827830007EF74 /* UserCenterEntryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterEntryModel.m; sourceTree = "<group>"; };
+		CF4BBCA61FC827830007EF74 /* UserCenterHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterHeaderModel.h; sourceTree = "<group>"; };
+		CF4BBCA71FC827830007EF74 /* UserCenterHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterHeaderModel.m; sourceTree = "<group>"; };
+		CF4BBCA81FC827830007EF74 /* UserCenterInforModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterInforModel.h; sourceTree = "<group>"; };
+		CF4BBCA91FC827830007EF74 /* UserCenterInforModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterInforModel.m; sourceTree = "<group>"; };
+		CF4BBCB11FC827890007EF74 /* UserCenterEntryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterEntryCollectionViewCell.h; sourceTree = "<group>"; };
+		CF4BBCB21FC827890007EF74 /* UserCenterEntryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterEntryCollectionViewCell.m; sourceTree = "<group>"; };
+		CF4BBCB31FC827890007EF74 /* UserCenterHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		CF4BBCB41FC827890007EF74 /* UserCenterHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterHeaderCollectionReusableView.m; sourceTree = "<group>"; };
+		CF4BBCB51FC827890007EF74 /* UserCenterInforCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterInforCollectionViewCell.h; sourceTree = "<group>"; };
+		CF4BBCB61FC827890007EF74 /* UserCenterInforCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterInforCollectionViewCell.m; sourceTree = "<group>"; };
+		CF4BBCBE1FC8282E0007EF74 /* UserCenterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterViewModel.h; sourceTree = "<group>"; };
+		CF4BBCBF1FC8282E0007EF74 /* UserCenterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCenterViewModel.m; sourceTree = "<group>"; };
+		CF4BBCC21FC8290D0007EF74 /* BadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeView.h; sourceTree = "<group>"; };
+		CF4BBCC31FC8290D0007EF74 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
+		CF4BBCC61FCBBB030007EF74 /* FlowLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowLayoutViewController.h; sourceTree = "<group>"; };
+		CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlowLayoutViewController.m; sourceTree = "<group>"; };
 		CF71D4521F8CA2A700E8FD99 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CF71D4531F8CA2A700E8FD99 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
@@ -279,6 +309,7 @@
 				CF4BBC8A1FC7C6CD0007EF74 /* TeamInfoCell.m */,
 				CF4BBC9A1FC7D5730007EF74 /* LeagueHeaderReusableView.h */,
 				CF4BBC9B1FC7D5730007EF74 /* LeagueHeaderReusableView.m */,
+				CF4BBCB01FC827890007EF74 /* UserCenter */,
 			);
 			path = DemoViews;
 			sourceTree = "<group>";
@@ -290,6 +321,7 @@
 				CF4BBC861FC7C6C60007EF74 /* LeagueInfo.m */,
 				CF4BBC841FC7C6C60007EF74 /* TeamInfo.h */,
 				CF4BBC851FC7C6C60007EF74 /* TeamInfo.m */,
+				CF4BBCA31FC827830007EF74 /* UserCenter */,
 			);
 			path = DemoModels;
 			sourceTree = "<group>";
@@ -316,11 +348,61 @@
 			path = UIImageExtention;
 			sourceTree = "<group>";
 		};
+		CF4BBCA31FC827830007EF74 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBCA41FC827830007EF74 /* UserCenterEntryModel.h */,
+				CF4BBCA51FC827830007EF74 /* UserCenterEntryModel.m */,
+				CF4BBCA61FC827830007EF74 /* UserCenterHeaderModel.h */,
+				CF4BBCA71FC827830007EF74 /* UserCenterHeaderModel.m */,
+				CF4BBCA81FC827830007EF74 /* UserCenterInforModel.h */,
+				CF4BBCA91FC827830007EF74 /* UserCenterInforModel.m */,
+				CF4BBCBD1FC8282E0007EF74 /* ViewModel */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		CF4BBCB01FC827890007EF74 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBCB11FC827890007EF74 /* UserCenterEntryCollectionViewCell.h */,
+				CF4BBCB21FC827890007EF74 /* UserCenterEntryCollectionViewCell.m */,
+				CF4BBCB31FC827890007EF74 /* UserCenterHeaderCollectionReusableView.h */,
+				CF4BBCB41FC827890007EF74 /* UserCenterHeaderCollectionReusableView.m */,
+				CF4BBCB51FC827890007EF74 /* UserCenterInforCollectionViewCell.h */,
+				CF4BBCB61FC827890007EF74 /* UserCenterInforCollectionViewCell.m */,
+				CF4BBCC11FC8290D0007EF74 /* BadgeView */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		CF4BBCBD1FC8282E0007EF74 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBCBE1FC8282E0007EF74 /* UserCenterViewModel.h */,
+				CF4BBCBF1FC8282E0007EF74 /* UserCenterViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF4BBCC11FC8290D0007EF74 /* BadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBCC21FC8290D0007EF74 /* BadgeView.h */,
+				CF4BBCC31FC8290D0007EF74 /* BadgeView.m */,
+			);
+			path = BadgeView;
+			sourceTree = "<group>";
+		};
 		CF71D4551F8CA2FA00E8FD99 /* DemoVCs */ = {
 			isa = PBXGroup;
 			children = (
 				CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */,
 				CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */,
+				CF4BBCA11FC8277C0007EF74 /* UserCenterViewController.h */,
+				CF4BBCA01FC8277C0007EF74 /* UserCenterViewController.m */,
+				CF4BBCC61FCBBB030007EF74 /* FlowLayoutViewController.h */,
+				CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */,
 				CF4BBC801FC7C4270007EF74 /* CollectionViewBaseViewController.h */,
 				CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */,
 			);
@@ -741,24 +823,34 @@
 			files = (
 				CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */,
 				CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */,
+				CF4BBCC01FC8282E0007EF74 /* UserCenterViewModel.m in Sources */,
 				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
 				CF4BBC961FC7C7170007EF74 /* NSObject+Class.m in Sources */,
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
+				CF4BBCAC1FC827830007EF74 /* UserCenterEntryModel.m in Sources */,
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
+				CF4BBCA21FC8277C0007EF74 /* UserCenterViewController.m in Sources */,
 				CF85BC6C1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m in Sources */,
 				CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */,
 				CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */,
 				CF4BBC8B1FC7C6CD0007EF74 /* TeamInfoCell.m in Sources */,
+				CF4BBCB91FC827890007EF74 /* UserCenterEntryCollectionViewCell.m in Sources */,
 				CF4BBC9C1FC7D5730007EF74 /* LeagueHeaderReusableView.m in Sources */,
 				CF4BBC871FC7C6C60007EF74 /* TeamInfo.m in Sources */,
 				CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */,
 				CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */,
 				CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */,
 				CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */,
+				CF4BBCC41FC8290D0007EF74 /* BadgeView.m in Sources */,
+				CF4BBCAE1FC827830007EF74 /* UserCenterInforModel.m in Sources */,
+				CF4BBCBA1FC827890007EF74 /* UserCenterHeaderCollectionReusableView.m in Sources */,
 				CF4BBC881FC7C6C60007EF74 /* LeagueInfo.m in Sources */,
+				CF4BBCC81FCBBB040007EF74 /* FlowLayoutViewController.m in Sources */,
+				CF4BBCAD1FC827830007EF74 /* UserCenterHeaderModel.m in Sources */,
 				CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */,
+				CF4BBCBB1FC827890007EF74 /* UserCenterInforCollectionViewCell.m in Sources */,
 				CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */,
 				CF4BBC981FC7C7170007EF74 /* NSObject+MulArgPerformSel.m in Sources */,
 				CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */,

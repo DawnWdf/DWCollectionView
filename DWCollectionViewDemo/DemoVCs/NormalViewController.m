@@ -46,21 +46,19 @@
 
 - (void)configCollectionView {
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
-        
         maker.registerCell([TeamInfoCell class],[TeamInfo class])
         .itemSize(^(NSIndexPath *indexPath, id data){
             return CGSizeMake(100, 140);
         })
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
+            newCell.showImage = YES;
             [newCell bindData:data];
         })
         .didSelect(^(NSIndexPath *indexPath, id data){
             NSLog(@"did select block : 如果vc中实现了didSelect的代理方法，则在此block后执行");
         });
  
-        
-        
     }];
     
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {

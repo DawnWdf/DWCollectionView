@@ -14,6 +14,8 @@
 #import "MainViewController.h"
 #import "NormalViewController.h"
 #import "DataManager.h"
+#import "UserCenterViewController.h"
+#import "FlowLayoutViewController.h"
 
 @interface MainViewController ()
 
@@ -49,7 +51,11 @@
     [self.navigationController pushViewController:[NormalViewController new] animated:YES];
 }
 - (IBAction)pushToGDemoVC:(id)sender {
-//    [self.navigationController pushViewController:[GDemoViewController new] animated:YES];
+    [self.navigationController pushViewController:[UserCenterViewController new] animated:YES];
+
+}
+- (IBAction)flowLayout:(id)sender {
+    [self.navigationController pushViewController:[FlowLayoutViewController new] animated:YES];
 
 }
 
