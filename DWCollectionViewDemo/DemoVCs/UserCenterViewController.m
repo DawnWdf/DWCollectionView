@@ -138,14 +138,14 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    CGPoint offset = scrollView.contentOffset;
-//    if ([self isKindOfClass:[DWCollectionViewDelegate class]]) {
-//        DWCollectionViewDelegate *delegate = (DWCollectionViewDelegate *)self;
-//        UserCenterViewController *vc = delegate.originalDelegate;
-//        [vc updateUserInforView:scrollView];
-//        [vc updateNav:offset];
-//
-//    }
+    CGPoint offset = scrollView.contentOffset;
+    if ([self isKindOfClass:[DWCollectionDelegate class]]) {
+        DWCollectionDelegate *delegate = (DWCollectionDelegate *)self;
+        UserCenterViewController *vc = delegate.originalDelegate;
+        [vc updateUserInforView:scrollView];
+        [vc updateNav:offset];
+
+    }
 }
 
 #pragma mark - update user header

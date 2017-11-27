@@ -26,3 +26,5 @@ FOUNDATION_EXPORT const unsigned char DWCollectionVersionString[];
 #import <DWCollection/DWCollectionCellMaker.h>
 #import <DWCollection/DWCollectionHeaderFooterMaker.h>
 
+#import <DWCollection/DWCollectionDelegate.h>
+

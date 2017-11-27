@@ -42,6 +42,7 @@
 		CF4BBCC01FC8282E0007EF74 /* UserCenterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCBF1FC8282E0007EF74 /* UserCenterViewModel.m */; };
 		CF4BBCC41FC8290D0007EF74 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC31FC8290D0007EF74 /* BadgeView.m */; };
 		CF4BBCC81FCBBB040007EF74 /* FlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */; };
+		CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
@@ -632,6 +633,7 @@
 				CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */,
 				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
 				CF1919371F67B75C002DD31B /* DWRefreshManagerProtocol.h in Headers */,
+				CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
