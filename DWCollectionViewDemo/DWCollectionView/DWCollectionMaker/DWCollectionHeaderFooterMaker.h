@@ -24,8 +24,12 @@ typedef void (^DWCollectionHeaderFooterDidSelectedBlock)(UITapGestureRecognizer 
 
 
 @property (nonatomic, strong) DWCollectionHeaderFooterConfiger *configer;
+@property (nonatomic, copy, readonly) DWCollectionHeaderFooterMaker *(^adapter)(DWCollectionHeaderFooterAdapterBlcok);
+@property (nonatomic, copy, readonly) DWCollectionHeaderFooterMaker *(^sizeConfiger)(DWCollectionHeaderFooterSizeBlock);
 
-- (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterAdapterBlcok))adapter;
-- (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterSizeBlock))sizeConfiger;
-- (DWCollectionHeaderFooterMaker *(^)(DWCollectionHeaderFooterDidSelectedBlock))didSelect;///TODO:
+/**
+ 暂不支持
+ */
+//@property (nonatomic, copy, readonly) DWCollectionHeaderFooterMaker *(^didSelect)(DWCollectionHeaderFooterDidSelectedBlock);
+
 @end

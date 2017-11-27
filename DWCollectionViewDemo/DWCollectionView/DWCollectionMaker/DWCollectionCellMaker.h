@@ -25,9 +25,9 @@ typedef void(^DWCollectionCellDidSelectBlock)(NSIndexPath*indexPath, id data);
 @interface DWCollectionCellMaker : NSObject
 
 @property (nonatomic, strong) DWCollectionCellConfiger *cellConfiger;
+@property (nonatomic, copy, readonly) DWCollectionCellMaker *(^itemSize)(DWCollectionCellItemSizeBlock);
+@property (nonatomic, copy, readonly) DWCollectionCellMaker *(^adapter)(DWCollectionCellAdapterBlock);
+@property (nonatomic, copy, readonly) DWCollectionCellMaker *(^didSelect)(DWCollectionCellDidSelectBlock);
 
-- (DWCollectionCellMaker *(^)(DWCollectionCellItemSizeBlock))itemSize;
-- (DWCollectionCellMaker *(^)(DWCollectionCellAdapterBlock))adapter;
-- (DWCollectionCellMaker *(^)(DWCollectionCellDidSelectBlock))didSelect;
 
 @end

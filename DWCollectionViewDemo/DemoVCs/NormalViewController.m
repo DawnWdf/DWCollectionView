@@ -58,7 +58,6 @@
         .didSelect(^(NSIndexPath *indexPath, id data){
             NSLog(@"did select block : 如果vc中实现了didSelect的代理方法，则在此block后执行");
         });
- 
     }];
     
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
