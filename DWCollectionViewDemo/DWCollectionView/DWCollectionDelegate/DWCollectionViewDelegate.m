@@ -12,7 +12,7 @@
 #import "DWMapperModel.h"
 #import "DWCollectionCellMaker.h"
 #import "DWCollectionHeaderFooterMaker.h"
-#import "DWCollectionViewFlowLayout.h"
+#import <objc/runtime.h>
 
 @implementation DWCollectionViewDelegate
 
@@ -20,13 +20,7 @@
 
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    if ([collectionViewLayout isKindOfClass:[DWCollectionViewFlowLayout class]]) {
-        DWCollectionViewFlowLayout *viewLayout = (DWCollectionViewFlowLayout *)collectionViewLayout;
-        if (viewLayout.dw_insetForSection) {
-            UIEdgeInsets insets = viewLayout.dw_insetForSection(section);
-            return insets;
-        }
-    }
+
     NSValue *value = [NSObject dw_target:self.originalDelegate performSel:_cmd arguments:collectionView,collectionViewLayout,section, nil];
     if (value) {
         UIEdgeInsets insets = UIEdgeInsetsZero;

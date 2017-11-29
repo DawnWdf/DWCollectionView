@@ -67,10 +67,10 @@
     flowLayout.delegate = self;
     
     UICollectionViewFlowLayout *sysLayout = [[UICollectionViewFlowLayout alloc] init];
-//    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
-//    sysLayout.sectionHeadersPinToVisibleBounds = YES;
-//    sysLayout.sectionFootersPinToVisibleBounds = YES;
-//    sysLayout.minimumLineSpacing = 50;
+    sysLayout.estimatedItemSize = CGSizeMake(100, 150);
+    sysLayout.sectionHeadersPinToVisibleBounds = YES;
+    sysLayout.sectionFootersPinToVisibleBounds = YES;
+    sysLayout.minimumLineSpacing = 50;
     //------------创建collectionView--------------------------------------
     UICollectionView *cv= [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) collectionViewLayout:sysLayout];
     cv.backgroundColor = [UIColor whiteColor];

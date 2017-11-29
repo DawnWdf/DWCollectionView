@@ -43,11 +43,10 @@
 		CF4BBCC41FC8290D0007EF74 /* BadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC31FC8290D0007EF74 /* BadgeView.m */; };
 		CF4BBCC81FCBBB040007EF74 /* FlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */; };
 		CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF4BBCCF1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCCE1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m */; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
-		CF85BC6C1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */; };
-		CF85BC6D1FA4396E000A9D5A /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */; };
 		CF9555691F6A28CE007A4B32 /* DWFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */; };
 		CFBD7B071F2AE65900D7BBA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B061F2AE65900D7BBA8 /* main.m */; };
 		CFBD7B0A1F2AE65900D7BBA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */; };
@@ -182,14 +181,14 @@
 		CF4BBCC31FC8290D0007EF74 /* BadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeView.m; sourceTree = "<group>"; };
 		CF4BBCC61FCBBB030007EF74 /* FlowLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlowLayoutViewController.h; sourceTree = "<group>"; };
 		CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlowLayoutViewController.m; sourceTree = "<group>"; };
+		CF4BBCCD1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		CF4BBCCE1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		CF71D4521F8CA2A700E8FD99 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CF71D4531F8CA2A700E8FD99 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
 		CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
 		CF71D45A1F8CA4C100E8FD99 /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		CF71D45B1F8CA4C100E8FD99 /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		CF85BC6A1FA438F7000A9D5A /* DWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
 		CF9555671F6A28CE007A4B32 /* DWFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWFlowLayout.h; sourceTree = "<group>"; };
 		CF9555681F6A28CE007A4B32 /* DWFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWFlowLayout.m; sourceTree = "<group>"; };
 		CFBD7B021F2AE65900D7BBA8 /* DWCollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWCollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -395,6 +394,15 @@
 			path = BadgeView;
 			sourceTree = "<group>";
 		};
+		CF4BBCCC1FCC19FD0007EF74 /* DWCollectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				CF4BBCCD1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.h */,
+				CF4BBCCE1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m */,
+			);
+			path = DWCollectionLayout;
+			sourceTree = "<group>";
+		};
 		CF71D4551F8CA2FA00E8FD99 /* DemoVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,15 +434,6 @@
 				CF4BBC931FC7C7170007EF74 /* UIImageExtention */,
 			);
 			path = Extention;
-			sourceTree = "<group>";
-		};
-		CF85BC691FA438F7000A9D5A /* DWCollectionLayout */ = {
-			isa = PBXGroup;
-			children = (
-				CF85BC6A1FA438F7000A9D5A /* DWCollectionViewFlowLayout.h */,
-				CF85BC6B1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m */,
-			);
-			path = DWCollectionLayout;
 			sourceTree = "<group>";
 		};
 		CF9555661F6A28AE007A4B32 /* FlowLayout */ = {
@@ -488,6 +487,7 @@
 				CF2FBD301F98754200247FDB /* DemoViews */,
 				CF19192C1F67B707002DD31B /* Refresh */,
 				CF1918F41F664AA9002DD31B /* issue.rtf */,
+				CF4BBCCC1FCC19FD0007EF74 /* DWCollectionLayout */,
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CF9555661F6A28AE007A4B32 /* FlowLayout */,
 				CFBD7B2A1F2AE68200D7BBA8 /* DWCollectionView */,
@@ -524,7 +524,6 @@
 				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
 				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
 				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
-				CF85BC691FA438F7000A9D5A /* DWCollectionLayout */,
 				CF1919061F666483002DD31B /* DWRefresher */,
 				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
 				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
@@ -826,6 +825,7 @@
 				CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */,
 				CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */,
 				CF4BBCC01FC8282E0007EF74 /* UserCenterViewModel.m in Sources */,
+				CF4BBCCF1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m in Sources */,
 				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
 				CF4BBC961FC7C7170007EF74 /* NSObject+Class.m in Sources */,
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
@@ -834,7 +834,6 @@
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
 				CF4BBCA21FC8277C0007EF74 /* UserCenterViewController.m in Sources */,
-				CF85BC6C1FA438F7000A9D5A /* DWCollectionViewFlowLayout.m in Sources */,
 				CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */,
 				CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */,
 				CF4BBC8B1FC7C6CD0007EF74 /* TeamInfoCell.m in Sources */,
@@ -872,7 +871,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF85BC6D1FA4396E000A9D5A /* DWCollectionViewFlowLayout.m in Sources */,
 				CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,

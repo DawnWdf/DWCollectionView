@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DWCollectionViewFlowLayout : UICollectionViewFlowLayout
-@property (nonatomic, copy) UIEdgeInsets(^dw_insetForSection)(NSInteger section);
+
+- (UIEdgeInsets (^)(NSInteger section))dw_insetForSection;
+- (void)setDw_insetForSection:(UIEdgeInsets(^)(NSInteger section))insetForSection;
+
 @end
