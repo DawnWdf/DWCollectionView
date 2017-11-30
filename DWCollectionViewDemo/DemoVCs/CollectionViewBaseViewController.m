@@ -8,6 +8,7 @@
 
 #import "CollectionViewBaseViewController.h"
 #import "DWCollectionViewFlowLayout.h"
+#import "DWRefreshManager.h"
 
 @interface CollectionViewBaseViewController ()
 
@@ -38,7 +39,23 @@
     cv.delegate = self;
     [self.view addSubview:cv];
     self.collectionView = cv;
-
+    self.collectionView.refreshManager = [[DWRefreshManager alloc] initWithScrollView:self.collectionView];
+    [self.collectionView.refreshManager setupRefreshType:DWRefreshTypeHeaderAndFooter];
+    
+    __weak typeof(self.collectionView.refreshManager) weakRefreshManager = self.collectionView.refreshManager;
+    [self.collectionView.refreshManager setupHeaderRefresh:^{
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            sleep(12);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
+                [strongRefreshManager endHeaderRefresh];
+            });
+        });
+        
+    } footerRefresh:^{
+        __strong typeof(weakRefreshManager) strongRefreshManager = weakRefreshManager;
+        [strongRefreshManager endFooterRefresh];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

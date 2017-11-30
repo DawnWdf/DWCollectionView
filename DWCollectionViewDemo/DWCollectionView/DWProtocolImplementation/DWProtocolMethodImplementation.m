@@ -40,7 +40,6 @@
                     if ((!isResponse) && isOriginalResponse) {
                         //如果当前类没有实现但是originalDelegate实现了 则替换
                         Method originalMethod = class_getInstanceMethod(original, selector);
-//                        NSLog(@"protocol======%@",NSStringFromSelector(protocolObject.name));
                         class_replaceMethod(aclass, selector, class_getMethodImplementation(original, selector), method_getTypeEncoding(originalMethod));
                         
                     }

@@ -26,7 +26,7 @@
 
 - (void)prepare {
     [super prepare];
-//    [self addSubview:self.titleLabel];
+    [self addSubview:self.titleLabel];
 }
 
 - (void)placeSubviews {
