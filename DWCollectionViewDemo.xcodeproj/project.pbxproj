@@ -48,6 +48,8 @@
 		CF4BBD011FD0F88E0007EF74 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC8E1FC7C7170007EF74 /* NSObject+Class.m */; };
 		CF4BBD021FD0F88E0007EF74 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC901FC7C7170007EF74 /* NSObject+Coding.m */; };
 		CF4BBD031FD0F88E0007EF74 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */; };
+		CF4BBD041FD12F3F0007EF74 /* NSObject+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4BBC8F1FC7C7170007EF74 /* NSObject+Coding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF4BBD051FD12F3F0007EF74 /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4BBC911FC7C7170007EF74 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
@@ -641,6 +643,8 @@
 				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
 				CF1919371F67B75C002DD31B /* DWRefreshManagerProtocol.h in Headers */,
 				CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */,
+				CF4BBD041FD12F3F0007EF74 /* NSObject+Coding.h in Headers */,
+				CF4BBD051FD12F3F0007EF74 /* NSObject+MulArgPerformSel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
