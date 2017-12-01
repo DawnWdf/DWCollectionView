@@ -92,6 +92,14 @@
                                     <action selector="flowLayout:" destination="4xO-fR-jxv" eventType="touchUpInside" id="IfQ-yp-mOJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vH4-aK-Mk6">
+                                <rect key="frame" x="16" y="248" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="test"/>
+                                <connections>
+                                    <action selector="test:" destination="4xO-fR-jxv" eventType="touchUpInside" id="4aA-zY-nRL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

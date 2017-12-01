@@ -44,6 +44,10 @@
 		CF4BBCC81FCBBB040007EF74 /* FlowLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */; };
 		CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = CFBD7B341F2AE68200D7BBA8 /* DWCollectionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF4BBCCF1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCCE1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m */; };
+		CF4BBD001FD0F5320007EF74 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBCFF1FD0F5320007EF74 /* TestViewController.m */; };
+		CF4BBD011FD0F88E0007EF74 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC8E1FC7C7170007EF74 /* NSObject+Class.m */; };
+		CF4BBD021FD0F88E0007EF74 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC901FC7C7170007EF74 /* NSObject+Coding.m */; };
+		CF4BBD031FD0F88E0007EF74 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC921FC7C7170007EF74 /* NSObject+MulArgPerformSel.m */; };
 		CF71D4541F8CA2A700E8FD99 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4531F8CA2A700E8FD99 /* MainViewController.m */; };
 		CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D4571F8CA30C00E8FD99 /* NormalViewController.m */; };
 		CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF71D45B1F8CA4C100E8FD99 /* DataManager.m */; };
@@ -183,6 +187,8 @@
 		CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlowLayoutViewController.m; sourceTree = "<group>"; };
 		CF4BBCCD1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		CF4BBCCE1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		CF4BBCFE1FD0F5320007EF74 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		CF4BBCFF1FD0F5320007EF74 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		CF71D4521F8CA2A700E8FD99 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		CF71D4531F8CA2A700E8FD99 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		CF71D4561F8CA30C00E8FD99 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
@@ -414,6 +420,8 @@
 				CF4BBCC71FCBBB040007EF74 /* FlowLayoutViewController.m */,
 				CF4BBC801FC7C4270007EF74 /* CollectionViewBaseViewController.h */,
 				CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */,
+				CF4BBCFE1FD0F5320007EF74 /* TestViewController.h */,
+				CF4BBCFF1FD0F5320007EF74 /* TestViewController.m */,
 			);
 			path = DemoVCs;
 			sourceTree = "<group>";
@@ -831,6 +839,7 @@
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
 				CF4BBCAC1FC827830007EF74 /* UserCenterEntryModel.m in Sources */,
+				CF4BBD001FD0F5320007EF74 /* TestViewController.m in Sources */,
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
 				CF4BBCA21FC8277C0007EF74 /* UserCenterViewController.m in Sources */,
@@ -871,6 +880,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4BBD011FD0F88E0007EF74 /* NSObject+Class.m in Sources */,
+				CF4BBD021FD0F88E0007EF74 /* NSObject+Coding.m in Sources */,
+				CF4BBD031FD0F88E0007EF74 /* NSObject+MulArgPerformSel.m in Sources */,
 				CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,

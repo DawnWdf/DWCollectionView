@@ -16,8 +16,9 @@
 #import "DataManager.h"
 #import "UserCenterViewController.h"
 #import "FlowLayoutViewController.h"
-
-@interface MainViewController ()
+#import <DWCollection/DWCollection.h>
+#import "TestViewController.h"
+@interface MainViewController ()<UICollectionViewDelegate>
 
 @end
 
@@ -56,6 +57,10 @@
 }
 - (IBAction)flowLayout:(id)sender {
     [self.navigationController pushViewController:[FlowLayoutViewController new] animated:YES];
+
+}
+- (IBAction)test:(id)sender {
+    [self.navigationController pushViewController:[TestViewController new] animated:YES];
 
 }
 
