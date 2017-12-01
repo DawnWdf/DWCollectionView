@@ -483,6 +483,7 @@
 		CFBD7B041F2AE65900D7BBA8 /* DWCollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CF1918F41F664AA9002DD31B /* issue.rtf */,
 				CFBD7B081F2AE65900D7BBA8 /* AppDelegate.h */,
 				CFBD7B091F2AE65900D7BBA8 /* AppDelegate.m */,
 				CF71D4521F8CA2A700E8FD99 /* MainViewController.h */,
@@ -496,7 +497,6 @@
 				CF2FBD311F98754300247FDB /* DemoModels */,
 				CF2FBD301F98754200247FDB /* DemoViews */,
 				CF19192C1F67B707002DD31B /* Refresh */,
-				CF1918F41F664AA9002DD31B /* issue.rtf */,
 				CF4BBCCC1FCC19FD0007EF74 /* DWCollectionLayout */,
 				CFBD7B471F2AE68200D7BBA8 /* EgModelCell */,
 				CF9555661F6A28AE007A4B32 /* FlowLayout */,
