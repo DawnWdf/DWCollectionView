@@ -10,6 +10,22 @@
 #import <UIKit/UIKit.h>
 #import "DWSection.h"
 
+#define DW_CheckSelfClass(calssName) \
+calssName *trueSelf = self; \
+if ([self isKindOfClass:[DWCollectionDelegate class]]) { \
+DWCollectionDelegate *delegate = (DWCollectionDelegate *)self; \
+id original = delegate.originalDelegate; \
+if ([original isKindOfClass:[calssName class]]) { \
+calssName *vc = (calssName *)original; \
+trueSelf = vc;\
+}else{ \
+return; \
+} \
+}else if([self isKindOfClass:[calssName class]]){ \
+trueSelf = self; \
+} \
+\
+
 @interface DWCollectionDelegate : NSObject
 
 @property (nonatomic, weak) id originalDelegate;

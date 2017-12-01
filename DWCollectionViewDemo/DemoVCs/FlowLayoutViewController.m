@@ -111,9 +111,5 @@
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    CGPoint offset = scrollView.contentOffset;
-    
-}
+
 @end
