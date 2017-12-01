@@ -33,16 +33,29 @@
                     struct objc_method_description protocolObject = protocolDes[i];
                     
                     SEL selector = protocolObject.name;
-                    //当前类是否实现此方法
-                    BOOL isResponse = class_respondsToSelector(aclass, selector);
+
                     //originalDelegate是否实现此方法
                     BOOL isOriginalResponse = class_respondsToSelector(original , selector);
-                    if ((!isResponse) && isOriginalResponse) {
-                        //如果当前类没有实现但是originalDelegate实现了 则替换
+
+                    if (isOriginalResponse) {
+                    
                         Method originalMethod = class_getInstanceMethod(original, selector);
                         class_replaceMethod(aclass, selector, class_getMethodImplementation(original, selector), method_getTypeEncoding(originalMethod));
-                        
                     }
+
+//                    //当前类是否实现此方法
+//                    BOOL isResponse = class_respondsToSelector(aclass, selector);
+//                    if ((!isResponse) && isOriginalResponse) {
+//                        //如果当前类没有实现但是originalDelegate实现了 则替换
+//
+//                    }
+//                    else if((!isOriginalResponse) && isResponse){
+//                        //如果当前类实现了，但是originalDelegate没有实现 则将代理中的方法删除
+//                        id newRespondsToSelectorBlcok = ^ void (id self, SEL selector)
+//                        {
+//                        };
+//                        class_replaceMethod(original, selector, imp_implementationWithBlock(newRespondsToSelectorBlcok), "v@:");
+//                    }
                 }
             }
         }

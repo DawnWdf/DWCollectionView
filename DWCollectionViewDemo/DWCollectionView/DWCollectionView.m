@@ -94,6 +94,9 @@
         return;
     }
     self.originalDelegate = delegate;
+    if (!self.originalDataSource) {
+        self.originalDataSource = delegate;
+    }
 }
 
 - (void)setDataSource:(id<UICollectionViewDataSource>)dataSource {

@@ -18,7 +18,7 @@
 
 #import "DataManager.h"
 
-@interface FlowLayoutViewController ()<UICollectionViewDelegate,DWFlowAutoMoveLayoutDelegate>
+@interface FlowLayoutViewController ()<UICollectionViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong) DWCollectionView *collectionView;
 
 @end
@@ -109,5 +109,11 @@
     CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5; // 0.5 to 1.0,away from white
     CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5; //0.5 to 1.0,away from black
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    
 }
 @end

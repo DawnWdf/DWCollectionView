@@ -10,7 +10,7 @@
 #import "DWCollectionViewFlowLayout.h"
 #import "DWRefreshManager.h"
 
-@interface CollectionViewBaseViewController ()
+@interface CollectionViewBaseViewController ()<UIScrollViewDelegate>
 
 @end
 
@@ -62,5 +62,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    
+}
 @end

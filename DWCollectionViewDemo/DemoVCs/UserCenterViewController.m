@@ -141,10 +141,16 @@
     CGPoint offset = scrollView.contentOffset;
     if ([self isKindOfClass:[DWCollectionDelegate class]]) {
         DWCollectionDelegate *delegate = (DWCollectionDelegate *)self;
-        UserCenterViewController *vc = delegate.originalDelegate;
-        [vc updateUserInforView:scrollView];
-        [vc updateNav:offset];
+        id original = delegate.originalDelegate;
+        if ([original isKindOfClass:[UserCenterViewController class]]) {
+            UserCenterViewController *vc = (UserCenterViewController *)original;
+            [vc updateUserInforView:scrollView];
+            [vc updateNav:offset];
+        }
 
+    }else if([self isKindOfClass:[UserCenterViewController class]]){
+        [self updateUserInforView:scrollView];
+        [self updateNav:offset];
     }
 }
 
