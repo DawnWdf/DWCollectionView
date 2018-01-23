@@ -8,6 +8,8 @@
 
 #import "TestViewController.h"
 #import "DWCollection.h"
+#import "UserCenterEntryCollectionViewCell.h"
+#import "UserCenterEntryModel.h"
 @interface TestViewController ()<UICollectionViewDelegate>
 @property (nonatomic, strong) DWCollectionView *collectionView;
 
@@ -18,7 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     DWCollectionView *collection = [[DWCollectionView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
+    collection.backgroundColor = [UIColor whiteColor];
     collection.delegate = self;
     self.collectionView = collection;
     [self.view addSubview:self.collectionView];
@@ -33,11 +37,23 @@
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data) {
             cell.backgroundColor = [UIColor lightGrayColor];
         });
+        //快捷入口
+        maker.registerCell([UserCenterEntryCollectionViewCell class],[UserCenterEntryModel class])
+        .itemSize(^(NSIndexPath *indexPath, id data){
+            return CGSizeMake(160, 80);
+        }).adapter(^(UICollectionViewCell *cell , NSIndexPath *indexPath, id data){
+            [(UserCenterEntryCollectionViewCell *)cell bindData:data];
+            cell.backgroundColor = [UIColor redColor];
+        }).didSelect(^(NSIndexPath*indexPath, id data){
+            
+        });
     }];
     
     
     DWSection *section = [[DWSection alloc] init];
-    section.items = @[@"a",@"b",@"c",@"d",@"e",@"f",@"g"];
+    UserCenterEntryModel *model = [[UserCenterEntryModel alloc] init];
+    model.title = @"big title";
+    section.items = @[@"a",model,@"b"];
     [self.collectionView setData:@[section]];
 }
 
