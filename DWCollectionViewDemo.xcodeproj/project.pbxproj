@@ -69,15 +69,15 @@
 		CFBD7BAC1F2AE9E800D7BBA8 /* DWMapperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B411F2AE68200D7BBA8 /* DWMapperModel.m */; };
 		CFBD7BAD1F2AE9E800D7BBA8 /* DWProtocolMethodImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B441F2AE68200D7BBA8 /* DWProtocolMethodImplementation.m */; };
 		CFBD7BAE1F2AE9E800D7BBA8 /* DWSection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD7B461F2AE68200D7BBA8 /* DWSection.m */; };
-		CFD00113201732350012BE52 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0010F201732350012BE52 /* NSObject+MulArgPerformSel.m */; };
-		CFD00114201732350012BE52 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD00110201732350012BE52 /* NSObject+Coding.m */; };
-		CFD00115201732350012BE52 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD00111201732350012BE52 /* NSObject+Class.m */; };
-		CFD00116201732670012BE52 /* NSObject+Class.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD0010D201732350012BE52 /* NSObject+Class.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFD00117201732670012BE52 /* NSObject+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD0010E201732350012BE52 /* NSObject+Coding.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFD00118201732670012BE52 /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD00112201732350012BE52 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFD001192017327D0012BE52 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD0010F201732350012BE52 /* NSObject+MulArgPerformSel.m */; };
-		CFD0011A2017327D0012BE52 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD00110201732350012BE52 /* NSObject+Coding.m */; };
-		CFD0011B2017327D0012BE52 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD00111201732350012BE52 /* NSObject+Class.m */; };
+		CFD001262018807F0012BE52 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001222018807E0012BE52 /* NSObject+MulArgPerformSel.m */; };
+		CFD001272018807F0012BE52 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001232018807E0012BE52 /* NSObject+Coding.m */; };
+		CFD001282018807F0012BE52 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001242018807E0012BE52 /* NSObject+Class.m */; };
+		CFD00129201881220012BE52 /* NSObject+MulArgPerformSel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001222018807E0012BE52 /* NSObject+MulArgPerformSel.m */; };
+		CFD0012A201881220012BE52 /* NSObject+Coding.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001232018807E0012BE52 /* NSObject+Coding.m */; };
+		CFD0012B201881220012BE52 /* NSObject+Class.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD001242018807E0012BE52 /* NSObject+Class.m */; };
+		CFD0012C2018812F0012BE52 /* NSObject+Class.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD001202018807E0012BE52 /* NSObject+Class.h */; };
+		CFD0012D2018812F0012BE52 /* NSObject+Coding.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD001212018807E0012BE52 /* NSObject+Coding.h */; };
+		CFD0012E2018812F0012BE52 /* NSObject+MulArgPerformSel.h in Headers */ = {isa = PBXBuildFile; fileRef = CFD001252018807E0012BE52 /* NSObject+MulArgPerformSel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,12 +230,12 @@
 		CFBD7B711F2AE75E00D7BBA8 /* DWCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD7B781F2AE75E00D7BBA8 /* DWCollectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWCollectionTests.m; sourceTree = "<group>"; };
 		CFBD7B7A1F2AE75E00D7BBA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFD0010D201732350012BE52 /* NSObject+Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Class.h"; sourceTree = "<group>"; };
-		CFD0010E201732350012BE52 /* NSObject+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
-		CFD0010F201732350012BE52 /* NSObject+MulArgPerformSel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MulArgPerformSel.m"; sourceTree = "<group>"; };
-		CFD00110201732350012BE52 /* NSObject+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
-		CFD00111201732350012BE52 /* NSObject+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Class.m"; sourceTree = "<group>"; };
-		CFD00112201732350012BE52 /* NSObject+MulArgPerformSel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MulArgPerformSel.h"; sourceTree = "<group>"; };
+		CFD001202018807E0012BE52 /* NSObject+Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Class.h"; sourceTree = "<group>"; };
+		CFD001212018807E0012BE52 /* NSObject+Coding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Coding.h"; sourceTree = "<group>"; };
+		CFD001222018807E0012BE52 /* NSObject+MulArgPerformSel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MulArgPerformSel.m"; sourceTree = "<group>"; };
+		CFD001232018807E0012BE52 /* NSObject+Coding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Coding.m"; sourceTree = "<group>"; };
+		CFD001242018807E0012BE52 /* NSObject+Class.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Class.m"; sourceTree = "<group>"; };
+		CFD001252018807E0012BE52 /* NSObject+MulArgPerformSel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MulArgPerformSel.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -521,7 +521,7 @@
 				CFBD7B3E1F2AE68200D7BBA8 /* DWCollectionView.m */,
 				CFBD7B451F2AE68200D7BBA8 /* DWSection.h */,
 				CFBD7B461F2AE68200D7BBA8 /* DWSection.m */,
-				CFD0010C201732350012BE52 /* NSObjectExtention */,
+				CFD0011F2018807E0012BE52 /* NSObjectExtention */,
 				CF1919061F666483002DD31B /* DWRefresher */,
 				CFBD7B2B1F2AE68200D7BBA8 /* DWCollectionCell */,
 				CFBD7B331F2AE68200D7BBA8 /* DWCollectionDelegate */,
@@ -615,15 +615,15 @@
 			path = DWCollectionTests;
 			sourceTree = "<group>";
 		};
-		CFD0010C201732350012BE52 /* NSObjectExtention */ = {
+		CFD0011F2018807E0012BE52 /* NSObjectExtention */ = {
 			isa = PBXGroup;
 			children = (
-				CFD0010D201732350012BE52 /* NSObject+Class.h */,
-				CFD0010E201732350012BE52 /* NSObject+Coding.h */,
-				CFD0010F201732350012BE52 /* NSObject+MulArgPerformSel.m */,
-				CFD00110201732350012BE52 /* NSObject+Coding.m */,
-				CFD00111201732350012BE52 /* NSObject+Class.m */,
-				CFD00112201732350012BE52 /* NSObject+MulArgPerformSel.h */,
+				CFD001202018807E0012BE52 /* NSObject+Class.h */,
+				CFD001212018807E0012BE52 /* NSObject+Coding.h */,
+				CFD001222018807E0012BE52 /* NSObject+MulArgPerformSel.m */,
+				CFD001232018807E0012BE52 /* NSObject+Coding.m */,
+				CFD001242018807E0012BE52 /* NSObject+Class.m */,
+				CFD001252018807E0012BE52 /* NSObject+MulArgPerformSel.h */,
 			);
 			path = NSObjectExtention;
 			sourceTree = "<group>";
@@ -643,10 +643,10 @@
 				CFBD7B8D1F2AE78A00D7BBA8 /* DWCollectionDelegateMaker.h in Headers */,
 				CFBD7B921F2AE78A00D7BBA8 /* DWSection.h in Headers */,
 				CF1919371F67B75C002DD31B /* DWRefreshManagerProtocol.h in Headers */,
+				CFD0012E2018812F0012BE52 /* NSObject+MulArgPerformSel.h in Headers */,
 				CF4BBCC91FCC0F640007EF74 /* DWCollectionDelegate.h in Headers */,
-				CFD00116201732670012BE52 /* NSObject+Class.h in Headers */,
-				CFD00117201732670012BE52 /* NSObject+Coding.h in Headers */,
-				CFD00118201732670012BE52 /* NSObject+MulArgPerformSel.h in Headers */,
+				CFD0012C2018812F0012BE52 /* NSObject+Class.h in Headers */,
+				CFD0012D2018812F0012BE52 /* NSObject+Coding.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,18 +839,18 @@
 				CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */,
 				CF71D45C1F8CA4C100E8FD99 /* DataManager.m in Sources */,
 				CF4BBCC01FC8282E0007EF74 /* UserCenterViewModel.m in Sources */,
-				CFD00113201732350012BE52 /* NSObject+MulArgPerformSel.m in Sources */,
+				CFD001262018807F0012BE52 /* NSObject+MulArgPerformSel.m in Sources */,
 				CF4BBCCF1FCC19FD0007EF74 /* DWCollectionViewFlowLayout.m in Sources */,
 				CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */,
 				CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */,
 				CFBD7B0D1F2AE65900D7BBA8 /* ViewController.m in Sources */,
 				CF4BBCAC1FC827830007EF74 /* UserCenterEntryModel.m in Sources */,
-				CFD00114201732350012BE52 /* NSObject+Coding.m in Sources */,
+				CFD001272018807F0012BE52 /* NSObject+Coding.m in Sources */,
 				CF4BBD001FD0F5320007EF74 /* TestViewController.m in Sources */,
 				CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */,
 				CF0370CE1F6D130C00F5BB28 /* DWFlowAutoMoveLayout.m in Sources */,
 				CF4BBCA21FC8277C0007EF74 /* UserCenterViewController.m in Sources */,
-				CFD00115201732350012BE52 /* NSObject+Class.m in Sources */,
+				CFD001282018807F0012BE52 /* NSObject+Class.m in Sources */,
 				CF71D4581F8CA30C00E8FD99 /* NormalViewController.m in Sources */,
 				CF4BBC991FC7C7170007EF74 /* UIImage+DWViewShot.m in Sources */,
 				CF4BBC8B1FC7C6CD0007EF74 /* TeamInfoCell.m in Sources */,
@@ -886,9 +886,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD001192017327D0012BE52 /* NSObject+MulArgPerformSel.m in Sources */,
-				CFD0011A2017327D0012BE52 /* NSObject+Coding.m in Sources */,
-				CFD0011B2017327D0012BE52 /* NSObject+Class.m in Sources */,
+				CFD00129201881220012BE52 /* NSObject+MulArgPerformSel.m in Sources */,
+				CFD0012A201881220012BE52 /* NSObject+Coding.m in Sources */,
+				CFD0012B201881220012BE52 /* NSObject+Class.m in Sources */,
 				CF0370C21F6CD8D800F5BB28 /* DWCollectionDelegate.m in Sources */,
 				CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */,
 				CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */,

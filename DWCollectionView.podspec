@@ -91,16 +91,15 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-#s.source_files  = "DWCollectionViewDemo/Extention/NSObjectExtention/*.{h,m}", "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
+  s.source_files  =  "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
   s.exclude_files = "DWCollection"
 
-  s.subspec "Extention" do |ex|
-    ex.source_files = "DWCollectionViewDemo/Extention/NSObjectExtention/*.{h,m}"
-  end
-  s.subspec "DWCollectionView" do |cv|
-    cv.source_files = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
-
-  end
+#s.subspec "Extention" do |ex|
+#    ex.source_files = "DWCollectionViewDemo/Extention/NSObjectExtention/*.{h,m}"
+#  end
+#  s.subspec "DWCollectionView" do |cv|
+#    cv.source_files = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
+#  end
 
   # s.public_header_files = "Classes/**/*.h"
 
