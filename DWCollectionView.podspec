@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DWCollectionView"
-  s.version      = "1.0.0"
-  s.summary      = "针对UICollectionView的简易封装。"
+  s.version      = "0.0.1"
+  s.summary      = "DWCollectionView是针对UICollectionView进行的封装"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-在使用collectionView的过程中通常有两到三个代理方法是必须使用的，为了减少代码重复，DWCollectionView使用block将常用的代理方法封装起来。
-                    DESC
+通过链式编程的方式提高开发效率，将常用代理方法封装，合并使用，减少重复代码的使用。
+                   DESC
 
   s.homepage     = "https://github.com/DawnWdf/DWCollectionView.git"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "Copyright (c) 2015年 Dawn Wang. All rights reserved."
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -56,7 +56,7 @@ Pod::Spec.new do |s|
   s.author             = { "Dawn" => "icy19882006@163.com" }
   # Or just: s.author    = "Dawn"
   # s.authors            = { "Dawn" => "icy19882006@163.com" }
-  s.social_media_url   = "https://www.jianshu.com/p/b8b99a688d6a"
+  # s.social_media_url   = "http://twitter.com/Dawn"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -64,11 +64,11 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  # s.platform     = :ios
+    s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
-   s.ios.deployment_target = "8.0"
+    s.ios.deployment_target = "9.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/DawnWdf/DWCollectionView.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/DawnWdf/DWCollectionView.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,19 +91,38 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  =  "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
-  s.exclude_files = "DWCollection"
+    s.source_files  = "DWCollectionViewDemo/DWCollectionView/*.{h,m}"
+    s.exclude_files = "DWCollection"
 
-#s.subspec "Extention" do |ex|
-#    ex.source_files = "DWCollectionViewDemo/Extention/NSObjectExtention/*.{h,m}"
-#  end
-#  s.subspec "DWCollectionView" do |cv|
-#    cv.source_files = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
-#  end
+  # s.public_header_files = "DWCollection"
 
-  # s.public_header_files = "Classes/**/*.h"
+    s.subspec 'DWCollectionMaker' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
+    end
 
+    s.subspec 'DWCollectionCell' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
+    end
 
+    s.subspec 'DWCollectionDelegate' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
+    end
+
+    s.subspec 'DWMapperModel' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
+    end
+
+    s.subspec 'DWProtocolImplementation' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
+    end
+
+    s.subspec 'DWRefresher' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
+    end
+
+    s.subspec 'NSObjectExtention' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
+    end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
@@ -140,6 +159,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+#  s.dependency "MJRefresh"
+#    s.dependency "SDWebImage"
 
 end
