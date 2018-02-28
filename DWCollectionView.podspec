@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DWCollectionView"
-  s.version      = "0.0.1"
+  s.version      = "1.1.0"
   s.summary      = "DWCollectionView是针对UICollectionView进行的封装"
 
   # This description is used to generate tags and improve search results.
@@ -91,38 +91,12 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-    s.source_files  = "DWCollectionViewDemo/DWCollectionView/*.{h,m}"
-    s.exclude_files = "DWCollection"
-
+    s.source_files  = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
+#    s.exclude_files = "DWCollection"
+#  s.prefix_header_contents = "DWCollectionViewDemo/DWCollectionView/**"
   # s.public_header_files = "DWCollection"
 
-    s.subspec 'DWCollectionMaker' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
-    end
 
-    s.subspec 'DWCollectionCell' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
-    end
-
-    s.subspec 'DWCollectionDelegate' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
-    end
-
-    s.subspec 'DWMapperModel' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
-    end
-
-    s.subspec 'DWProtocolImplementation' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
-    end
-
-    s.subspec 'DWRefresher' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
-    end
-
-    s.subspec 'NSObjectExtention' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
-    end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
