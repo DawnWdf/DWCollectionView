@@ -91,12 +91,45 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-    s.source_files  = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
-#    s.exclude_files = "DWCollection"
-#  s.prefix_header_contents = "DWCollectionViewDemo/DWCollectionView/**"
-  # s.public_header_files = "DWCollection"
+    s.source_files  = "DWCollectionViewDemo/DWCollectionView/*.{h,m}",
+    'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}',
+    'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
+    # s.exclude_files = "DWCollection"
+   # s.public_header_files = "DWCollectionViewDemo/DWCollectionView/*.h"
 
-
+# s.subspec 'DWMapperModel' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
+# end
+#
+# s.subspec 'DWCollectionMaker' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
+# end
+#
+# s.subspec 'DWCollectionCell' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
+# end
+#
+# s.subspec 'DWCollectionDelegate' do |ss|
+# #ss.public_header_files = "DWCollectionViewDemo/DWCollectionView/DWMapperModel/**/*.{h,m}"
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
+# end
+#
+# s.subspec 'DWProtocolImplementation' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
+# end
+#
+# s.subspec 'DWRefresher' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
+# end
+#
+# s.subspec 'NSObjectExtention' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
+# end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
