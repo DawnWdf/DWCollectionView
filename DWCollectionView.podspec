@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DWCollectionView"
-  s.version      = "1.1.2"
+  s.version      = "1.1.1"
   s.summary      = "DWCollectionView是针对UICollectionView进行的封装"
 
   # This description is used to generate tags and improve search results.
@@ -91,14 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-    s.source_files  = "DWCollectionViewDemo/DWCollectionView/*.{h,m}",
-    'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}',
-    'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
+    s.source_files  = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
     # s.exclude_files = "DWCollection"
    # s.public_header_files = "DWCollectionViewDemo/DWCollectionView/*.h"
 
