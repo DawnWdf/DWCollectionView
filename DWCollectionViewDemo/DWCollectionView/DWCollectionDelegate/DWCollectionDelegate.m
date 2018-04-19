@@ -38,6 +38,19 @@ typedef struct{
     if ([model isKindOfClass:[NSString class]] || [model isKindOfClass:[@"" class]]) {
         return @"NSString";
     }
+    if ([model isKindOfClass:NSClassFromString(@"__NSDictionaryI")]) {
+        return @"NSDictionary";
+    }
+    
+    if ([model isKindOfClass:NSClassFromString(@"__NSArrayI")]) {
+        return @"NSArray";
+    }
+    if ([model isKindOfClass:NSClassFromString(@"__NSDictionaryM")]) {
+        return @"NSDictionary";
+    }
+    if ([model isKindOfClass:NSClassFromString(@"__NSArrayM")]) {
+        return @"NSArray";
+    }
     return NSStringFromClass([model class]);
 }
 

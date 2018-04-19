@@ -25,7 +25,9 @@
     //------------创建collectionView--------------------------------------
     [self configCollectionView];
     [DataManager teamData:^(NSMutableArray *data) {
-        [self.collectionView setData:data];
+        DWSection *section = [[DWSection alloc] init];
+        section.items = @[@{@"key1":@"value1",@"key2":@"value2"}];
+        [self.collectionView setData:@[section]];
     }];
 }
 
@@ -46,18 +48,31 @@
 
 - (void)configCollectionView {
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
-        maker.registerCell([TeamInfoCell class],[TeamInfo class])
+        
+        maker.registerCell([TeamInfoCell class],[NSDictionary class])
         .itemSize(^(NSIndexPath *indexPath, id data){
             return CGSizeMake(100, 140);
         })
         .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
             TeamInfoCell *newCell = (TeamInfoCell *)cell;
             newCell.showImage = YES;
-            [newCell bindData:data];
+//            [newCell bindData:data];
         })
         .didSelect(^(NSIndexPath *indexPath, id data){
             NSLog(@"did select block : 如果vc中实现了didSelect的代理方法，则在此block后执行");
         });
+//        maker.registerCell([TeamInfoCell class],[TeamInfo class])
+//        .itemSize(^(NSIndexPath *indexPath, id data){
+//            return CGSizeMake(100, 140);
+//        })
+//        .adapter(^(UICollectionViewCell *cell, NSIndexPath *indexPath, id data){
+//            TeamInfoCell *newCell = (TeamInfoCell *)cell;
+//            newCell.showImage = YES;
+//            [newCell bindData:data];
+//        })
+//        .didSelect(^(NSIndexPath *indexPath, id data){
+//            NSLog(@"did select block : 如果vc中实现了didSelect的代理方法，则在此block后执行");
+//        });
     }];
     
     [self.collectionView registerViewAndModel:^(DWCollectionDelegateMaker *maker) {
