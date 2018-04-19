@@ -95,29 +95,29 @@ Pod::Spec.new do |s|
     # s.exclude_files = "DWCollection"
    # s.public_header_files = "DWCollectionViewDemo/DWCollectionView/*.h"
 
-  # s.subspec 'DWMapperModel' do |ss|
-  #    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
-  # end
+  s.subspec 'DWMapperModel' do |ss|
+     ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
+  end
 #
   # s.subspec 'DWCollectionMaker' do |ss|
   #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
   # end
 #
-  # s.subspec 'DWCollectionCell' do |ss|
-  #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
-  # end
+  s.subspec 'DWCollectionCell' do |ss|
+    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
+  end
 #
   # s.subspec 'DWCollectionDelegate' do |ss|
   #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
   # end
 #
-# s.subspec 'DWProtocolImplementation' do |ss|
-# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
-# end
+s.subspec 'DWProtocolImplementation' do |ss|
+ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
+end
 #
-# s.subspec 'DWRefresher' do |ss|
-# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
-# end
+s.subspec 'DWRefresher' do |ss|
+ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
+end
 #
   s.subspec 'NSObjectExtention' do |ss|
       ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
