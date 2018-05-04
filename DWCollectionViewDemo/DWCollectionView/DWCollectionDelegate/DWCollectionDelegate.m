@@ -38,7 +38,7 @@ typedef struct{
     if ([model isKindOfClass:[NSString class]] || [model isKindOfClass:[@"" class]]) {
         return @"NSString";
     }
-    if ([model isKindOfClass:NSClassFromString(@"__NSDictionaryI")] || [model isKindOfClass:NSClassFromString(@"__NSFrozenDictionaryM")] || [model isKindOfClass:NSClassFromString(@"__NSDictionaryM")]) {
+    if ([model isKindOfClass:NSClassFromString(@"__NSDictionaryI")] || [model isKindOfClass:NSClassFromString(@"__NSFrozenDictionaryM")] || [model isKindOfClass:NSClassFromString(@"__NSDictionaryM")] || [model isKindOfClass:NSClassFromString(@"__NSSingleEntryDictionaryI")]) {
         return @"NSDictionary";
     }
     
