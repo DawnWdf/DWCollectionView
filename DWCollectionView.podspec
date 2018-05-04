@@ -91,37 +91,38 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-    # s.source_files  = "DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
+    s.source_files  = "DWCollectionView","DWCollectionViewDemo/DWCollectionView/**/*.{h,m}"
     # s.exclude_files = "DWCollection"
    # s.public_header_files = "DWCollectionViewDemo/DWCollectionView/*.h"
 
-  s.subspec 'DWMapperModel' do |ss|
-     ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
-  end
-#
-  # s.subspec 'DWCollectionMaker' do |ss|
-  #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
-  # end
-#
-  s.subspec 'DWCollectionCell' do |ss|
-    ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
-  end
-#
-  # s.subspec 'DWCollectionDelegate' do |ss|
-  #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
-  # end
-#
-s.subspec 'DWProtocolImplementation' do |ss|
-ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
-end
-#
-s.subspec 'DWRefresher' do |ss|
-ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
-end
-#
-  s.subspec 'NSObjectExtention' do |ss|
-      ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
-  end
+#   s.subspec 'DWMapperModel' do |ss|
+#      ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWMapperModel/*.{h,m}'
+#   end
+# #
+#   # s.subspec 'DWCollectionMaker' do |ss|
+#   #   ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionMaker/*.{h,m}'
+#   # end
+# #
+#   s.subspec 'DWCollectionCell' do |ss|
+#     ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionCell/*.{h,m}'
+#   end
+# #
+#   s.subspec 'DWCollectionDelegate' do |ss|
+#     ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWCollectionDelegate/*.{h,m}'
+#     ss.dependency = 'DWCollectionViewDemo/DWCollectionView'
+#   end
+# #
+# s.subspec 'DWProtocolImplementation' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWProtocolImplementation/*.{h,m}'
+# end
+# #
+# s.subspec 'DWRefresher' do |ss|
+# ss.source_files = 'DWCollectionViewDemo/DWCollectionView/DWRefresher/*.{h,m}'
+# end
+# #
+#   s.subspec 'NSObjectExtention' do |ss|
+#       ss.source_files = 'DWCollectionViewDemo/DWCollectionView/NSObjectExtention/*.{h,m}'
+#   end
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  A list of resources included with the Pod. These are copied into the
