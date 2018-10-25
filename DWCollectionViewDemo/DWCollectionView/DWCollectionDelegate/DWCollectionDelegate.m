@@ -34,6 +34,9 @@ typedef struct{
     }
     
     DWSection *section = self.data[indexPath.section];
+    if (section.items.count <= indexPath.row) {
+        return nil;
+    }
     id model = [[section items] objectAtIndex:indexPath.row];
     if ([model isKindOfClass:[NSString class]] || [model isKindOfClass:[@"" class]]) {
         return @"NSString";
