@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "DWCollectionView"
-  s.version      = "1.1.5"
+  s.version      = "1.1.7"
   s.summary      = "DWCollectionView是针对UICollectionView进行的封装"
 
   # This description is used to generate tags and improve search results.
