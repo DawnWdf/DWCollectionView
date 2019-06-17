@@ -38,7 +38,6 @@
     }
     return self;
 }
-
 - (void)dealloc{
 #ifdef DEBUG
     NSLog(@"%s",__func__);
