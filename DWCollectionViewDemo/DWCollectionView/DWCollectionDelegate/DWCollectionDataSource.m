@@ -151,11 +151,11 @@
                 }else{
                     modelString = [self modelStringForFooterForIndexPath:indexPath];
                 }
-                GMMMapper *configerModel = self.configer[kindString][modelString];
-                if ((configerModel.makerConfig) && [configerModel.makerConfig isKindOfClass:[GMCHeaderFooterConfiger class]]) {
-                    GMCHeaderFooterConfiger *cellConfiger = (GMCHeaderFooterConfiger *)configerModel.makerConfig;
-                    if (cellConfiger.didSelectedBlock) {
-                        cellConfiger.didSelectedBlock(recognizer, indexPath.section, [self.data[indexPath.section] headerData]);
+                DWMapperModel *configerModel = self.configer[kindString][modelString];
+                if ((configerModel.makerConfig) && [configerModel.makerConfig isKindOfClass:[DWCollectionHeaderFooterConfiger class]]) {
+                    DWCollectionHeaderFooterConfiger *cellConfiger = (DWCollectionHeaderFooterConfiger *)configerModel.makerConfig;
+                    if (cellConfiger.didSelectBlock) {
+                        cellConfiger.didSelectBlock(recognizer, indexPath.section, [self.data[indexPath.section] headerData]);
                     }
                     
                 }
