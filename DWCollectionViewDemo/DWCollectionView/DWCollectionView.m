@@ -134,4 +134,15 @@
     
 }
 
+- (void)dw_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withData:(NSArray<DWSection *> *)data {
+    self.dwDataSource = data;
+    self.dwViewDelegate.data = data;
+    if ([[NSThread currentThread] isMainThread]) {
+        [self reloadItemsAtIndexPaths:indexPaths];
+    }else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self reloadItemsAtIndexPaths:indexPaths];
+        });
+    }
+}
 @end

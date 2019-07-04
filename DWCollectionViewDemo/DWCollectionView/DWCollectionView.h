@@ -27,4 +27,7 @@ typedef void (^DWCollectionViewCellMaker)(void);
  */
 - (void)registerViewAndModel:(void(^)(DWCollectionDelegateMaker *maker))maker;
 
+
+- (void)dw_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withData:(NSArray<DWSection *> *)data;
+
 @end
