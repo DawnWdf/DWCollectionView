@@ -16,7 +16,7 @@
 
 @implementation NSObject (Class)
 
-NSSet *foundationClasses(){
+NSSet *dw_foundationClasses(){
     return [NSSet setWithObjects:
             [NSURL class],
             [NSDate class],
@@ -31,9 +31,9 @@ NSSet *foundationClasses(){
 
 }
 
-BOOL isClassForFoundatation(Class class){
+BOOL dw_isClassForFoundatation(Class class){
     __block BOOL result = NO;
-    [foundationClasses() enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [dw_foundationClasses() enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         
         if ([class isSubclassOfClass:obj] || (class == [NSObject class])) {
             result = YES;
@@ -44,7 +44,7 @@ BOOL isClassForFoundatation(Class class){
 }
 
 
-- (void)enumClass:(void(^)(Class cl, BOOL *stop))enumBlock {
+- (void)dw_enumClass:(void(^)(Class cl, BOOL *stop))enumBlock {
     if (!enumBlock) {
         return;
     }
@@ -59,7 +59,7 @@ BOOL isClassForFoundatation(Class class){
         c = class_getSuperclass(c);
         
         
-        if (isClassForFoundatation(c)) {
+        if (dw_isClassForFoundatation(c)) {
             break ;
         }
     }
@@ -68,7 +68,7 @@ BOOL isClassForFoundatation(Class class){
 }
 
 
-- (void)propertyForClass:(Class)cl finish:(void(^)(PropertyModel *pModel))finish {
+- (void)dw_propertyForClass:(Class)cl finish:(void(^)(PropertyModel *pModel))finish {
     if (!finish) {
         return;
     }

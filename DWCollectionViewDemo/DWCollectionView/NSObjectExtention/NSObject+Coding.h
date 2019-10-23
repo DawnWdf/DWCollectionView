@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (Coding)
-- (void)coding_encode:(NSCoder *_Nonnull)aCoder ;
-- (nullable instancetype)coding_decode:(NSCoder *_Nonnull)aDecoder ;
+- (void)dw_coding_encode:(NSCoder *_Nonnull)aCoder ;
+- (nullable instancetype)dw_coding_decode:(NSCoder *_Nonnull)aDecoder ;
 @end
 
 
 
-#define CodingImplmentation \
+#define dw_CodingImplmentation \
 - (void)encodeWithCoder:(NSCoder *)aCoder { \
     [self coding_encode:aCoder];    \
 }  \
@@ -27,4 +27,4 @@
 }\
 
 
-#define DWObjectCodingImplmentation CodingImplmentation
+#define DWObjectCodingImplmentation dw_CodingImplmentation

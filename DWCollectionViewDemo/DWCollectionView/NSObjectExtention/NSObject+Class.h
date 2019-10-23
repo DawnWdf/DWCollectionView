@@ -24,8 +24,8 @@
  */
 @interface NSObject (Class)
 
-- (void)enumClass:(void(^)(Class cl, BOOL *stop))enumBlock;
+- (void)dw_enumClass:(void(^)(Class cl, BOOL *stop))enumBlock;
 
-- (void)propertyForClass:(Class)cl finish:(void(^)(PropertyModel *pModel))finish;
+- (void)dw_propertyForClass:(Class)cl finish:(void(^)(PropertyModel *pModel))finish;
 
 @end
