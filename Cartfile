@@ -1,2 +1,2 @@
-github "butcheryl/MJRefresh" "master"
-github "rs/SDWebImage"
+github "CoderMJLee/MJRefresh"
+github "SDWebImage/SDWebImage"

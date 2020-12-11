@@ -1,2 +1,2 @@
-github "butcheryl/MJRefresh" "f82742927fc357dff9426a9b2240f560a11244e9"
-github "rs/SDWebImage" "4.4.6"
+github "CoderMJLee/MJRefresh" "3.5.1"
+github "SDWebImage/SDWebImage" "5.10.0"
