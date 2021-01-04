@@ -12,10 +12,6 @@
 		CF1918F21F664A36002DD31B /* DWCollectionViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918E81F663F71002DD31B /* DWCollectionViewDelegate.m */; };
 		CF1918F31F664A36002DD31B /* DWCollectionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1918EB1F664005002DD31B /* DWCollectionDataSource.m */; };
 		CF1918F51F664AA9002DD31B /* issue.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF1918F41F664AA9002DD31B /* issue.rtf */; };
-		CF1918FE1F665C96002DD31B /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
-		CF1918FF1F665C96002DD31B /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; };
-		CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF19192F1F67B707002DD31B /* DWRefreshManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19192E1F67B707002DD31B /* DWRefreshManager.m */; };
 		CF1919351F67B728002DD31B /* DWMJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919321F67B728002DD31B /* DWMJRefreshFooter.m */; };
 		CF1919361F67B728002DD31B /* DWMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919341F67B728002DD31B /* DWMJRefreshHeader.m */; };
@@ -23,6 +19,10 @@
 		CF19193E1F67BA68002DD31B /* DWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1919391F67BA68002DD31B /* DWCollectionViewCell.m */; };
 		CF19193F1F67BA68002DD31B /* DWFooterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193B1F67BA68002DD31B /* DWFooterCollectionReusableView.m */; };
 		CF1919401F67BA68002DD31B /* DWHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19193D1F67BA68002DD31B /* DWHeaderCollectionReusableView.m */; };
+		CF31CE0425A30A2500736239 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; };
+		CF31CE0525A30A2500736239 /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FC1F665C96002DD31B /* MJRefresh.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF31CE0725A30A2600736239 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; };
+		CF31CE0825A30A2600736239 /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF1918FD1F665C96002DD31B /* SDWebImage.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF4BBC821FC7C4270007EF74 /* CollectionViewBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC811FC7C4270007EF74 /* CollectionViewBaseViewController.m */; };
 		CF4BBC871FC7C6C60007EF74 /* TeamInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC851FC7C6C60007EF74 /* TeamInfo.m */; };
 		CF4BBC881FC7C6C60007EF74 /* LeagueInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4BBC861FC7C6C60007EF74 /* LeagueInfo.m */; };
@@ -112,14 +112,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CF1918F11F6648D1002DD31B /* Embed Frameworks */ = {
+		CF31CE0625A30A2500736239 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CF1919011F665C96002DD31B /* SDWebImage.framework in Embed Frameworks */,
-				CF1918FF1F665C96002DD31B /* MJRefresh.framework in Embed Frameworks */,
+				CF31CE0825A30A2600736239 /* SDWebImage.framework in Embed Frameworks */,
+				CF31CE0525A30A2500736239 /* MJRefresh.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,8 +243,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1919001F665C96002DD31B /* SDWebImage.framework in Frameworks */,
-				CF1918FE1F665C96002DD31B /* MJRefresh.framework in Frameworks */,
+				CF31CE0725A30A2600736239 /* SDWebImage.framework in Frameworks */,
+				CF31CE0425A30A2500736239 /* MJRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,8 +660,8 @@
 				CFBD7AFE1F2AE65900D7BBA8 /* Sources */,
 				CFBD7AFF1F2AE65900D7BBA8 /* Frameworks */,
 				CFBD7B001F2AE65900D7BBA8 /* Resources */,
-				CF1918F11F6648D1002DD31B /* Embed Frameworks */,
 				CF1919031F665D0B002DD31B /* ShellScript */,
+				CF31CE0625A30A2500736239 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -734,7 +734,7 @@
 		CFBD7AFA1F2AE65900D7BBA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Dawn Wang";
 				TargetAttributes = {
 					CFBD7B011F2AE65900D7BBA8 = {
@@ -759,7 +759,7 @@
 			};
 			buildConfigurationList = CFBD7AFD1F2AE65900D7BBA8 /* Build configuration list for PBXProject "DWCollectionViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -959,6 +959,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -969,6 +970,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -976,8 +978,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1002,7 +1006,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1013,6 +1017,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1023,6 +1028,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1030,8 +1036,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1050,7 +1058,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1134,7 +1142,7 @@
 				);
 				INFOPLIST_FILE = DWCollection/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
 				MODULEMAP_PRIVATE_FILE = "";
@@ -1165,7 +1173,7 @@
 				);
 				INFOPLIST_FILE = DWCollection/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "";
 				MODULEMAP_PRIVATE_FILE = "";

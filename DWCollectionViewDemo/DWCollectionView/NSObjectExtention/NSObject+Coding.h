@@ -17,11 +17,11 @@
 
 #define dw_CodingImplmentation \
 - (void)encodeWithCoder:(NSCoder *)aCoder { \
-    [self coding_encode:aCoder];    \
+    [self dw_coding_encode:aCoder];    \
 }  \
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder { \
     if (self == [super init]){ \
-        [self coding_decode:aDecoder];\
+        [self dw_coding_decode:aDecoder];\
     }\
     return  self;\
 }\
